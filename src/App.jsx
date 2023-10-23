@@ -1,27 +1,35 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./ui/Home";
 import Menu from "./features/menu/Menu";
+import AppLayout from "./ui/AppLayout";
+import MakeReservation from "./features/reservation/MakeReservation";
+import Reservation from "./features/reservation/Reservation";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/menu",
-    element: <Menu />,
-  },
-  {
-    path: "/contact",
-    element: <Menu />,
-  },
-  {
-    path: "/reservation/new",
-    element: <Menu />,
-  },
-  {
-    path: "/reservation/:reservationId",
-    element: <Menu />,
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/menu",
+        element: <Menu />,
+      },
+      {
+        path: "/contact",
+        element: <Menu />,
+      },
+      {
+        path: "/reservation/new",
+        element: <MakeReservation />,
+      },
+      {
+        path: "/reservation/:reservationId",
+        element: <Reservation />,
+      },
+    ],
   },
 ]);
 
