@@ -3,8 +3,7 @@ import Navbar from "./Navbar";
 
 function Header() {
   return (
-    <header>
-      <Logo />
+    <header className="px-12 py-6">
       <Navbar />
     </header>
   );

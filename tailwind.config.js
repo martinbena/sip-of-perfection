@@ -10,8 +10,8 @@ export default {
       colors: {
         accent: "#51C0C8",
         accentshade: "#0E737F",
-        text: "#503000",
-        textbtn: "#222222",
+        commontext: "#503000",
+        btntext: "#222222",
         brand: "#FFDBA5",
         brandshade: "#FFE9C8",
         brandtint: "#FFF4E3",
