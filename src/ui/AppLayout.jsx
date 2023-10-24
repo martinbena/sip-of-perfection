@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Header from "./Header";
 
 function AppLayout() {
   return (
     <div>
-      <Navbar />
-      <Outlet />
+      <Header />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
