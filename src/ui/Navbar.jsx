@@ -3,20 +3,20 @@ import Logo from "./Logo";
 
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between">
+    <nav className="fixed flex w-screen items-center justify-between px-12">
       <Logo />
-      <ul className="flex gap-12 text-lg font-medium">
-        <li>
-          <NavLink to="/menu">About Us</NavLink>
+      <ul className="child-hover:text-linkhover flex gap-12 text-lg font-medium text-white">
+        <li className="">
+          <NavLink to="/">About Us</NavLink>
         </li>
         <li>
           <NavLink to="/menu">Menu</NavLink>
         </li>
         <li>
-          <NavLink to="/menu">Contact Us</NavLink>
+          <NavLink to="/contact">Contact Us</NavLink>
         </li>
         <li>
-          <NavLink to="/menu">Reservation</NavLink>
+          <NavLink to="/reservation/new">Reservation</NavLink>
         </li>
       </ul>
     </nav>

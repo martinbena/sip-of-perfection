@@ -3,13 +3,18 @@ import logo from "../assets/logo.png";
 
 function Logo() {
   return (
-    <Link to="/">
-      <img
-        src={logo}
-        alt="Logo of the cafe"
-        className="inline-block h-32 w-32"
-      />
-    </Link>
+    <div>
+      <Link to="/">
+        <img
+          src={logo}
+          alt="Logo of the cafe"
+          className="inline-block h-24 w-24"
+        />
+      </Link>
+      <Link to="/" className="font-heading text-2xl text-white">
+        Sip of Perfection
+      </Link>
+    </div>
   );
 }
 

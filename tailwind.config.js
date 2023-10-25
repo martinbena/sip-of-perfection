@@ -9,7 +9,8 @@ export default {
     extend: {
       colors: {
         accent: "#51C0C8",
-        accentshade: "#0E737F",
+        accentshadelight: "#49adb4",
+        accentshadedark: "#0E737F",
         commontext: "#503000",
         btntext: "#222222",
         brand: "#FFDBA5",
@@ -18,8 +19,18 @@ export default {
         wavetop: "#F5F8F5",
         wavemid: "#C2AE91",
         wavebot: "#886C47",
+        linkhover: "#FFC772",
+      },
+      backgroundImage: {
+        "hero-pattern":
+          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/hero.jpg')",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant("child", "& > *");
+      addVariant("child-hover", "& > *:hover");
+    },
+  ],
 };
