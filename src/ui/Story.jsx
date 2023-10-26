@@ -25,8 +25,9 @@ function Story() {
             Find us
           </Button>
         </article>
-        <div className="flex items-center justify-center child:max-w-full">
+        <div className="flex items-center justify-center">
           <img
+            className="max-w-full"
             src="/src/assets/coffee-and-cake.png"
             alt="Our coffee and cake"
           />
