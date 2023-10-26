@@ -9,7 +9,9 @@ function Hero() {
       <p className="mb-6 text-xl font-medium text-white">
         Discover the art of culinary delight in every visit.
       </p>
-      <Button to="/reservation/new">Reserve</Button>
+      <Button type="primary" to="/reservation/new">
+        Reserve
+      </Button>
     </section>
   );
 }

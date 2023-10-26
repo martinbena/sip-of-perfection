@@ -24,6 +24,11 @@ export default {
       backgroundImage: {
         "hero-pattern":
           "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/hero.jpg')",
+        "story-pattern":
+          "url('../src/assets/story-bg.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
+      },
+      maxWidth: {
+        "1/2": "50%",
       },
     },
   },
