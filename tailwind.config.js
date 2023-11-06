@@ -26,9 +26,17 @@ export default {
           "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/hero.jpg')",
         "story-pattern":
           "url('../src/assets/story-bg.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
+        "specs-pattern":
+          "url('../src/assets/specs-bg-left.png'), url('../src/assets/specs-bg-right.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
+      },
+      backgroundPosition: {
+        specs: "left bottom, right top",
       },
       maxWidth: {
-        "1/2": "50%",
+        sixty: "60%",
+      },
+      borderRadius: {
+        speciality: "70px",
       },
     },
   },
