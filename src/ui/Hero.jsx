@@ -2,7 +2,7 @@ import Button from "./Button";
 
 function Hero() {
   return (
-    <section className="bg-hero-pattern flex h-screen flex-col items-center justify-center  bg-cover bg-center text-center">
+    <section className="flex h-screen flex-col items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat text-center">
       <h1 className="mx-auto mb-12 max-w-3xl font-heading text-5xl font-bold leading-tight text-white">
         Sip and savor the taste of a perfect coffee
       </h1>
