@@ -36,9 +36,13 @@ export default {
       },
       maxWidth: {
         sixty: "60%",
+        seventy: "70%",
       },
       borderRadius: {
         speciality: "70px",
+      },
+      boxShadow: {
+        carouselimg: "0 12px 24px rgba(0, 0, 0, 0.2)",
       },
     },
   },
