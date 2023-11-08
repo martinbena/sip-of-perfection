@@ -1,29 +1,36 @@
+import { useState } from "react";
 import ButtonIcon from "./ButtonIcon";
+import CarouselImage from "./CarouselImage";
+import CarouselText from "./CarouselText";
 import CarouselDots from "./CarouselDots";
 
-function Carousel() {
+function Carousel({ items }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToPrevious = () =>
+    setCurrentIndex((curr) => (curr === 0 ? items.length - 1 : curr - 1));
+
+  const goToNext = () =>
+    setCurrentIndex((curr) => (curr === items.length - 1 ? 0 : curr + 1));
+
+  function goToItem(index) {
+    setCurrentIndex(index);
+  }
+
   return (
-    <>
-      <div className="max-w-seventy relative mb-8 rounded-lg bg-commontext px-20 py-16">
-        <img
-          className="shadow-carouselimg absolute right-1/2 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full"
-          src="/src/assets/isabella-rodriguez.jpg"
-          alt=""
-        />
-        <blockquote className="text-white">
-          <p className="mb-8 mt-8">
-            “As a regular visitor to this cafe, I'm continually impressed by the
-            exceptional quality of their coffee and the warmth of their
-            welcoming atmosphere. The Java Bliss Coffee Cocktail is a personal
-            favorite.”
-          </p>
-          <p className="text-sm">Isabella Rodriguez</p>
-        </blockquote>
-        <ButtonIcon direction="left" />
-        <ButtonIcon direction="right" />
+    <div>
+      <div className="relative mb-8 rounded-lg bg-commontext px-20 py-16">
+        <CarouselImage items={items} index={currentIndex} />
+        <CarouselText items={items} index={currentIndex} />
+        <ButtonIcon direction="left" onClick={goToPrevious} />
+        <ButtonIcon direction="right" onClick={goToNext} />
       </div>
-      <CarouselDots />
-    </>
+      <CarouselDots
+        items={items}
+        onClickHandler={goToItem}
+        currentIndex={currentIndex}
+      />
+    </div>
   );
 }
 

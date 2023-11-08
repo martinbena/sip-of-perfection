@@ -1,18 +1,17 @@
-function CarouselDots() {
+function CarouselDots({ items, onClickHandler, currentIndex }) {
   return (
-    <div className="flex gap-6">
-      <button className="h-5 w-5 rounded-full border-2 border-commontext bg-commontext">
-        &nbsp;
-      </button>
-      <button className="h-5 w-5 rounded-full border-2 border-commontext bg-white">
-        &nbsp;
-      </button>
-      <button className="h-5 w-5 rounded-full border-2 border-commontext bg-white">
-        &nbsp;
-      </button>
-      <button className="h-5 w-5 rounded-full border-2 border-commontext bg-white">
-        &nbsp;
-      </button>
+    <div className="flex items-center justify-center gap-6">
+      {items.map((item, index) => (
+        <button
+          className={`h-4 w-4 rounded-full border-2 border-commontext transition-all duration-300 ease-out ${
+            index === currentIndex ? "bg-commontext" : ""
+          }`}
+          key={index}
+          onClick={() => onClickHandler(index)}
+        >
+          &nbsp;
+        </button>
+      ))}
     </div>
   );
 }
