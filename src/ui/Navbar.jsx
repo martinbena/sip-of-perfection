@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 function Navbar() {
   return (
-    <nav className="fixed flex w-screen items-center justify-between px-16 py-2 font-medium">
+    <nav className="absolute left-0 top-0 flex w-screen items-center justify-between px-16 py-2 font-medium">
       <Logo />
       <ul className="flex gap-16 text-lg font-medium text-white child-hover:text-linkhover">
         <li className="">
