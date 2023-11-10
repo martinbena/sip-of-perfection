@@ -30,6 +30,7 @@ export default {
           "url('../src/assets/specs-bg-left.png'), url('../src/assets/specs-bg-right.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
         "opening-hours":
           "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/opening-hours.jpg')",
+        footer: "url(../src/assets/footer-bg.svg)",
       },
       backgroundPosition: {
         specs: "left bottom, right top",

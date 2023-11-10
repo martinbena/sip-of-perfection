@@ -30,7 +30,7 @@ function Gallery() {
   return (
     <div className="grid grid-cols-2 items-center gap-12 py-12 pr-20">
       {pictures.map((pic) => (
-        <GalleryItem title={pic.title} src={pic.src} />
+        <GalleryItem title={pic.title} src={pic.src} key={pic.title} />
       ))}
     </div>
   );
