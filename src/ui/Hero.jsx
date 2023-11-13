@@ -1,11 +1,12 @@
 import Button from "./Button";
+import HeadingPrimary from "./HeadingPrimary";
 
 function Hero() {
   return (
-    <section className="flex h-screen flex-col items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat text-center">
-      <h1 className="mx-auto mb-12 max-w-3xl font-heading text-5xl font-bold leading-tight text-white">
+    <section className="mob:px-5 flex h-screen flex-col items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat px-10 text-center">
+      <HeadingPrimary>
         Sip and savor the taste of a perfect coffee
-      </h1>
+      </HeadingPrimary>
       <p className="mb-6 text-xl font-medium text-white">
         Discover the art of culinary delight in every visit.
       </p>

@@ -45,6 +45,13 @@ export default {
       boxShadow: {
         carouselimg: "0 12px 24px rgba(0, 0, 0, 0.2)",
       },
+      screens: {
+        mob: { max: "544px" },
+        moblg: { max: "704px" },
+        tab: { max: "944px" },
+        tablg: { max: "1200px" },
+        dtsm: { max: "1344px" },
+      },
     },
   },
   plugins: [
