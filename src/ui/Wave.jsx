@@ -22,7 +22,7 @@ function Wave() {
           transition={{
             repeat: Infinity,
             repeatType: "reverse",
-            duration: 2,
+            duration: 1.5,
             ease: "easeInOut",
           }}
           fill="#F5F8F5"
