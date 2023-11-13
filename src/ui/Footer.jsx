@@ -8,7 +8,7 @@ function Footer() {
   return (
     <>
       <Wave />
-      <footer className="grid grid-cols-3 items-center justify-items-center gap-y-16 bg-commontext pb-24 text-center text-white">
+      <footer className="grid grid-cols-3 items-center justify-items-center gap-y-16 bg-commontext pb-24 pt-12 text-center text-white">
         <FooterItem title="Address">
           <p>Sip of Perfection</p>
           <p>1234 Maplewood Lane, Portland, OR 97218</p>
