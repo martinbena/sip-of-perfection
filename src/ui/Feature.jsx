@@ -1,6 +1,6 @@
 function Feature({ icon, title, children }) {
   return (
-    <div className="flex flex-col items-center justify-start text-center">
+    <div className="flex flex-col items-center text-center">
       <div className="mb-8 inline-block rounded-full bg-brand p-5 child:h-12 child:w-12">
         {icon}
       </div>

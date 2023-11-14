@@ -3,12 +3,12 @@ import HeadingSecondary from "./HeadingSecondary";
 
 function Story() {
   return (
-    <section className="tab:px-20 mob:px-8 mob:py-16 bg-story-pattern bg-left-bottom bg-no-repeat px-8 py-24">
-      <div className="dtsm:grid-cols-2 tab:grid-cols-1 tab:gap-16 tablg:gap-12 m-auto grid max-w-7xl grid-cols-[4fr_5fr] gap-24">
-        <article className="tab:items-center tab:text-center flex flex-col items-start justify-center">
+    <section className="bg-story-pattern bg-left-bottom bg-no-repeat px-8 py-24 tab:px-20 mob:px-8">
+      <div className="m-auto grid max-w-6xl grid-cols-[4fr_5fr] gap-20 dtsm:grid-cols-2 tablg:gap-12 tab:grid-cols-1 tab:gap-16">
+        <article className="flex flex-col items-start justify-center tab:items-center tab:text-center">
           <HeadingSecondary>Our story</HeadingSecondary>
 
-          <div className="tab:mt-9 mb-8 mt-12 space-y-6">
+          <div className="mb-8 mt-12 space-y-6 tab:mt-9">
             <p>
               Nestled in a serene corner of Portland, our cafe offers a tranquil
               escape from the daily grind. Here, each sip and bite is a
@@ -37,9 +37,3 @@ function Story() {
 }
 
 export default Story;
-
-// mob: { max: "544px" },
-//         moblg: { max: "704px" },
-//         tab: { max: "944px" },
-//         tablg: { max: "1200px" },
-//         dtsm: { max: "1344px" },
