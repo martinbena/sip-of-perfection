@@ -34,6 +34,7 @@ export default {
       },
       backgroundPosition: {
         specs: "left bottom, right top",
+        "specs-sm": "left top, right bottom",
       },
       maxWidth: {
         sixty: "60%",

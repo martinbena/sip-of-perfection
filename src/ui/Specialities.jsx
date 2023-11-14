@@ -20,7 +20,7 @@ const specs = [
 function Specialities() {
   return (
     <section className="bg-specs-pattern bg-specs bg-no-repeat py-24">
-      <article className="mx-auto max-w-6xl px-12">
+      <article className="mx-auto max-w-6xl px-12 tablg:px-8">
         <div className="mb-20 text-center">
           <HeadingSecondary>Our specialities</HeadingSecondary>
         </div>
@@ -46,3 +46,9 @@ function Specialities() {
 }
 
 export default Specialities;
+
+// mob: { max: "544px" },
+//         moblg: { max: "704px" },
+//         tab: { max: "944px" },
+//         tablg: { max: "1200px" },
+//         dtsm: { max: "1344px" },

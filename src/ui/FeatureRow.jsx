@@ -26,9 +26,3 @@ function FeatureRow() {
 }
 
 export default FeatureRow;
-
-// mob: { max: "544px" },
-//         moblg: { max: "704px" },
-//         tab: { max: "944px" },
-//         tablg: { max: "1200px" },
-//         dtsm: { max: "1344px" },
