@@ -19,7 +19,7 @@ function Carousel({ items }) {
 
   return (
     <div>
-      <div className="relative mb-8 rounded-lg bg-commontext px-20 py-16">
+      <div className="relative mb-8 rounded-lg bg-commontext px-20 py-16 mob:px-8 mob:py-10">
         <CarouselImage items={items} index={currentIndex} />
         <CarouselText items={items} index={currentIndex} />
         <ButtonIcon direction="left" onClick={goToPrevious} />

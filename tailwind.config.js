@@ -39,6 +39,7 @@ export default {
       maxWidth: {
         sixty: "60%",
         seventy: "70%",
+        "8xl": "104rem",
       },
       borderRadius: {
         speciality: "70px",
@@ -47,11 +48,13 @@ export default {
         carouselimg: "0 12px 24px rgba(0, 0, 0, 0.2)",
       },
       screens: {
+        dt: { max: "1540px" },
         dtsm: { max: "1344px" },
         tablg: { max: "1200px" },
         tab: { max: "944px" },
         moblg: { max: "704px" },
         mob: { max: "544px" },
+        mobsm: { max: "440px" },
       },
     },
   },

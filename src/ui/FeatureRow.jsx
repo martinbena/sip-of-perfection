@@ -7,7 +7,7 @@ import Feature from "./Feature";
 function FeatureRow() {
   return (
     <section className="bg-brandtint py-24">
-      <div className="m-auto grid max-w-7xl grid-cols-4 gap-12 dtsm:gap-8 dtsm:px-8 tablg:grid-cols-2 tablg:gap-16 moblg:grid-cols-1">
+      <div className="max-w-8xl m-auto grid grid-cols-4 gap-12 dtsm:gap-8 dtsm:px-8 tablg:grid-cols-2 tablg:gap-16 moblg:grid-cols-1">
         <Feature title="Premium coffee selection" icon={<TbCoffee />}>
           Awaken your senses with our exquisite coffee blends.
         </Feature>

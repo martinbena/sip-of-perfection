@@ -1,6 +1,6 @@
 function HeadingPrimary({ children }) {
   return (
-    <h1 className="tab:text-4xl mx-auto max-w-3xl font-heading text-5xl font-bold leading-tight text-white">
+    <h1 className="mx-auto font-heading text-5xl font-bold leading-tight text-white tab:text-4xl">
       {children}
     </h1>
   );
