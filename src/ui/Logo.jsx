@@ -5,7 +5,11 @@ function Logo({ type }) {
   if (type === "footer")
     return (
       <Link to="/">
-        <img src={logo} alt="Logo of the cafe" className="h-40 w-40" />
+        <img
+          src={logo}
+          alt="Logo of the cafe"
+          className="h-40 w-40 tab:h-36 tab:w-36"
+        />
       </Link>
     );
 
