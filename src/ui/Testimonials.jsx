@@ -30,7 +30,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <article className="mobsm:[&>*:nth-child(1)]:text-center max-w-8xl flex flex-col items-center justify-center p-24 tab:px-8 tab:pb-12 [&>*:nth-child(1)]:mb-36">
+    <article className="mobsm:[&>*:nth-child(1)]:text-center flex flex-col items-center justify-center p-24 tab:px-8 tab:pb-12 [&>*:nth-child(1)]:mb-36">
       <HeadingSecondary>The cafe experience</HeadingSecondary>
       <Carousel items={testimonials} />
     </article>

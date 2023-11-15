@@ -3,9 +3,11 @@ import Testimonials from "./Testimonials";
 
 function CafeExperience() {
   return (
-    <section className="grid grid-cols-[55fr_45fr] bg-brandtint tablg:grid-cols-1">
-      <Testimonials />
-      <Gallery />
+    <section className="bg-brandtint">
+      <div className="max-w-8xl mx-auto grid grid-cols-[55fr_45fr] tablg:grid-cols-1">
+        <Testimonials />
+        <Gallery />
+      </div>
     </section>
   );
 }
