@@ -14,7 +14,7 @@ function Logo({ type }) {
     );
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="z-50 flex items-center gap-4">
       <Link to="/">
         <img
           src={logo}

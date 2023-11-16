@@ -11,7 +11,7 @@ function CarouselText({ items, index }) {
                   : "invisible h-0 w-0 -translate-x-full opacity-0"
               }`}
             >
-              "{item.statement}"
+              {item.statement}
             </p>
             <p
               className={`${

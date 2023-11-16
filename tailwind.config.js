@@ -22,6 +22,8 @@ export default {
         linkhover: "#FFC772",
       },
       backgroundImage: {
+        "mobile-nav":
+          "linear-gradient(to right, rgba(80, 48, 0 ,0.75), rgba(80, 48, 0 ,0.75))",
         "hero-pattern":
           "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/hero.jpg')",
         "story-pattern":
@@ -42,6 +44,7 @@ export default {
         sixty: "60%",
         seventy: "70%",
         "8xl": "104rem",
+        "9xl": "120rem",
       },
       borderRadius: {
         speciality: "70px",

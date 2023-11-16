@@ -22,6 +22,11 @@
   animation: loading 1s infinite linear;
 }
 
+.active {
+  color: #ffc772;
+  border-bottom: 2px solid;
+}
+
 @keyframes loading {
   20% {
     background-position:

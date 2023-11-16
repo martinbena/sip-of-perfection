@@ -10,25 +10,6 @@ function Button({ children, to, type }) {
       classes +
       " hover:bg-accentshadedark text-accentshadedark border-accentshadedark border-2 transition-all duration-300 ease-out  hover:text-white",
   };
-  // if (type === "primary")
-  //   return (
-  //     <Link
-  //       to={to}
-  //       className="hover:bg-accentshadelight rounded-md bg-accent px-10 py-1.5 text-xl font-semibold text-btntext"
-  //     >
-  //       {children}
-  //     </Link>
-  //   );
-
-  // if (type === "secondary")
-  //   return (
-  //     <Link
-  //       to={to}
-  //       className="hover:bg-accentshadedark text-accentshadedark border-accentshadedark rounded-md border-2 px-10 py-1.5 text-xl font-semibold transition-all duration-300 ease-out  hover:text-white"
-  //     >
-  //       {children} {rarr}
-  //     </Link>
-  //   );
   return (
     <Link to={to} className={styles[type]}>
       {type === "secondary" ? `${children} ${rarr}` : children}
