@@ -9,9 +9,18 @@ function SocialNetworks() {
       <SocialLink
         icon={<PiInstagramLogo />}
         link="https://www.instagram.com/"
+        name="instagram"
       />
-      <SocialLink icon={<PiFacebookLogo />} link="https://www.facebook.com/" />
-      <SocialLink icon={<PiTwitterLogo />} link="https://twitter.com/" />
+      <SocialLink
+        icon={<PiFacebookLogo />}
+        link="https://www.facebook.com/"
+        name="facebook"
+      />
+      <SocialLink
+        icon={<PiTwitterLogo />}
+        link="https://twitter.com/"
+        name="twitter"
+      />
     </p>
   );
 }

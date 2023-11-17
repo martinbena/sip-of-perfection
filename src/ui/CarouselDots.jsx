@@ -8,6 +8,7 @@ function CarouselDots({ items, onClickHandler, currentIndex }) {
           }`}
           key={index}
           onClick={() => onClickHandler(index)}
+          aria-label={`See testimonial of ${item.name}`}
         >
           &nbsp;
         </button>
