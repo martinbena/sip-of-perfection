@@ -22,7 +22,7 @@ function Logo({ type }) {
           className="inline-block h-16 w-16"
         />
       </Link>
-      <Link to="/" className="font-heading text-2xl text-white">
+      <Link to="/" className="font-heading text-2xl text-white mobsm:hidden">
         Sip of Perfection
       </Link>
     </div>

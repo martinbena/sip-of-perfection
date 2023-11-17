@@ -1,59 +1,66 @@
-import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
-import { useState } from "react";
-import { HiMenu } from "react-icons/hi";
-import { HiOutlineX } from "react-icons/hi";
+import { useEffect, useRef, useState } from "react";
+import Navigation from "./Navigation";
+import NavigationButton from "./NavigationButton";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleTabKey = (e) => {
+      const focusableElements = navRef.current.querySelectorAll("a, button");
+      const firstElement = focusableElements[2];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (
+        e.key === "Tab" &&
+        e.shiftKey &&
+        document.activeElement === firstElement
+      ) {
+        e.preventDefault();
+        lastElement.focus();
+      }
+
+      if (
+        e.key === "Tab" &&
+        !e.shiftKey &&
+        document.activeElement === lastElement
+      ) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    };
+
+    const handleEscapeKey = (e) => {
+      e.key === "Escape" && setIsOpen(false);
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleTabKey);
+      document.addEventListener("keydown", handleEscapeKey);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleTabKey);
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [isOpen]);
+
+  const handleToggle = () => setIsOpen((open) => !open);
+
+  const handleClose = () => isOpen && setIsOpen(false);
 
   return (
     <div
-      className={`max-w-9xl  left-0 right-0 top-0 mx-auto flex items-center justify-between px-16 py-6 font-medium tablg:px-8 ${
+      ref={navRef}
+      className={`left-0  right-0 top-0 z-30 mx-auto flex max-w-9xl items-center justify-between px-16 py-6 font-medium tablg:px-8 ${
         isOpen ? "fixed" : "absolute"
       }`}
     >
       <Logo />
-      <nav
-        className={`transition-all duration-500 ease-in tab:fixed tab:left-0 tab:right-0 tab:top-0 tab:flex tab:h-screen tab:w-full tab:flex-col tab:items-center tab:justify-center ${
-          isOpen
-            ? "bg-mobile-nav backdrop-blur"
-            : "tab:pointer-events-none tab:invisible tab:translate-x-full tab:opacity-0"
-        }`}
-      >
-        <ul
-          className={`flex gap-16 font-medium text-white child-hover:text-linkhover ${
-            isOpen ? "flex-col text-center text-3xl" : "text-lg"
-          }`}
-        >
-          <li>
-            <NavLink className="pb-0.5" to="/">
-              About Us
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="pb-0.5" to="/menu">
-              Menu
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="pb-0.5" to="/contact">
-              Contact Us
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="pb-0.5" to="/reservation/new">
-              Reservation
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-      <button
-        className="z-50 hidden text-white hover:text-linkhover child:h-12 child:w-12 tab:block"
-        onClick={() => setIsOpen((open) => !open)}
-      >
-        {isOpen ? <HiOutlineX /> : <HiMenu />}
-      </button>
+      <Navigation isOpen={isOpen} onClose={handleClose} />
+      <NavigationButton isOpen={isOpen} onToggle={handleToggle} />
     </div>
   );
 }
