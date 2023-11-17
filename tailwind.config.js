@@ -67,6 +67,8 @@ export default {
     function ({ addVariant }) {
       addVariant("child", "& > *");
       addVariant("child-hover", "& > *:hover");
+      addVariant("hover-child", "&:hover > *");
+      addVariant("focus-child", "&:focus > *");
     },
   ],
 };

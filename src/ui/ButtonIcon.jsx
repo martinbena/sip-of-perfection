@@ -9,7 +9,7 @@ function ButtonIcon({ direction, onClick }) {
 
   return (
     <button
-      className={`${translate} absolute top-1/2 ${directionClass} flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-carouselimg child:h-6 child:w-6 child:transition-all child:duration-300 child:ease-linear child-hover:scale-150`}
+      className={`${translate} absolute top-1/2 ${directionClass} hover-child:scale-150 focus-child:scale-150 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-carouselimg focus:outline-none focus:ring focus:ring-linkhover focus:ring-offset-2 child:h-6 child:w-6 child:transition-all child:duration-300 child:ease-linear`}
       onClick={onClick}
     >
       {icon}

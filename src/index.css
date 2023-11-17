@@ -9,6 +9,11 @@
   color: #444;
 } */
 
+::selection {
+  color: #fff;
+  background-color: #503000;
+}
+
 /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
 .loader {
   width: 45px;
