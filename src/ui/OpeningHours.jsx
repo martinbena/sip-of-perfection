@@ -2,7 +2,7 @@ import Button from "./Button";
 
 function OpeningHours() {
   return (
-    <section className="bg-opening-hours bg-cover bg-fixed bg-center bg-no-repeat py-36 text-center text-white">
+    <section className="dtxl:py-64 bg-opening-hours bg-cover bg-fixed bg-center bg-no-repeat py-36 text-center text-white">
       <h2 className="mb-16 font-heading text-5xl font-bold leading-tight tab:text-4xl">
         <span className="border-b-2 pb-2">Open every day</span>
       </h2>

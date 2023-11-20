@@ -46,6 +46,10 @@ export default {
         "8xl": "104rem",
         "9xl": "120rem",
       },
+      height: {
+        screen: "100dvh",
+        "half-screen": "50dvh",
+      },
       borderRadius: {
         speciality: "70px",
       },
@@ -53,6 +57,7 @@ export default {
         carouselimg: "0 12px 24px rgba(0, 0, 0, 0.2)",
       },
       screens: {
+        dtxl: { min: "2540px" },
         dt: { max: "1540px" },
         dtsm: { max: "1344px" },
         tablg: { max: "1200px" },
