@@ -34,7 +34,7 @@ export default {
           "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/opening-hours.jpg')",
         footer: "url(../src/assets/footer-bg.svg)",
         carousel:
-          "url(../src/assets/group-10.png), linear-gradient(to right, rgb(80, 48, 0), rgb(80, 48, 0))",
+          "url(../src/assets/carousel-bg.png), linear-gradient(to right, rgb(80, 48, 0), rgb(80, 48, 0))",
       },
       backgroundPosition: {
         specs: "left bottom, right top",
