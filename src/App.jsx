@@ -1,9 +1,10 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import Menu from "./features/menu/Menu";
+import Menu, { loader as menuLoader } from "./pages/Menu";
 import AppLayout from "./ui/AppLayout";
 import MakeReservation from "./features/reservation/MakeReservation";
 import Reservation from "./features/reservation/Reservation";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -16,10 +17,11 @@ const router = createBrowserRouter([
       {
         path: "/menu",
         element: <Menu />,
+        loader: menuLoader,
       },
       {
         path: "/contact",
-        element: <Menu />,
+        element: <Contact />,
       },
       {
         path: "/reservation/new",
