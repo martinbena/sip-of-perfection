@@ -5,10 +5,12 @@ import AppLayout from "./ui/AppLayout";
 import MakeReservation from "./features/reservation/MakeReservation";
 import Reservation from "./features/reservation/Reservation";
 import Contact from "./pages/Contact";
+import Error from "./ui/Error";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -18,6 +20,7 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
         loader: menuLoader,
+        errorElement: <Error />,
       },
       {
         path: "/contact",
