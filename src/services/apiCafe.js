@@ -1,7 +1,8 @@
 import { db } from "../config/firebase";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, addDoc } from "firebase/firestore";
 
 const menuRef = collection(db, "menu");
+const reservationsRef = collection(db, "reservations");
 
 export async function getMenu() {
   try {
@@ -11,6 +12,18 @@ export async function getMenu() {
       id: doc.id,
     }));
     return data;
+  } catch (err) {
+    throw new Error(err.message);
+  }
+}
+
+export async function makeReservation(reservation) {
+  try {
+    const newReservation = await addDoc(reservationsRef, {
+      date: reservation.date,
+      preorder: reservation.preorder,
+    });
+    return newReservation;
   } catch (err) {
     throw new Error(err.message);
   }

@@ -2,7 +2,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Menu, { loader as menuLoader } from "./pages/Menu";
 import AppLayout from "./ui/AppLayout";
-import MakeReservation from "./pages/MakeReservation";
+import MakeReservation, {
+  action as makeReservationAction,
+} from "./pages/MakeReservation";
 import Reservation from "./features/reservation/Reservation";
 import Contact from "./pages/Contact";
 import Error from "./ui/Error";
@@ -29,6 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/reservation/new",
         element: <MakeReservation />,
+        action: makeReservationAction,
       },
       {
         path: "/reservation/:reservationId",
