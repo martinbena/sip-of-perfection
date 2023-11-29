@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { addHours, addMinutes, format, parse, set, setHours } from "date-fns";
 import {
   WEEKEND_CLOSING_HOUR,
   WEEKEND_OPENING_HOUR,
@@ -13,13 +13,17 @@ export function formatCurrency(value) {
   }).format(value);
 }
 
+// export function formatDate(dateStr) {
+//   return new Intl.DateTimeFormat("en", {
+//     day: "numeric",
+//     month: "short",
+//     hour: "2-digit",
+//     minute: "2-digit",
+//   }).format(new Date(dateStr));
+// }
+
 export function formatDate(dateStr) {
-  return new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "short",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(new Date(dateStr));
+  return new Intl.DateTimeFormat("en-US").format(new Date(dateStr));
 }
 
 export function calcMinutesLeft(dateStr) {
@@ -49,10 +53,36 @@ export function getOpeningHour(date) {
       : WEEK_OPENING_HOUR;
   return open;
 }
+
 export function getClosingHour(date) {
   const close =
     date.getDay() === 0 || date.getDay() === 6
       ? WEEKEND_CLOSING_HOUR
       : WEEK_CLOSING_HOUR;
   return close;
+}
+
+export function calculateStartEndTime(start, duration) {
+  const [hours, rawMinutes] = duration.toString().split(".").map(Number);
+  const hoursInMinutes = hours * 60;
+  const minutes = rawMinutes === 5 ? 30 : 0;
+  const totalMinutes = hoursInMinutes + minutes;
+
+  const startTime = parse(start, "h:mm a", new Date());
+
+  const endTime = addMinutes(startTime, totalMinutes);
+
+  return [format(startTime, "kk:mm"), format(endTime, "kk:mm")];
+}
+
+export function filterConcurrentReservations(reservations, start, end) {
+  const filteredReservations = reservations.filter((reservation) => {
+    return (
+      (reservation.from >= start && reservation.from < end) ||
+      (reservation.to > start && reservation.to <= end) ||
+      (reservation.from <= start && reservation.to >= end)
+    );
+  });
+
+  return filteredReservations;
 }

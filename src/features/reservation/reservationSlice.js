@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   date: null,
-  numGuests: 2,
-  duration: 2,
+  numGuests: null,
+  duration: null,
   name: null,
-  preorder: false,
+  preorder: null,
   email: null,
   phone: null,
 };
@@ -17,9 +17,16 @@ const reservationSlice = createSlice({
     updateDate(state, action) {
       state.date = action.payload;
     },
+    updateGuests(state, action) {
+      state.numGuests = action.payload;
+    },
+    updateDuration(state, action) {
+      state.duration = action.payload;
+    },
   },
 });
 
-export const { updateDate } = reservationSlice.actions;
+export const { updateDate, updateGuests, updateDuration } =
+  reservationSlice.actions;
 
 export default reservationSlice.reducer;
