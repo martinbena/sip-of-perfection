@@ -70,6 +70,7 @@ export async function checkAvailability(date, time, duration, numGuests) {
       .reduce((sum, guests) => sum + guests, 0);
 
     const capacityLimit = CAPACITY;
+    console.log(totalGuests + numGuests);
     const isAvailable = totalGuests + numGuests <= capacityLimit;
 
     status = isAvailable ? "ok" : "full capacity";
