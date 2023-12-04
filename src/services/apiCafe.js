@@ -26,11 +26,17 @@ export async function getMenu() {
 
 export async function makeReservation(reservation) {
   try {
+    const { date, from, to, guests, fullName, email, phone, note } =
+      reservation;
     const newReservation = await addDoc(reservationsRef, {
-      date: reservation.date,
-      from: reservation.from,
-      to: reservation.to,
-      guests: reservation.guests,
+      date,
+      from,
+      to,
+      guests,
+      fullName,
+      email,
+      phone,
+      note,
     });
     return newReservation;
   } catch (err) {

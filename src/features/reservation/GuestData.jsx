@@ -1,4 +1,4 @@
-import { useNavigation } from "react-router-dom";
+import { useActionData, useNavigation } from "react-router-dom";
 import { useFormContext } from "./FormContext";
 
 function GuestData() {
@@ -6,6 +6,7 @@ function GuestData() {
   const isSubmitting = navigation.status === "submitting";
   const { ACTIONS, state, dispatch, formattedDate } = useFormContext();
   const { selectedTime, numGuests, duration, isAvailable, message } = state;
+  const formErrors = useActionData();
   return (
     <div
       className={`${
@@ -30,6 +31,53 @@ function GuestData() {
           Change
         </button>
       </div>
+      <label htmlFor="fullName">Full name:</label>
+      <input
+        type="text"
+        id="fullName"
+        name="fullName"
+        placeholder="John Smith"
+        required
+      />
+      {formErrors?.fullName && (
+        <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
+          {formErrors.fullName}
+        </p>
+      )}
+      <label htmlFor="email">E-mail:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="john.smith@gmail.com"
+        required
+      />
+      {formErrors?.email && (
+        <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
+          {formErrors.email}
+        </p>
+      )}
+      <label htmlFor="phone">Telephone:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="123-456-7890"
+        required
+      />
+      {formErrors?.phone && (
+        <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
+          {formErrors.phone}
+        </p>
+      )}
+      <label htmlFor="note">Note for us:</label>
+      <textarea
+        name="note"
+        id="note"
+        placeholder="Let us know about your diet, alergies..."
+        cols="30"
+        rows="10"
+      ></textarea>
       <button
         className="text-white"
         type="submit"

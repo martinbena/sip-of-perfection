@@ -1,14 +1,21 @@
 import HeadingPrimary from "../ui/HeadingPrimary";
 import { calculateStartEndTime, formatDate } from "../utilities/helpers";
-import { Form, redirect, useActionData } from "react-router-dom";
+import { Form, redirect } from "react-router-dom";
 import { makeReservation } from "../services/apiCafe";
 import DateTimeCheck from "../features/reservation/DateTimeCheck";
 import GuestData from "../features/reservation/GuestData";
 import { FormProvider } from "../features/reservation/FormContext";
 
-function MakeReservation() {
-  const formErrors = useActionData();
+const isValidFullName = (str) =>
+  /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
+const isValidPhone = (str) =>
+  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
+    str,
+  );
+const isValidEmail = (str) =>
+  /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(str);
 
+function MakeReservation() {
   return (
     <section className="overflow-hidden bg-commontext py-40 text-center">
       <HeadingPrimary>Resrervation</HeadingPrimary>
@@ -24,7 +31,8 @@ function MakeReservation() {
 
 export async function action({ request }) {
   const formData = await request.formData();
-  const { date, time, numGuests, duration } = Object.fromEntries(formData);
+  const { date, time, numGuests, duration, fullName, email, phone, note } =
+    Object.fromEntries(formData);
   const reservationDate = formatDate(date);
 
   const [startTime, endTime] = calculateStartEndTime(time, duration);
@@ -34,17 +42,28 @@ export async function action({ request }) {
     from: startTime,
     to: endTime,
     guests: +numGuests,
+    fullName,
+    email,
+    phone,
+    note,
   };
-
-  console.log(reservation);
   const errors = {};
+  if (!isValidFullName(fullName))
+    errors.fullName =
+      "Please give us your correct full name. We will need it upon your arrival.";
+  if (!isValidPhone(phone))
+    errors.phone =
+      "Please give us your correct phone number. We might need it to contact you.";
+  if (!isValidEmail(email))
+    errors.email =
+      "Please give us your correct e-mail address. We might need it to contact you.";
   if (Object.keys(errors).length > 0) return errors;
 
   const newReservation = await makeReservation(reservation);
+  console.log(reservation);
   console.log(newReservation.id);
 
-  if (reservation.preorder) return redirect("/menu");
-  return null;
+  return redirect(`/reservation/${newOrder.id}`);
 }
 
 export default MakeReservation;
