@@ -1,5 +1,13 @@
 import { db } from "../config/firebase";
-import { getDocs, collection, addDoc, query, where } from "firebase/firestore";
+import {
+  getDocs,
+  collection,
+  addDoc,
+  query,
+  where,
+  getDoc,
+  doc,
+} from "firebase/firestore";
 import {
   calculateStartEndTime,
   filterConcurrentReservations,
@@ -85,3 +93,18 @@ export async function checkAvailability(date, time, duration, numGuests) {
     throw new Error("Error checking availability");
   }
 }
+
+export async function getReservation(id) {
+  try {
+    const docRef = doc(db, "reservations", id);
+    const res = await getDoc(docRef);
+    const data = { ...res.data(), id: res.id };
+    if (!data.date) throw new Error(`Couldn't find reservation number ${id}`);
+    return data;
+  } catch (err) {
+    throw new Error(err.message || `Error finding reservation`);
+  }
+}
+
+// rb4yoZ4azwxWFTtBHn7Q
+// XwwmnxMalF8eAkHRWbih

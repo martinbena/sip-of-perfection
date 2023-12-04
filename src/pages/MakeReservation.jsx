@@ -5,6 +5,7 @@ import { makeReservation } from "../services/apiCafe";
 import DateTimeCheck from "../features/reservation/DateTimeCheck";
 import GuestData from "../features/reservation/GuestData";
 import { FormProvider } from "../features/reservation/FormContext";
+import SearchReservation from "../features/reservation/SearchReservation";
 
 const isValidFullName = (str) =>
   /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
@@ -19,6 +20,7 @@ function MakeReservation() {
   return (
     <section className="overflow-hidden bg-commontext py-40 text-center">
       <HeadingPrimary>Resrervation</HeadingPrimary>
+      <SearchReservation />
       <Form method="POST">
         <FormProvider>
           <DateTimeCheck />
@@ -63,7 +65,7 @@ export async function action({ request }) {
   console.log(reservation);
   console.log(newReservation.id);
 
-  return redirect(`/reservation/${newOrder.id}`);
+  return redirect(`/reservation/${newReservation.id}`);
 }
 
 export default MakeReservation;

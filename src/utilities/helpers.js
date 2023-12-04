@@ -1,4 +1,4 @@
-import { addHours, addMinutes, format, parse, set, setHours } from "date-fns";
+import { addMinutes, format, parse } from "date-fns";
 import {
   WEEKEND_CLOSING_HOUR,
   WEEKEND_OPENING_HOUR,
@@ -13,23 +13,17 @@ export function formatCurrency(value) {
   }).format(value);
 }
 
-// export function formatDate(dateStr) {
-//   return new Intl.DateTimeFormat("en", {
-//     day: "numeric",
-//     month: "short",
-//     hour: "2-digit",
-//     minute: "2-digit",
-//   }).format(new Date(dateStr));
-// }
-
 export function formatDate(dateStr) {
   return new Intl.DateTimeFormat("en-US").format(new Date(dateStr));
 }
 
-export function calcMinutesLeft(dateStr) {
-  const d1 = new Date().getTime();
-  const d2 = new Date(dateStr).getTime();
-  return Math.round((d2 - d1) / 60000);
+export function formatTime(timeStr) {
+  return new Date(`1970-01-01T${timeStr}Z`).toLocaleTimeString("en-US", {
+    timeZone: "UTC",
+    hour12: true,
+    hour: "numeric",
+    minute: "numeric",
+  });
 }
 
 export function getAvailableTimeSlots(date, open, close) {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function SearchReservation() {
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -15,6 +15,7 @@ function SearchReservation() {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        type="text"
         placeholder="Search reservation number"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
