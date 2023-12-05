@@ -3,6 +3,7 @@ import Button from "../../ui/Button";
 import { formatCurrency } from "../../utilities/helpers";
 import { addItem, getCurrentItemQuantity } from "../cart/cartSlice";
 import DeleteItem from "../cart/DeleteItem";
+import UpdateItemQuantity from "../cart/UpdateItemQuantity";
 
 function MenuItem({ item }) {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function MenuItem({ item }) {
 
   function handlePreorder() {
     const newItem = {
-      itemId: id,
+      id,
       name,
       quantity: 1,
       unitPrice: price,
@@ -43,7 +44,12 @@ function MenuItem({ item }) {
             Preorder
           </Button>
         )}
-        {isInCart && <DeleteItem itemId={id} />}
+        {isInCart && (
+          <div className="flex items-center gap-3 sm:gap-8">
+            <UpdateItemQuantity id={id} quantity={currentQuantity} />
+            <DeleteItem id={id} />
+          </div>
+        )}
       </div>
     </li>
   );

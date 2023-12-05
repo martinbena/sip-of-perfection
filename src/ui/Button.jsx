@@ -12,6 +12,8 @@ function Button({ children, to, type, onClick }) {
     secondary:
       classes +
       " hover:bg-accentshadedark focus:text-white focus:bg-accentshadedark focus:ring-accentshadedark text-accentshadedark border-accentshadedark border-2 transition-all duration-300 ease-out  hover:text-white",
+    round:
+      "rounded-full text-xl font-semibold focus:outline-none focus:ring focus:ring-offset-2",
   };
 
   if (onClick)
