@@ -10,6 +10,7 @@ import Reservation, {
 } from "./features/reservation/Reservation";
 import Contact from "./pages/Contact";
 import Error from "./ui/Error";
+import { action as updateReservationAction } from "./features/reservation/UpdateReservation";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
         element: <Reservation />,
         loader: reservationLoader,
         errorElement: <Error />,
+        action: updateReservationAction,
       },
     ],
   },

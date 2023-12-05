@@ -1,12 +1,16 @@
 import { useActionData, useNavigation } from "react-router-dom";
 import { useFormContext } from "./FormContext";
+import { useSelector } from "react-redux";
+import { getCart } from "../cart/cartSlice";
 
 function GuestData() {
   const navigation = useNavigation();
   const isSubmitting = navigation.status === "submitting";
   const { ACTIONS, state, dispatch, formattedDate } = useFormContext();
   const { selectedTime, numGuests, duration, isAvailable, message } = state;
+  const cart = useSelector(getCart);
   const formErrors = useActionData();
+
   return (
     <div
       className={`${
@@ -78,6 +82,7 @@ function GuestData() {
         cols="30"
         rows="10"
       ></textarea>
+      <input type="hidden" name="cart" value={JSON.stringify(cart)} />
       <button
         className="text-white"
         type="submit"

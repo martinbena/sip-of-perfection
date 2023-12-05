@@ -6,6 +6,8 @@ import DateTimeCheck from "../features/reservation/DateTimeCheck";
 import GuestData from "../features/reservation/GuestData";
 import { FormProvider } from "../features/reservation/FormContext";
 import SearchReservation from "../features/reservation/SearchReservation";
+import store from "../store";
+import { clearCart } from "../features/cart/cartSlice";
 
 const isValidFullName = (str) =>
   /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
@@ -33,8 +35,17 @@ function MakeReservation() {
 
 export async function action({ request }) {
   const formData = await request.formData();
-  const { date, time, numGuests, duration, fullName, email, phone, note } =
-    Object.fromEntries(formData);
+  const {
+    date,
+    time,
+    numGuests,
+    duration,
+    fullName,
+    email,
+    phone,
+    note,
+    cart,
+  } = Object.fromEntries(formData);
   const reservationDate = formatDate(date);
 
   const [startTime, endTime] = calculateStartEndTime(time, duration);
@@ -48,6 +59,7 @@ export async function action({ request }) {
     email,
     phone,
     note,
+    preorder: JSON.parse(cart),
   };
   const errors = {};
   if (!isValidFullName(fullName))
@@ -64,6 +76,7 @@ export async function action({ request }) {
   const newReservation = await makeReservation(reservation);
   console.log(reservation);
   console.log(newReservation.id);
+  store.dispatch(clearCart());
 
   return redirect(`/reservation/${newReservation.id}`);
 }
