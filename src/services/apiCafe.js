@@ -7,6 +7,7 @@ import {
   where,
   getDoc,
   doc,
+  deleteDoc,
 } from "firebase/firestore";
 import {
   calculateStartEndTime,
@@ -107,5 +108,7 @@ export async function getReservation(id) {
   }
 }
 
-// rb4yoZ4azwxWFTtBHn7Q
-// XwwmnxMalF8eAkHRWbih
+export async function cancelReservation(id) {
+  const docRef = doc(db, "reservations", id);  
+  await deleteDoc(docRef);
+}
