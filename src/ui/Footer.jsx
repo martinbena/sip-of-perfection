@@ -21,7 +21,7 @@ function Footer() {
               <a
                 href="tel:+5551234567"
                 aria-label="Call us"
-                className="flex items-center gap-4 [&>*:nth-child(1)]:text-xl"
+                className="flex items-center gap-4 hover:text-accent [&>*:nth-child(1)]:text-xl"
               >
                 <HiPhone /> (555) 123-4567
               </a>
@@ -30,7 +30,7 @@ function Footer() {
               <a
                 href="mailto:cafe@sop.com"
                 aria-label="Send us an e-mail"
-                className="flex items-center gap-4 [&>*:nth-child(1)]:text-xl"
+                className="flex items-center gap-4 hover:text-accent [&>*:nth-child(1)]:text-xl"
               >
                 <HiEnvelope /> cafe@sop.com
               </a>
