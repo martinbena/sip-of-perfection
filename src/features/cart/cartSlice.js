@@ -26,6 +26,9 @@ const cartSlice = createSlice({
 
       if (item.quantity === 0) cartSlice.caseReducers.deleteItem(state, action);
     },
+    loadCart(state, action) {
+      state.cart = action.payload;
+    },
     clearCart(state) {
       state.cart = [];
     },
@@ -37,6 +40,7 @@ export const {
   deleteItem,
   increaseItemQuantity,
   decreaseItemQuantity,
+  loadCart,
   clearCart,
 } = cartSlice.actions;
 

@@ -31,7 +31,7 @@ function Reservation() {
         <p>To: {formatTime(to)}</p>
         <p>Number of guests: {guests}</p>
         {note && <p>Note for us: {note}</p>}
-        {preorder && (
+        {preorder.length > 0 && (
           <>
             <ul>
               {preorder.map((item) => (
@@ -55,8 +55,8 @@ function Reservation() {
             </p>
           </>
         )}
-        <UpdateReservation reservation={reservation} />
         <CancelReservation id={id} />
+        <UpdateReservation reservation={reservation} menu={fetcher} />
       </div>
     </section>
   );

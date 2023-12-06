@@ -8,6 +8,7 @@ import {
   getDoc,
   doc,
   deleteDoc,
+  updateDoc,
 } from "firebase/firestore";
 import {
   calculateStartEndTime,
@@ -109,6 +110,11 @@ export async function getReservation(id) {
 }
 
 export async function cancelReservation(id) {
-  const docRef = doc(db, "reservations", id);  
+  const docRef = doc(db, "reservations", id);
   await deleteDoc(docRef);
+}
+
+export async function updateReservation(id, reservation) {
+  const docRef = doc(db, "reservations", id);
+  await updateDoc(docRef, { ...reservation });
 }

@@ -1,11 +1,59 @@
-import { useFetcher } from "react-router-dom";
+import { useFetcher, useNavigation } from "react-router-dom";
 import Button from "../../ui/Button";
+import { updateReservation } from "../../services/apiCafe";
+import { useEffect, useState } from "react";
+import MenuItems from "../menu/MenuItems";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart, getCart, loadCart } from "../cart/cartSlice";
 
-function UpdateReservation({ reservation }) {
+function UpdateReservation({ reservation, menu }) {
   const fetcher = useFetcher();
+  const cart = useSelector(getCart);
+  const dispatch = useDispatch();
+  const [isHidden, setIsHidden] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (!isHidden) dispatch(loadCart(reservation.preorder));
+
+    return () => dispatch(clearCart());
+  }, [isHidden]);
+
+  useEffect(() => {
+    fetcher.state === "submitting" && setIsSubmitting(true);
+  }, [fetcher.state]);
+
+  useEffect(() => {
+    setIsHidden(true);
+    setIsSubmitting(false);
+  }, [reservation.preorder]);
+
   return (
     <fetcher.Form method="PATCH">
-      <button>haha</button>
+      <button
+        type="button"
+        onClick={() => {
+          setIsHidden((hidden) => !hidden);
+        }}
+      >
+        {isHidden ? "Show menu" : "Close menu"}
+      </button>
+      {!isHidden && (
+        <div>
+          <ul>
+            <MenuItems menu={menu.data} />
+          </ul>
+          <input type="hidden" name="cart" value={JSON.stringify(cart)} />
+          <button
+            disabled={
+              JSON.stringify(reservation.preorder) === JSON.stringify(cart) ||
+              isSubmitting
+            }
+          >
+            {isSubmitting ? "Loading..." : "Update preorder"}
+          </button>
+        </div>
+      )}
     </fetcher.Form>
   );
 }
@@ -13,5 +61,9 @@ function UpdateReservation({ reservation }) {
 export default UpdateReservation;
 
 export async function action({ request, params }) {
+  const formData = await request.formData();
+  const { cart } = Object.fromEntries(formData);
+  const data = { preorder: JSON.parse(cart) };
+  await updateReservation(params.reservationId, data);
   return null;
 }

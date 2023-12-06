@@ -18,7 +18,7 @@ function Button({ children, to, type, onClick }) {
 
   if (onClick)
     return (
-      <button onClick={onClick} className={styles[type]}>
+      <button type="button" onClick={onClick} className={styles[type]}>
         {children}
       </button>
     );
