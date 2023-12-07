@@ -88,3 +88,11 @@ export function filterConcurrentReservations(reservations, start, end) {
 
   return filteredReservations;
 }
+
+export function getAvailablePages(maxPages) {
+  const pages = Array.from({ length: maxPages }, (_, i) => {
+    const page = i + 1;
+    return page;
+  });
+  return pages;
+}

@@ -66,9 +66,6 @@ function Navbar() {
       className={`left-0  right-0 top-0 z-30 mx-auto flex max-w-9xl items-center justify-between px-16 py-6 font-medium tablg:px-8 ${
         isNavigationFixed || isOpen ? "bg-nav shadow-nav fixed" : "absolute"
       } `}
-      // isOpen ? "fixed" : isNavigationFixed ? "fixed" : "absolute"
-      // isNavigationFixed ? "fixed" : "absolute"
-      // ${isOpen ? "fixed" : "absolute"}
     >
       <Logo />
       <Navigation isOpen={isOpen} onClose={handleClose} />

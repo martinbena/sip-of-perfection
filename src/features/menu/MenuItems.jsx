@@ -1,9 +1,9 @@
 import MenuItem from "./MenuItem";
 
-function MenuItems({ menu }) {
+function MenuItems({ currentItems }) {
   return (
     <ul>
-      {menu.map((item) => (
+      {currentItems.map((item) => (
         <MenuItem key={item.id} item={item} />
       ))}
     </ul>
