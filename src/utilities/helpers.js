@@ -6,6 +6,14 @@ import {
   WEEK_OPENING_HOUR,
 } from "../config/constants";
 
+export function fixedNavigation(entries) {
+  const [entry] = entries;
+  // console.log(entry);
+
+  if (!entry.isIntersecting) nav.classList.add("sticky");
+  else nav.classList.remove("sticky");
+}
+
 export function formatCurrency(value) {
   return new Intl.NumberFormat("en", {
     style: "currency",

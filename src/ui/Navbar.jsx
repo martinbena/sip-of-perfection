@@ -2,10 +2,19 @@ import Logo from "./Logo";
 import { useEffect, useRef, useState } from "react";
 import Navigation from "./Navigation";
 import NavigationButton from "./NavigationButton";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentNavHeight, getNavigationPosition } from "../navigationSlice";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef(null);
+  const isNavigationFixed = useSelector(getNavigationPosition);
+  const navHeight = navRef.current?.getBoundingClientRect().height;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCurrentNavHeight(navHeight));
+  }, [navHeight]);
 
   useEffect(() => {
     const handleTabKey = (e) => {
@@ -55,8 +64,9 @@ function Navbar() {
     <div
       ref={navRef}
       className={`left-0  right-0 top-0 z-30 mx-auto flex max-w-9xl items-center justify-between px-16 py-6 font-medium tablg:px-8 ${
-        isOpen ? "fixed" : "absolute"
-      }`}
+        isNavigationFixed ? "fixed" : "absolute"
+      } `}
+      // ${isOpen ? "fixed" : "absolute"}
     >
       <Logo />
       <Navigation isOpen={isOpen} onClose={handleClose} />
