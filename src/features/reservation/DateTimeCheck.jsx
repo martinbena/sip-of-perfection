@@ -93,6 +93,7 @@ function DateTimeCheck() {
         onClickDay={(newDate) =>
           dispatch({ type: ACTIONS.CHANGE_DATE, payload: newDate })
         }
+        value={date}
       />
       <input type="hidden" name="date" value={date} required />
       <p className="text-white">
