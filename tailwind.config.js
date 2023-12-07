@@ -22,6 +22,7 @@ export default {
         linkhover: "#FFC772",
       },
       backgroundImage: {
+        nav: "linear-gradient(to right, rgba(80, 48, 0 ,0.85), rgba(80, 48, 0 ,0.85))",
         "mobile-nav":
           "linear-gradient(to right, rgba(34, 34, 34 ,0.75), rgba(34, 34, 34 ,0.75))",
         "hero-pattern":
@@ -55,6 +56,7 @@ export default {
       },
       boxShadow: {
         carouselimg: "0 12px 24px rgba(0, 0, 0, 0.2)",
+        nav: "0 12px 32px rgba(0, 0, 0, 0.05)",
       },
       screens: {
         dtxl: { min: "2540px" },
