@@ -1,9 +1,6 @@
 import HeadingPrimary from "../ui/HeadingPrimary";
 import { getMenu } from "../services/apiCafe";
 import { useLoaderData } from "react-router-dom";
-import MenuItems from "../features/menu/MenuItems";
-import { useState } from "react";
-import Pagination from "../features/menu/Pagination";
 import MenuFunctions from "../features/menu/MenuFunctions";
 
 function Menu() {

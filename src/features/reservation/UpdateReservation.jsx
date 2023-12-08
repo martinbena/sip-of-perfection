@@ -2,9 +2,9 @@ import { useFetcher, useNavigation } from "react-router-dom";
 import Button from "../../ui/Button";
 import { updateReservation } from "../../services/apiCafe";
 import { useEffect, useState } from "react";
-import MenuItems from "../menu/MenuItems";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart, loadCart } from "../cart/cartSlice";
+import MenuFunctions from "../menu/MenuFunctions";
 
 function UpdateReservation({ reservation, menu }) {
   const fetcher = useFetcher();
@@ -40,9 +40,7 @@ function UpdateReservation({ reservation, menu }) {
       </button>
       {!isHidden && (
         <div>
-          <ul>
-            <MenuItems menu={menu.data} />
-          </ul>
+          <MenuFunctions menu={menu.data} />
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <button
             disabled={

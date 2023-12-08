@@ -5,6 +5,7 @@ function Category({ category }) {
 
   return (
     <button
+      type="button"
       className="text-white"
       onClick={() =>
         dispatch({ type: ACTIONS.VIEW_CATEGORY, payload: category.name })
