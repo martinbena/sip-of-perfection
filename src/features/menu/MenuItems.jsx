@@ -1,6 +1,9 @@
+import { useMenuContext } from "./MenuContext";
 import MenuItem from "./MenuItem";
 
-function MenuItems({ currentItems }) {
+function MenuItems() {
+  const { currentItems } = useMenuContext();
+
   return (
     <ul>
       {currentItems.map((item) => (

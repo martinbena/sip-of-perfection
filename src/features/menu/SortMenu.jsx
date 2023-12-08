@@ -1,4 +1,8 @@
-function SortMenu({ sortBy, dispatch, ACTIONS }) {
+import { useMenuContext } from "./MenuContext";
+
+function SortMenu() {
+  const { sortBy, dispatch, ACTIONS } = useMenuContext();
+
   return (
     <div className="text-white">
       <select

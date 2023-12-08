@@ -27,16 +27,11 @@ const categories = [
   },
 ];
 
-function Categories({ dispatch, ACTIONS }) {
+function Categories() {
   return (
     <div>
       {categories.map((category) => (
-        <Category
-          key={category.name}
-          category={category}
-          dispatch={dispatch}
-          ACTIONS={ACTIONS}
-        />
+        <Category key={category.name} category={category} />
       ))}
     </div>
   );

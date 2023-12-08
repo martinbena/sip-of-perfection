@@ -1,4 +1,8 @@
-function SearchMenuItem({ searchTerm, dispatch, ACTIONS }) {
+import { useMenuContext } from "./MenuContext";
+
+function SearchMenuItem() {
+  const { searchTerm, dispatch, ACTIONS } = useMenuContext();
+
   return (
     <div>
       <input

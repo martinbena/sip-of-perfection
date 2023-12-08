@@ -1,9 +1,13 @@
-function Category({ category, dispatch, ACTIONS }) {
+import { useMenuContext } from "./MenuContext";
+
+function Category({ category }) {
+  const { dispatch, ACTIONS } = useMenuContext();
+
   return (
     <button
       className="text-white"
       onClick={() =>
-        dispatch({ type: ACTIONS.SET_FILTER, payload: category.name })
+        dispatch({ type: ACTIONS.VIEW_CATEGORY, payload: category.name })
       }
     >
       {category.name}
