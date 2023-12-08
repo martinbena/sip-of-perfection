@@ -2,6 +2,9 @@ import { useReducer, useState } from "react";
 import Pagination from "./Pagination";
 import MenuItems from "./MenuItems";
 import { MENU_ITEMS_PER_PAGE } from "../../config/constants";
+import SearchMenuItem from "./SearchMenuItem";
+import Categories from "./Categories";
+import SortMenu from "./SortMenu";
 
 function MenuFunctions({ menu }) {
   const itemsPerPage = MENU_ITEMS_PER_PAGE;
@@ -74,76 +77,13 @@ function MenuFunctions({ menu }) {
 
   return (
     <>
-      <div>
-        <input
-          type="text"
-          placeholder="Search item..."
-          value={searchTerm}
-          onChange={(e) =>
-            dispatch({
-              type: ACTIONS.CHANGE_SEARCH_TERM,
-              payload: e.target.value,
-            })
-          }
-        />
-      </div>
-      <div className="text-white">
-        <button
-          onClick={() =>
-            dispatch({ type: ACTIONS.SET_FILTER, payload: "default" })
-          }
-        >
-          Whole menu
-        </button>
-        <button
-          onClick={() =>
-            dispatch({ type: ACTIONS.SET_FILTER, payload: "Coffee" })
-          }
-        >
-          Coffee
-        </button>
-        <button
-          onClick={() =>
-            dispatch({ type: ACTIONS.SET_FILTER, payload: "Desserts" })
-          }
-        >
-          Desserts
-        </button>
-        <button
-          onClick={() =>
-            dispatch({ type: ACTIONS.SET_FILTER, payload: "Specialty drinks" })
-          }
-        >
-          Secialty Drinks
-        </button>
-        <button
-          onClick={() => dispatch({ type: ACTIONS.SET_FILTER, payload: "Tea" })}
-        >
-          Tea
-        </button>
-        <button
-          onClick={() =>
-            dispatch({ type: ACTIONS.SET_FILTER, payload: "Breakfast" })
-          }
-        >
-          Breakfast
-        </button>
-        <select
-          className="text-black"
-          name="sortBy"
-          value={sortBy}
-          onChange={(e) =>
-            dispatch({ type: ACTIONS.SELECT_SORT_BY, payload: e.target.value })
-          }
-        >
-          <option value="default">Default order</option>
-          <option value="nameAZ">Name in ascending order</option>
-          <option value="nameZA">Name in descending order</option>
-          <option value="price01">The most cheap</option>
-          <option value="price10">The least cheap</option>
-        </select>
-      </div>
-
+      <SearchMenuItem
+        searchTerm={searchTerm}
+        dispatch={dispatch}
+        ACTIONS={ACTIONS}
+      />
+      <Categories dispatch={dispatch} ACTIONS={ACTIONS} />
+      <SortMenu sortBy={sortBy} dispatch={dispatch} ACTIONS={ACTIONS} />
       <MenuItems currentItems={currentItems} />
       <Pagination
         currentPage={currentPage}
