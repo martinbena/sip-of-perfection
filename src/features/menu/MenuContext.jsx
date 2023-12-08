@@ -5,7 +5,6 @@ const MenuContext = createContext();
 
 function MenuProvider({ menu, children }) {
   const itemsPerPage = MENU_ITEMS_PER_PAGE;
-  const maxPages = Math.ceil(menu.length / itemsPerPage);
 
   const ACTIONS = {
     SELECT_SORT_BY: "select-sort-by",
@@ -26,7 +25,7 @@ function MenuProvider({ menu, children }) {
       case ACTIONS.SELECT_SORT_BY:
         return { ...state, sortBy: action.payload };
       case ACTIONS.VIEW_CATEGORY:
-        return { ...state, selectedCategory: action.payload };
+        return { ...state, selectedCategory: action.payload, currentPage: 1 };
       case ACTIONS.CHANGE_SEARCH_TERM:
         return { ...state, searchTerm: action.payload };
       case ACTIONS.SET_CURRENT_PAGE:
@@ -70,6 +69,8 @@ function MenuProvider({ menu, children }) {
     sortedItems = filteredItems.slice().sort((a, b) => a.price - b.price);
   if (sortBy === "price10")
     sortedItems = filteredItems.slice().sort((a, b) => b.price - a.price);
+
+  const maxPages = Math.ceil(sortedItems.length / itemsPerPage);
 
   const currentItems = sortedItems.slice(startIndex, endIndex);
 
