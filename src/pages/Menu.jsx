@@ -10,7 +10,7 @@ function Menu() {
     <>
       <Subhero
         title="Our menu"
-        subtitle="Preorder, arrive and immediately indulge"
+        subtitle="Pre-order, arrive and immediately indulge"
         background="bg-opening-hours"
       />
       <section className="bg-commontext py-40 text-center">

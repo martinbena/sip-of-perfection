@@ -41,7 +41,7 @@ function MenuItem({ item }) {
         <p>{formatCurrency(price)}</p>
         {!isInCart && (
           <Button onClick={handlePreorder} type="primary">
-            Preorder
+            Pre-order
           </Button>
         )}
         {isInCart && (

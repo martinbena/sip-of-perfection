@@ -48,7 +48,7 @@ function UpdateReservation({ reservation, menu }) {
               isSubmitting
             }
           >
-            {isSubmitting ? "Loading..." : "Update preorder"}
+            {isSubmitting ? "Loading..." : "Update pre-order"}
           </button>
         </div>
       )}

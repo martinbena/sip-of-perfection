@@ -11,7 +11,7 @@ function Speciality({ title, image, description, isReversed }) {
         <HeadingTertiary>{title}</HeadingTertiary>
         <p className="mb-6 mt-8">{description}</p>
         <Button type="primary" to="/reservation/new">
-          Preorder
+          Pre-order
         </Button>
       </div>
     </div>
