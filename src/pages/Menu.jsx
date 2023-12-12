@@ -1,16 +1,22 @@
-import HeadingPrimary from "../ui/HeadingPrimary";
 import { getMenu } from "../services/apiCafe";
 import { useLoaderData } from "react-router-dom";
 import MenuFunctions from "../features/menu/MenuFunctions";
+import Subhero from "../ui/Subhero";
 
 function Menu() {
   const menu = useLoaderData();
 
   return (
-    <section className="bg-commontext py-40 text-center">
-      <HeadingPrimary>Our menu</HeadingPrimary>
-      <MenuFunctions menu={menu} />
-    </section>
+    <>
+      <Subhero
+        title="Our menu"
+        subtitle="Preorder, arrive and immediately indulge"
+        background="bg-opening-hours"
+      />
+      <section className="bg-commontext py-40 text-center">
+        <MenuFunctions menu={menu} />
+      </section>
+    </>
   );
 }
 

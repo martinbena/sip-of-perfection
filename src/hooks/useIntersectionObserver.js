@@ -14,11 +14,16 @@ export function useIntersectionObserver() {
   });
 
   useEffect(() => {
-    if (!inView) dispatch(toggleNavFixedPosition(true));
-    if (inView) dispatch(toggleNavFixedPosition(false));
+    inView
+      ? dispatch(toggleNavFixedPosition(false))
+      : dispatch(toggleNavFixedPosition(true));
 
     return () => dispatch(toggleNavFixedPosition(true));
   }, [inView]);
+
+  useEffect(() => {
+    !targetRef && dispatch(toggleNavFixedPosition(true));
+  }, [targetRef]);
 
   return targetRef;
 }

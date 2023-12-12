@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isNavigationFixed: false,
+  isNavigationFixed: true,
   navHeight: null,
 };
 

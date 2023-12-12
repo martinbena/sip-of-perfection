@@ -26,7 +26,7 @@ export default {
         "mobile-nav":
           "linear-gradient(to right, rgba(34, 34, 34 ,0.75), rgba(34, 34, 34 ,0.75))",
         "hero-pattern":
-          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/hero.jpg')",
+          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/hero.jpg')",        
         "story-pattern":
           "url('../src/assets/story-bg.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
         "specs-pattern":
@@ -50,6 +50,7 @@ export default {
       height: {
         screen: "100dvh",
         "half-screen": "50dvh",
+        112: "28rem",
       },
       borderRadius: {
         speciality: "70px",
