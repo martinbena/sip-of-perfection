@@ -12,7 +12,7 @@ function MenuAccordion() {
     setIsHidden((isHidden) => !isHidden);
   }
   return (
-    <div className="mb-8 flex items-center justify-center">
+    <div className="mb-16 flex items-center justify-center">
       <div
         onClick={handleClick}
         className={`grid max-w-max cursor-pointer grid-cols-[1fr_auto] items-center rounded-lg bg-white p-6 px-12 ${

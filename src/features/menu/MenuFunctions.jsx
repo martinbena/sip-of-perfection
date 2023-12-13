@@ -8,11 +8,13 @@ import { MenuProvider } from "./MenuContext";
 function MenuFunctions({ menu }) {
   return (
     <MenuProvider menu={menu}>
-      <Categories />
-      <SearchMenuItem />
-      <SortMenu />
-      <MenuItems />
-      <Pagination />
+      <div className="mx-auto max-w-screen-lg">
+        <Categories />
+        <SearchMenuItem />
+        <SortMenu />
+        <MenuItems />
+        <Pagination />
+      </div>
     </MenuProvider>
   );
 }
