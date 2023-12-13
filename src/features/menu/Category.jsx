@@ -6,7 +6,7 @@ function Category({ category }) {
   return (
     <button
       type="button"
-      className="text-white"
+      className=""
       disabled={selectedCategory === category.name}
       onClick={() =>
         dispatch({ type: ACTIONS.VIEW_CATEGORY, payload: category.name })

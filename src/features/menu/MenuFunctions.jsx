@@ -8,8 +8,8 @@ import { MenuProvider } from "./MenuContext";
 function MenuFunctions({ menu }) {
   return (
     <MenuProvider menu={menu}>
-      <SearchMenuItem />
       <Categories />
+      <SearchMenuItem />
       <SortMenu />
       <MenuItems />
       <Pagination />

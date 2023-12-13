@@ -2,6 +2,7 @@ import { getMenu } from "../services/apiCafe";
 import { useLoaderData } from "react-router-dom";
 import MenuFunctions from "../features/menu/MenuFunctions";
 import Subhero from "../ui/Subhero";
+import MenuAccordion from "../ui/MenuAccordion";
 
 function Menu() {
   const menu = useLoaderData();
@@ -13,7 +14,8 @@ function Menu() {
         subtitle="Pre-order, arrive and immediately indulge"
         background="bg-opening-hours"
       />
-      <section className="bg-commontext py-40 text-center">
+      <section className="bg-brandshade py-24">
+        <MenuAccordion />
         <MenuFunctions menu={menu} />
       </section>
     </>

@@ -35,7 +35,7 @@ function MenuItem({ item }) {
 
   return (
     <li>
-      <div className="flex items-center justify-around gap-12 text-white">
+      <div className="flex items-center justify-around gap-12">
         <img className="h-12 w-12" src={imageUrl} alt={name} />
         <p>{name}</p>
         <p>{formatCurrency(price)}</p>
