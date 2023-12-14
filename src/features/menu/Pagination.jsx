@@ -1,48 +1,12 @@
-import { getAvailablePages } from "../../utilities/helpers";
-import { useMenuContext } from "./MenuContext";
+import PaginationButton from "./PaginationButton";
+import PaginationNumbers from "./PaginationNumbers";
 
 function Pagination() {
-  const { currentPage, maxPages, dispatch, ACTIONS } = useMenuContext();
-  const allPages = getAvailablePages(maxPages);
-
   return (
-    <div className="flex justify-between text-white">
-      {currentPage !== 1 && (
-        <button
-          onClick={() =>
-            dispatch({
-              type: ACTIONS.SET_CURRENT_PAGE,
-              payload: currentPage - 1,
-            })
-          }
-        >
-          Previous Page
-        </button>
-      )}
-      <div>
-        {allPages.map((page, i) => (
-          <button
-            key={i}
-            onClick={() =>
-              dispatch({ type: ACTIONS.SET_CURRENT_PAGE, payload: page })
-            }
-          >
-            {page}
-          </button>
-        ))}
-      </div>
-      {currentPage < maxPages && (
-        <button
-          onClick={() =>
-            dispatch({
-              type: ACTIONS.SET_CURRENT_PAGE,
-              payload: currentPage + 1,
-            })
-          }
-        >
-          Next page
-        </button>
-      )}
+    <div className="mx-auto mt-20 flex max-w-sixty items-center justify-between">
+      <PaginationButton direction="previous" />
+      <PaginationNumbers />
+      <PaginationButton direction="next" />
     </div>
   );
 }
