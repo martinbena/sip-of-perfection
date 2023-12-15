@@ -6,7 +6,7 @@ function DeleteItem({ id }) {
   const dispatch = useDispatch();
 
   return (
-    <Button type="primary" onClick={() => dispatch(deleteItem(id))}>
+    <Button type="tertiary" onClick={() => dispatch(deleteItem(id))}>
       Delete
     </Button>
   );

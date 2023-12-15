@@ -7,7 +7,7 @@ function SortMenu() {
     <div className="flex flex-col items-center gap-2">
       <p>Sort by:</p>
       <select
-        className="w-96 cursor-pointer rounded-full py-4 text-center focus:outline focus:outline-2 focus:outline-commontext"
+        className="shadow-menu-inputs w-96 cursor-pointer rounded-full py-4 text-center focus:outline focus:outline-2 focus:outline-commontext"
         name="sortBy"
         value={sortBy}
         onChange={(e) =>

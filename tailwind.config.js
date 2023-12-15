@@ -26,7 +26,7 @@ export default {
         "mobile-nav":
           "linear-gradient(to right, rgba(34, 34, 34 ,0.75), rgba(34, 34, 34 ,0.75))",
         "hero-pattern":
-          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/hero.jpg')",        
+          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/hero.jpg')",
         "story-pattern":
           "url('../src/assets/story-bg.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
         "specs-pattern":
@@ -58,6 +58,8 @@ export default {
       boxShadow: {
         carouselimg: "0 12px 24px rgba(0, 0, 0, 0.2)",
         nav: "0 12px 32px rgba(0, 0, 0, 0.05)",
+        accordion: "0 12px 24px rgba(0, 0, 0, 0.075)",
+        "menu-inputs": "0 0 6px rgba(0, 0, 0, 0.05)",
       },
       screens: {
         dtxl: { min: "2540px" },

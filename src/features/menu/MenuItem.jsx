@@ -35,21 +35,34 @@ function MenuItem({ item }) {
 
   return (
     <li>
-      <div className="flex items-center justify-around gap-12">
-        <img className="h-12 w-12" src={imageUrl} alt={name} />
-        <p>{name}</p>
-        <p>{formatCurrency(price)}</p>
-        {!isInCart && (
-          <Button onClick={handlePreorder} type="primary">
-            Pre-order
-          </Button>
-        )}
-        {isInCart && (
-          <div className="flex items-center gap-3 sm:gap-8">
-            <UpdateItemQuantity id={id} quantity={currentQuantity} />
-            <DeleteItem id={id} />
+      <div className="grid grid-cols-[1fr_2fr] gap-8">
+        <div className="h-36">
+          <img className="h-36 rounded-lg" src={imageUrl} alt={name} />
+        </div>
+
+        <div className="flex flex-col justify-between">
+          <div>
+            <p className="mb-2 font-semibold leading-6">{name}</p>
+            <p className="text-sm italic">{ingredients.join(", ")}</p>
           </div>
-        )}
+          <div>
+            <p className="mb-1 font-medium">{formatCurrency(price)}</p>
+
+            {!isInCart && (
+              <div>
+                <Button onClick={handlePreorder} type="tertiary">
+                  Pre-order
+                </Button>
+              </div>
+            )}
+            {isInCart && (
+              <div className="flex items-center justify-between gap-3 sm:gap-8">
+                <UpdateItemQuantity id={id} quantity={currentQuantity} />
+                <DeleteItem id={id} />
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </li>
   );

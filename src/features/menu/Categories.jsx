@@ -35,7 +35,7 @@ const categories = [
 
 function Categories() {
   return (
-    <div className="mb-16 flex items-center justify-between gap-8">
+    <div className="mb-12 flex items-center justify-between gap-8">
       {categories.map((category) => (
         <Category key={category.name} category={category} />
       ))}

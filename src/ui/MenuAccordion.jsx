@@ -15,7 +15,7 @@ function MenuAccordion() {
     <div className="mb-16 flex items-center justify-center">
       <div
         onClick={handleClick}
-        className={`grid max-w-max cursor-pointer grid-cols-[1fr_auto] items-center rounded-lg bg-white p-6 px-12 ${
+        className={`shadow-accordion grid max-w-max cursor-pointer grid-cols-[1fr_auto] items-center rounded-lg bg-white p-6 px-12 ${
           isHidden ? "" : "gap-y-8 border-t-4 border-commontext"
         }`}
       >

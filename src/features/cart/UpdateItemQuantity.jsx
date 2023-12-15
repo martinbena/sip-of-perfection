@@ -10,7 +10,7 @@ function UpdateItemQuantity({ id, quantity }) {
       <Button type="round" onClick={() => dispatch(decreaseItemQuantity(id))}>
         -
       </Button>
-      <span className="text-sm font-medium">{quantity}</span>
+      <span className="text-sm">{quantity}</span>
       <Button type="round" onClick={() => dispatch(increaseItemQuantity(id))}>
         +
       </Button>

@@ -15,7 +15,7 @@ function SearchMenuItem() {
       <p>Search in selected category:</p>
       <div
         onClick={focusInput}
-        className="searchbar flex w-96 items-center gap-8 rounded-full bg-white px-6 py-3 focus-within:outline focus-within:outline-2 focus-within:outline-commontext"
+        className="searchbar shadow-menu-inputs flex w-96 items-center gap-8 rounded-full bg-white px-6 py-3 focus-within:outline focus-within:outline-2 focus-within:outline-commontext"
       >
         <GiMagnifyingGlass className="h-8 w-8" />
         <input
