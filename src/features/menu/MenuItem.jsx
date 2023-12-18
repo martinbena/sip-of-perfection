@@ -42,8 +42,8 @@ function MenuItem({ item }) {
 
         <div className="flex flex-col justify-between">
           <div>
-            <p className="mb-2 font-semibold leading-6">{name}</p>
-            <p className="text-sm italic">{ingredients.join(", ")}</p>
+            <p className="mb-1 font-semibold leading-6">{name}</p>
+            <p className="text-sm italic leading-6">{ingredients.join(", ")}</p>
           </div>
           <div>
             <p className="mb-1 font-medium">{formatCurrency(price)}</p>
