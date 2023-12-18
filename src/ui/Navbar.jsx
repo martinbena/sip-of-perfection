@@ -63,13 +63,15 @@ function Navbar() {
   return (
     <div
       ref={navRef}
-      className={`left-0  right-0 top-0 z-30 mx-auto flex max-w-9xl items-center justify-between px-16 py-6 font-medium tablg:px-8 ${
-        isNavigationFixed || isOpen ? "bg-nav shadow-nav fixed" : "absolute"
+      className={`left-0  right-0 top-0 z-30 w-full px-16 py-6 font-medium tablg:px-8 ${
+        isNavigationFixed || isOpen ? "fixed bg-nav shadow-nav" : "absolute"
       } `}
     >
-      <Logo />
-      <Navigation isOpen={isOpen} onClose={handleClose} />
-      <NavigationButton isOpen={isOpen} onToggle={handleToggle} />
+      <div className="mx-auto flex max-w-9xl items-center justify-between">
+        <Logo />
+        <Navigation isOpen={isOpen} onClose={handleClose} />
+        <NavigationButton isOpen={isOpen} onToggle={handleToggle} />
+      </div>
     </div>
   );
 }
