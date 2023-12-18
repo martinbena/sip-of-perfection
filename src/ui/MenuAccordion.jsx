@@ -11,20 +11,28 @@ function MenuAccordion() {
   function handleClick() {
     setIsHidden((isHidden) => !isHidden);
   }
+
   return (
-    <div className="mb-16 flex items-center justify-center">
+    <div className="mb-16 flex items-center justify-center tab:px-8 mob:px-4">
       <div
         onClick={handleClick}
-        className={`shadow-accordion grid max-w-max cursor-pointer grid-cols-[1fr_auto] items-center rounded-lg bg-white p-6 px-12 ${
-          isHidden ? "" : "gap-y-8 border-t-4 border-commontext"
+        className={`max-w-max cursor-pointer rounded-lg bg-white p-6 px-12 shadow-accordion moblg:px-6 ${
+          isHidden ? "" : "space-y-8 border-t-4 border-commontext"
         }`}
       >
-        <p className="text-2xl font-semibold">How does the pre-order work?</p>
-        <IoIosArrowDropup
-          className={`h-8 w-8 transition-all duration-300 ease-linear ${
-            isHidden ? "rotate-180" : ""
-          }`}
-        />
+        <div className="grid grid-cols-[1fr_auto] gap-6">
+          <p className="text-2xl font-semibold tab:text-xl mob:text-lg">
+            How does the pre-order work?
+          </p>
+          <span>
+            <IoIosArrowDropup
+              className={`h-8 w-8 transition-all duration-300 ease-linear mob:h-7 mob:w-7 ${
+                isHidden ? "rotate-180" : ""
+              }`}
+            />
+          </span>
+        </div>
+
         <ul
           className={`flex flex-col gap-4 ${
             isHidden ? "invisible h-0 opacity-0" : "opacity-100"
