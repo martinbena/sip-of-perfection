@@ -11,7 +11,7 @@ function Footer() {
     <>
       <footer className=" bg-commontext">
         <Wave />
-        <article className="mx-auto grid max-w-8xl grid-cols-3 justify-items-center gap-y-16 px-12 pb-24 pt-12 text-center text-white tab:grid-cols-2 tab:px-8 mob:grid-cols-1">
+        <article className="mx-auto grid max-w-8xl grid-cols-3 justify-items-center gap-y-16 px-12 pb-24 pt-4 text-center text-white tab:grid-cols-2 tab:px-8 mob:grid-cols-1">
           <FooterItem title="Address">
             <p>Sip of Perfection</p>
             <p>1234 Maplewood Lane, Portland, OR 97218</p>
