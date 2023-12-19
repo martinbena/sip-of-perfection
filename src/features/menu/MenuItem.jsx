@@ -34,19 +34,21 @@ function MenuItem({ item }) {
   }
 
   return (
-    <li>
-      <div className="grid grid-cols-[1fr_2fr] gap-8">
-        <div className="h-36">
-          <img className="h-36 rounded-lg" src={imageUrl} alt={name} />
+    <li className="tab:py-2">
+      <div className="grid grid-cols-[1fr_2fr] gap-8 tablg:gap-2 tab:grid-cols-[auto_1fr] tab:gap-8 mob:gap-2 mobsm:grid-cols-1 mobsm:justify-items-center mobsm:gap-4 mobsm:text-center">
+        <div className="h-36 tab:h-28 mobsm:justify-self-center">
+          <img className="h-36 rounded-lg tab:h-28" src={imageUrl} alt={name} />
         </div>
 
         <div className="flex flex-col justify-between">
           <div>
-            <p className="mb-1 font-semibold leading-6">{name}</p>
-            <p className="text-sm italic leading-6">{ingredients.join(", ")}</p>
+            <p className="mb-1 font-semibold leading-6 ">{name}</p>
+            <p className="text-sm italic leading-6 mobsm:mb-4">
+              {ingredients.join(", ")}
+            </p>
           </div>
-          <div>
-            <p className="mb-1 font-medium">{formatCurrency(price)}</p>
+          <div className="tab:flex tab:items-center tab:justify-between mobsm:justify-center mobsm:gap-8">
+            <p className="mb-1 font-medium tab:mb-0">{formatCurrency(price)}</p>
 
             {!isInCart && (
               <div>
@@ -56,7 +58,7 @@ function MenuItem({ item }) {
               </div>
             )}
             {isInCart && (
-              <div className="flex items-center justify-between gap-3 sm:gap-8">
+              <div className="flex items-center justify-between gap-3 tab:gap-8 mob:gap-3">
                 <UpdateItemQuantity id={id} quantity={currentQuantity} />
                 <DeleteItem id={id} />
               </div>

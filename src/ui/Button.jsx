@@ -16,7 +16,7 @@ function Button({ children, to, type, onClick }) {
       classes +
       " px-5 py-1.5 hover:bg-accentshadelight bg-accent text-sm text-btntext focus:ring-accentshadelight focus:bg-accentshadelight",
     round:
-      "rounded-full flex items-center justify-center p-4 h-4 w-4 text-xl bg-accent font-semibold focus:ring-accentshadelight focus:outline-none focus:ring focus:ring-offset-2",
+      "rounded-full flex items-center justify-center p-4 h-4 w-4 text-xl bg-accent font-semibold focus:ring-accentshadelight focus:outline-none focus:ring focus:ring-offset-2 mob:p-3.5",
   };
 
   if (onClick)
