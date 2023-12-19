@@ -11,11 +11,11 @@ function SearchMenuItem() {
   }
 
   return (
-    <div className="flex flex-col items-center gap-2">
-      <p>Search in selected category:</p>
+    <div className="flex w-full flex-col items-center gap-2">
+      <p className="mob:text-sm">Search in selected category:</p>
       <div
         onClick={focusInput}
-        className="searchbar shadow-menu-inputs flex w-96 items-center gap-8 rounded-full bg-white px-6 py-3 focus-within:outline focus-within:outline-2 focus-within:outline-commontext"
+        className="searchbar flex w-96 items-center gap-8 rounded-full bg-white px-6 py-3 shadow-menu-inputs focus-within:outline focus-within:outline-2 focus-within:outline-commontext mob:py-1.5 mobsm:w-full mobsm:w-full"
       >
         <GiMagnifyingGlass className="h-8 w-8" />
         <input

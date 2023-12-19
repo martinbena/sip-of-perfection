@@ -33,20 +33,9 @@ const categories = [
   },
 ];
 
-// screens: {
-//       dtxl: { min: "2540px" },
-//       dt: { max: "1540px" },
-//       dtsm: { max: "1344px" },
-//       tablg: { max: "1200px" },
-//       tab: { max: "944px" },
-//       moblg: { max: "704px" },
-//       mob: { max: "544px" },
-//       mobsm: { max: "440px" },
-//     },
-
 function Categories() {
   return (
-    <div className="mb-12 flex flex-wrap items-center justify-between gap-8 tablg:justify-center tablg:px-8 mob:gap-2">
+    <div className="mb-12 flex flex-wrap items-center justify-between gap-8 tablg:justify-center tablg:px-8 tab:mb-8 moblg:gap-2 mob:px-4">
       {categories.map((category) => (
         <Category key={category.name} category={category} />
       ))}

@@ -4,10 +4,10 @@ function SortMenu() {
   const { sortBy, dispatch, ACTIONS } = useMenuContext();
 
   return (
-    <div className="flex flex-col items-center gap-2">
-      <p>Sort by:</p>
+    <div className="flex w-full flex-col items-center gap-2">
+      <p className="mob:text-sm">Sort by:</p>
       <select
-        className="shadow-menu-inputs w-96 cursor-pointer rounded-full py-4 text-center focus:outline focus:outline-2 focus:outline-commontext"
+        className="w-96 cursor-pointer rounded-full py-4 text-center shadow-menu-inputs focus:outline focus:outline-2 focus:outline-commontext mob:py-2 mobsm:w-full"
         name="sortBy"
         value={sortBy}
         onChange={(e) =>
