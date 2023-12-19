@@ -4,12 +4,20 @@ import { useMenuContext } from "./MenuContext";
 function PaginationNumbers() {
   const { currentPage, maxPages, dispatch, ACTIONS } = useMenuContext();
   const allPages = getAvailablePages(maxPages);
-  const displayRange = [currentPage - 1, currentPage, currentPage + 1];
+  const displayRange = [
+    allPages[0],
+    currentPage,
+    allPages[allPages.length - 1],
+  ];
 
   return (
     <div className="flex flex-wrap justify-center gap-4">
       {allPages.map((page, i) => {
-        const shouldDisplay = displayRange.includes(i + 1);
+        const isSmallScreen = window.innerWidth < 545;
+        const shouldDisplay =
+          displayRange.includes(i + 1) ||
+          (currentPage === displayRange[2] && i === currentPage - 2) ||
+          (currentPage === displayRange[0] && i === currentPage);
 
         return (
           <button
@@ -26,12 +34,16 @@ function PaginationNumbers() {
             }
             disabled={currentPage === i + 1}
           >
-            <span className="hidden mob:inline">
-              {(i + 1 === displayRange[0] || i + 1 === displayRange[2]) &&
+            <span>
+              {isSmallScreen &&
+                i + 1 === displayRange[2] &&
+                i + 1 !== currentPage &&
                 "..."}
-            </span>
-            <span className={`inline ${currentPage !== i + 1 && "mob:hidden"}`}>
               {page}
+              {isSmallScreen &&
+                i + 1 === displayRange[0] &&
+                i + 1 !== currentPage &&
+                "..."}
             </span>
           </button>
         );
