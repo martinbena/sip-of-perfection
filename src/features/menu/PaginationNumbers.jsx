@@ -1,14 +1,29 @@
+import { useSelector } from "react-redux";
 import { getAvailablePages } from "../../utilities/helpers";
 import { useMenuContext } from "./MenuContext";
+import { getNavHeight } from "../../navigationSlice";
 
 function PaginationNumbers() {
-  const { currentPage, maxPages, dispatch, ACTIONS } = useMenuContext();
+  const { currentPage, maxPages, dispatch, ACTIONS, menuRef } =
+    useMenuContext();
   const allPages = getAvailablePages(maxPages);
   const displayRange = [
     allPages[0],
     currentPage,
     allPages[allPages.length - 1],
   ];
+  const navHeight = useSelector(getNavHeight);
+
+  function handleDispatch(page) {
+    dispatch({ type: ACTIONS.SET_CURRENT_PAGE, payload: page });
+
+    if (menuRef.current) {
+      const scrollPosition = menuRef.current.offsetTop - navHeight - 20;
+      setTimeout(() => {
+        window.scrollTo(0, scrollPosition);
+      }, 0);
+    }
+  }
 
   return (
     <div className="flex flex-wrap justify-center gap-4">
@@ -29,9 +44,7 @@ function PaginationNumbers() {
                   }`
             }`}
             key={i}
-            onClick={() =>
-              dispatch({ type: ACTIONS.SET_CURRENT_PAGE, payload: page })
-            }
+            onClick={() => handleDispatch(page)}
             disabled={currentPage === i + 1}
           >
             <span>

@@ -1,9 +1,10 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useRef } from "react";
 import { MENU_ITEMS_PER_PAGE } from "../../config/constants";
 
 const MenuContext = createContext();
 
 function MenuProvider({ menu, children }) {
+  const menuRef = useRef(null);
   const itemsPerPage = MENU_ITEMS_PER_PAGE;
 
   const ACTIONS = {
@@ -77,6 +78,7 @@ function MenuProvider({ menu, children }) {
   return (
     <MenuContext.Provider
       value={{
+        menuRef,
         ACTIONS,
         dispatch,
         maxPages,
