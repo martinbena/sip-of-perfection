@@ -42,7 +42,7 @@ function CartOverview() {
           <span>{formatCurrency(totalCartPrice)}</span>
         </div>
         <div>
-          <Button type="tertiary" onClick={() => dispatch(clearCart())}>
+          <Button type="tertiary-warn" onClick={() => dispatch(clearCart())}>
             Clear all
           </Button>
           <Button type="tertiary" to="/reservation/new">
