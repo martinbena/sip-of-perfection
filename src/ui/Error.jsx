@@ -7,11 +7,13 @@ function Error() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <h1>Something went wrong 😢</h1>
-      <p>{error.data || error.message}</p>
+    <div className="flex h-screen flex-col items-center justify-center bg-brandshade text-center mob:px-4">
+      <h1 className="mb-2 font-heading text-2xl">Something went wrong</h1>
+      <p className="mb-4">{error.data || error.message}</p>
 
-      <button onClick={() => navigate(-1)}>&larr; Go back</button>
+      <Button type="secondary" onClick={() => navigate(-1)}>
+        &larr; Go back
+      </Button>
     </div>
   );
 }
