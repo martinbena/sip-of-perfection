@@ -21,7 +21,11 @@ function PaginationButton({ direction }) {
     if (menuRef.current) {
       const scrollPosition = menuRef.current.offsetTop - navHeight - 20;
       setTimeout(() => {
-        window.scrollTo(0, scrollPosition);
+        window.scrollTo({
+          top: scrollPosition,
+          left: 0,
+          behavior: "smooth",
+        });
       }, 0);
     }
   }
