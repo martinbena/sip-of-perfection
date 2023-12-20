@@ -39,6 +39,9 @@ function MenuAccordion() {
           }`}
         >
           <MenuAccordionListItem icon={<PiCheckBold />}>
+            Choose your desired items and then make a reservation
+          </MenuAccordionListItem>
+          <MenuAccordionListItem icon={<PiCheckBold />}>
             Our team prepares your chosen items in advance for prompt service
             upon arrival
           </MenuAccordionListItem>

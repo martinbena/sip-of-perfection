@@ -11,7 +11,7 @@ function Button({ children, to, type, onClick }) {
       " px-10 py-1.5 text-xl hover:bg-accentshadelight bg-accent text-btntext focus:ring-accentshadelight focus:bg-accentshadelight",
     secondary:
       classes +
-      " px-10 py-1.5 text-xl hover:bg-accentshadedark focus:text-white focus:bg-accentshadedark focus:ring-accentshadedark text-accentshadedark border-accentshadedark border-2 transition-all duration-300 ease-out  hover:text-white",
+      " px-10 py-1.5 text-xl hover:bg-accentshadedark focus:text-white focus:bg-accentshadedark focus:ring-accentshadedark text-accentshadedark border-accentshadedark border-2 transition-all duration-300 ease-out hover:text-white",
     tertiary:
       classes +
       " px-5 py-1.5 hover:bg-accentshadelight bg-accent text-sm text-btntext focus:ring-accentshadelight focus:bg-accentshadelight",
