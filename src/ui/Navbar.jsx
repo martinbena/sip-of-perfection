@@ -63,8 +63,10 @@ function Navbar() {
   return (
     <div
       ref={navRef}
-      className={`left-0  right-0 top-0 z-30 w-full px-16 py-6 font-medium tablg:px-8 ${
-        isNavigationFixed || isOpen ? "fixed bg-nav shadow-nav" : "absolute"
+      className={`left-0  right-0 top-0 z-30 w-full px-16 font-medium tablg:px-8 ${
+        isNavigationFixed || isOpen
+          ? "fixed bg-nav py-3 shadow-nav"
+          : "absolute py-6"
       } `}
     >
       <div className="mx-auto flex max-w-9xl items-center justify-between">
