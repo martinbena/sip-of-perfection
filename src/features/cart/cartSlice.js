@@ -30,7 +30,12 @@ const cartSlice = createSlice({
       state.cart = action.payload;
     },
     clearCart(state) {
-      state.cart = [];
+      if (
+        confirm(
+          "Are you sure that you want to delete all items from your pre-order?",
+        )
+      )
+        state.cart = [];
     },
   },
 });
