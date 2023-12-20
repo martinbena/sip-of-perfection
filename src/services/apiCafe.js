@@ -34,6 +34,17 @@ export async function getMenu() {
   }
 }
 
+export async function getMenuItem(id) {
+  try {
+    const docRef = doc(db, "menu", id);
+    const res = await getDoc(docRef);
+    const data = { ...res.data(), id: res.id };
+    return data;
+  } catch (err) {
+    throw new Error(err.message || `Error finding specialities`);
+  }
+}
+
 export async function makeReservation(reservation) {
   try {
     const { date, from, to, guests, fullName, email, phone, note, preorder } =
@@ -102,7 +113,8 @@ export async function getReservation(id) {
     const docRef = doc(db, "reservations", id);
     const res = await getDoc(docRef);
     const data = { ...res.data(), id: res.id };
-    if (!data.date) throw new Error(`Couldn't find reservation number ${id}`);
+    if (!data.date)
+      throw new Error(`Couldn't find reservation number: "${id}"`);
     return data;
   } catch (err) {
     throw new Error(err.message || `Error finding reservation`);

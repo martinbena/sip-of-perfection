@@ -19,8 +19,7 @@ function PaginationNumbers() {
 
     if (menuRef.current) {
       const scrollPosition = menuRef.current.offsetTop - navHeight - 20;
-      console.log(menuRef.current.offsetTop);
-      setTimeout(() => {        
+      setTimeout(() => {
         window.scrollTo({
           top: scrollPosition,
           left: 0,
