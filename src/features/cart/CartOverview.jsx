@@ -25,10 +25,19 @@ function CartOverview() {
     return () => clearTimeout(timeout);
   }, [totalCartQuantity]);
 
+  function handleClearCart() {
+    if (
+      confirm(
+        "Are you sure that you want to delete all items from your pre-order?",
+      )
+    )
+      dispatch(clearCart());
+  }
+
   if (!totalCartQuantity) return null;
 
   return (
-    <div className="shadow-cart fixed bottom-0 left-0 w-full bg-nav text-white">
+    <div className="fixed bottom-0 left-0 w-full bg-nav text-white shadow-cart">
       <div className="mx-auto flex max-w-9xl items-center justify-between px-16 py-4 child:space-x-12 tablg:px-8 tab:justify-between tab:child:space-x-6 mob:flex-col mob:gap-2 mob:px-4 mob:child:space-x-3">
         <div className="flex items-center font-semibold">
           <p className="font-heading text-lg">Pre-order:</p>
@@ -42,7 +51,7 @@ function CartOverview() {
           <span>{formatCurrency(totalCartPrice)}</span>
         </div>
         <div>
-          <Button type="tertiary-warn" onClick={() => dispatch(clearCart())}>
+          <Button type="tertiary-warn" onClick={handleClearCart}>
             Clear all
           </Button>
           <Button type="tertiary" to="/reservation/new">
