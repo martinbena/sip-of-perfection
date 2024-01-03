@@ -22,7 +22,7 @@ function Reservation() {
 
   return (
     <section className="overflow-hidden bg-commontext py-40 text-center">
-      <HeadingPrimary>Your resrervation</HeadingPrimary>
+      <HeadingPrimary>Your reservation</HeadingPrimary>
       <SearchReservation />
       <div className="text-white">
         <p>Number: {id}</p>

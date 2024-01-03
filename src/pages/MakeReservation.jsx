@@ -21,7 +21,7 @@ const isValidEmail = (str) =>
 function MakeReservation() {
   return (
     <section className="overflow-hidden bg-commontext py-40 text-center">
-      <HeadingPrimary>Resrervation</HeadingPrimary>
+      <HeadingPrimary>Reservation</HeadingPrimary>
       <SearchReservation />
       <Form method="POST">
         <FormProvider>

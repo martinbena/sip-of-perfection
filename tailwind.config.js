@@ -33,6 +33,8 @@ export default {
           "url('../src/assets/specs-bg-left.png'), url('../src/assets/specs-bg-right.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
         "opening-hours":
           "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/opening-hours.jpg')",
+        "contact-us":
+          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/barista.jpg')",
         footer: "url(../src/assets/footer-bg.svg)",
         carousel:
           "url(../src/assets/carousel-bg.png), linear-gradient(to right, rgb(80, 48, 0), rgb(80, 48, 0))",
@@ -60,7 +62,7 @@ export default {
         nav: "0 12px 32px rgba(0, 0, 0, 0.05)",
         cart: "12px 0 32px rgba(0, 0, 0, 0.05)",
         accordion: "0 12px 24px rgba(0, 0, 0, 0.075)",
-        "menu-inputs": "0 0 6px rgba(0, 0, 0, 0.05)",        
+        "menu-inputs": "0 0 6px rgba(0, 0, 0, 0.05)",
       },
       screens: {
         dtxl: { min: "2540px" },
