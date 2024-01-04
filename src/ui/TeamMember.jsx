@@ -10,7 +10,7 @@ function TeamMember({ fullName, position, phone, email, description, image }) {
         <span className="text-sm capitalize italic">{position}</span>
       </div>
       <img className="rounded-lg" src={image} alt={`${position} ${fullName}`} />
-      <div className="font-semibold">
+      <div className="font-semibold child:w-max">
         <TeamMemberContact phone={phone} />
         <TeamMemberContact email={email} />
       </div>
