@@ -23,7 +23,7 @@ const ContactDetail = ({ type, value }) => {
 
   return (
     <div
-      className={` ${
+      className={`text-lg ${
         link
           ? "child:flex child:items-center child:gap-3"
           : "flex items-center gap-3"
