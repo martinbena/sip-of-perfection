@@ -23,20 +23,20 @@ const ContactDetail = ({ type, value }) => {
 
   return (
     <div
-      className={`text-lg ${
+      className={`text-lg mobsm:text-base ${
         link
-          ? "child:flex child:items-center child:gap-3"
-          : "flex items-center gap-3"
+          ? "child:flex child:items-center child:gap-5"
+          : "flex items-center gap-5"
       }`}
     >
       {link ? (
         <a href={link} className="hover:text-linkhover">
-          <span className="child:h-6 child:w-6">{icon}</span>
+          <span className="child:h-8 child:w-8">{icon}</span>
           <span>{value}</span>
         </a>
       ) : (
         <>
-          <span className="child:h-6 child:w-6">{icon}</span>
+          <span className="child:h-8 child:w-8">{icon}</span>
           <span>{value}</span>
         </>
       )}
