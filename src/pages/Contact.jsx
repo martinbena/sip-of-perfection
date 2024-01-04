@@ -1,5 +1,6 @@
 import ContactInfo from "../ui/ContactInfo";
 import Subhero from "../ui/Subhero";
+import Team from "../ui/Team";
 
 function Contact() {
   return (
@@ -11,6 +12,7 @@ function Contact() {
       />
       <section className="bg-brandshade py-24">
         <ContactInfo />
+        <Team />
       </section>
     </>
   );
