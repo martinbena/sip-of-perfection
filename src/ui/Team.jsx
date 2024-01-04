@@ -33,9 +33,9 @@ const teamMembers = [
 
 function Team() {
   return (
-    <div className="mx-auto max-w-screen-2xl px-12 [&>*:nth-child(1)]:mb-12 [&>*:nth-child(1)]:text-center">
+    <div className="mx-auto max-w-screen-2xl px-12 moblg:px-4 [&>*:nth-child(1)]:mb-12 [&>*:nth-child(1)]:text-center">
       <HeadingSecondary>Our Team</HeadingSecondary>
-      <div className="grid grid-cols-3 justify-items-center">
+      <div className="flex justify-center gap-8 tab:flex-wrap tab:gap-y-12">
         {teamMembers.map((member) => (
           <TeamMember
             key={member.fullName}
