@@ -1,4 +1,5 @@
 import HeadingSecondary from "./HeadingSecondary";
+import TeamMember from "./TeamMember";
 
 const teamMembers = [
   {
@@ -8,7 +9,7 @@ const teamMembers = [
     email: "jordan@sop.com",
     description:
       "The creative force behind Sip of Perfection, devoted to crafting a warm and memorable atmosphere for all.",
-    image: "../assets/jordan-chamberlain.jpg",
+    image: "/src/assets/jordan-chamberlain.jpg",
   },
   {
     fullName: "Sarah Mitchell",
@@ -17,7 +18,7 @@ const teamMembers = [
     email: "sarah@sop.com",
     description:
       "Guiding our seamless operations, our dedicated manager upholds the high standards of hospitality at Sip of Perfection.",
-    image: "../assets/sarah-mitchell.jpg",
+    image: "/src/assets/sarah-mitchell.jpg",
   },
   {
     fullName: "Lorenzo DiMatteo",
@@ -26,15 +27,27 @@ const teamMembers = [
     email: "lorenzo@sop.com",
     description:
       "Indulge in culinary excellence, where every dish reflects the chef's commitment to a memorable dining experience at Sip of Perfection.",
-    image: "../assets/lorenzo-dimatteo.jpg",
+    image: "/src/assets/lorenzo-dimatteo.jpg",
   },
 ];
 
 function Team() {
   return (
-    <div className="[&>*:nth-child(1)]:text-center">
+    <div className="mx-auto max-w-screen-2xl px-12 [&>*:nth-child(1)]:mb-12 [&>*:nth-child(1)]:text-center">
       <HeadingSecondary>Our Team</HeadingSecondary>
-      <div></div>
+      <div className="grid grid-cols-3 justify-items-center">
+        {teamMembers.map((member) => (
+          <TeamMember
+            key={member.fullName}
+            fullName={member.fullName}
+            position={member.position}
+            phone={member.phone}
+            email={member.email}
+            description={member.description}
+            image={member.image}
+          />
+        ))}
+      </div>
     </div>
   );
 }
