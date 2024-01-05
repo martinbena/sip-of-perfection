@@ -34,7 +34,7 @@ function Specialities() {
           ))}
         </div>
         <div className="mt-24 text-center">
-          <Button type="secondary" to="/menu">
+          <Button type="secondary" to="/menu" ariaLabel="Go to the menu page">
             See menu
           </Button>
         </div>

@@ -21,7 +21,11 @@ function Story() {
               sip at a time.
             </p>
           </div>
-          <Button type="secondary" to="/contact">
+          <Button
+            type="secondary"
+            to="/contact"
+            ariaLabel="Go to the contact page"
+          >
             Find us
           </Button>
         </article>

@@ -16,7 +16,11 @@ function Hero() {
       <p className="mb-12 text-xl font-medium text-white">
         Discover the art of culinary delight in every visit.
       </p>
-      <Button type="primary" to="/reservation/new">
+      <Button
+        type="primary"
+        to="/reservation/new"
+        ariaLabel="Go to the reservation page"
+      >
         Reserve
       </Button>
     </section>

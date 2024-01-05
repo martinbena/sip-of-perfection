@@ -34,15 +34,23 @@ function Speciality({ data, isReversed }) {
         <p className="mb-6 mt-8">{description}</p>
         {!isInCart && (
           <div>
-            <Button onClick={handlePreorder} type="primary">
+            <Button
+              onClick={handlePreorder}
+              type="primary"
+              ariaLabel={`Preorder ${name} for ${price} USD`}
+            >
               Pre-order ({formatCurrency(price)})
             </Button>
           </div>
         )}
         {isInCart && (
           <div className="flex items-center justify-between gap-3 tab:gap-8 mob:gap-3">
-            <UpdateItemQuantity id={id} quantity={currentQuantity} />
-            <DeleteItem id={id} />
+            <UpdateItemQuantity
+              id={id}
+              quantity={currentQuantity}
+              name={name}
+            />
+            <DeleteItem id={id} name={name} />
           </div>
         )}
       </div>
