@@ -18,7 +18,7 @@ function Category({ category }) {
           : "hover:cursor-pointer"
       }`}
       role="button"
-      tabIndex="0"
+      tabIndex={category.name === selectedCategory ? "-1" : "0"}
       aria-label={`Select ${
         category.name === "default" ? "Whole Menu" : category.name
       }`}
