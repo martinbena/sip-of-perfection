@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 function Logo({ type }) {
   if (type === "footer")
     return (
-      <Link to="/">
+      <Link to="/" aria-label="Go to home page">
         <img
           src={logo}
           alt="Logo of the cafe"
@@ -15,14 +15,18 @@ function Logo({ type }) {
 
   return (
     <div className="z-50 flex items-center gap-4">
-      <Link to="/">
+      <Link to="/" aria-label="Go to home page">
         <img
           src={logo}
           alt="Logo of the cafe"
           className="inline-block h-16 w-16"
         />
       </Link>
-      <Link to="/" className="font-heading text-2xl text-white mobsm:hidden">
+      <Link
+        to="/"
+        aria-label="Go to home page"
+        className="font-heading text-2xl text-white mobsm:hidden"
+      >
         Sip of Perfection
       </Link>
     </div>
