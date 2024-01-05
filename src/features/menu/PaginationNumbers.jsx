@@ -50,6 +50,7 @@ function PaginationNumbers() {
             key={i}
             onClick={() => handleDispatch(page)}
             disabled={currentPage === i + 1}
+            aria-label={`Show page number ${page}`}
           >
             <span>
               {isSmallScreen &&

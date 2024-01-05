@@ -46,6 +46,9 @@ function PaginationButton({ direction }) {
         (direction === "previous" && currentPage === 1) ||
         (direction === "next" && currentPage === maxPages)
       }
+      aria-label={
+        direction === "next" ? "Show the next page" : "Show the previous page"
+      }
     >
       {icon}
     </button>
