@@ -11,8 +11,8 @@ function TeamMember({ fullName, position, phone, email, description, image }) {
       </div>
       <img className="rounded-lg" src={image} alt={`${position} ${fullName}`} />
       <div className="font-semibold child:w-max">
-        <TeamMemberContact phone={phone} />
-        <TeamMemberContact email={email} />
+        <TeamMemberContact fullName={fullName} phone={phone} />
+        <TeamMemberContact fullName={fullName} email={email} />
       </div>
       <div>
         <p>{description}</p>
