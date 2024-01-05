@@ -5,7 +5,7 @@ function TeamMemberContact({ fullName, phone, email }) {
   return (
     <p>
       <a
-        className="flex items-center gap-4 border-b-2 border-transparent pb-0.5 hover:border-b-commontext"
+        className="flex items-center gap-4 border-b-2 border-transparent pb-0.5 hover:border-b-commontext focus:border-b-commontext focus:outline-none"
         href={email ? `mailto:${email}` : `tel:${phone.replace(/-/g, "")}`}
         aria-label={
           email ? `Send an e-mail to ${fullName}` : `Call ${fullName}`
