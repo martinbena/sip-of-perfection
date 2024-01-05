@@ -51,10 +51,18 @@ function CartOverview() {
           <span>{formatCurrency(totalCartPrice)}</span>
         </div>
         <div>
-          <Button type="tertiary-warn" onClick={handleClearCart}>
+          <Button
+            type="tertiary-warn"
+            onClick={handleClearCart}
+            ariaLabel="Remove all items from your pre-order"
+          >
             Clear all
           </Button>
-          <Button type="tertiary" to="/reservation/new">
+          <Button
+            type="tertiary"
+            to="/reservation/new"
+            ariaLabel="Proceed to reservation"
+          >
             Reserve
           </Button>
         </div>
