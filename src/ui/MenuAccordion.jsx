@@ -12,13 +12,26 @@ function MenuAccordion() {
     setIsHidden((isHidden) => !isHidden);
   }
 
+  function handleKeyDown(e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setIsHidden((isHidden) => !isHidden);
+    }
+  }
+
   return (
     <div className="mb-16 flex items-center justify-center tab:px-8 mob:px-4">
       <div
+        role="button"
         onClick={handleClick}
-        className={`max-w-max cursor-pointer rounded-lg bg-white p-6 px-12 shadow-accordion moblg:px-6 ${
+        className={`max-w-max cursor-pointer rounded-lg bg-white p-6 px-12 shadow-accordion focus-within:ring-4 focus-within:ring-commontext focus-within:ring-offset-4 focus-within:ring-offset-brandshade focus:outline-none moblg:px-6 ${
           isHidden ? "" : "space-y-8 border-t-4 border-commontext"
         }`}
+        tabIndex="0"
+        aria-label={`${
+          isHidden ? "Open" : "Close"
+        } the description of how the pre-order works`}
+        onKeyDown={(e) => handleKeyDown(e)}
       >
         <div className="grid grid-cols-[1fr_auto] gap-6">
           <p className="text-2xl font-semibold tab:text-xl mob:text-lg">
