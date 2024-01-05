@@ -35,7 +35,10 @@ const categories = [
 
 function Categories() {
   return (
-    <div className="mb-12 flex flex-wrap items-center justify-between gap-8 tablg:justify-center tablg:px-8 tab:mb-8 moblg:gap-2 mob:px-4">
+    <div
+      className="mb-12 flex flex-wrap items-center justify-between gap-8 tablg:justify-center tablg:px-8 tab:mb-8 moblg:gap-2 mob:px-4"
+      role="tablist"
+    >
       {categories.map((category) => (
         <Category key={category.name} category={category} />
       ))}
