@@ -63,6 +63,8 @@ export default {
         cart: "12px 0 32px rgba(0, 0, 0, 0.05)",
         accordion: "0 12px 24px rgba(0, 0, 0, 0.075)",
         "menu-inputs": "0 0 6px rgba(0, 0, 0, 0.05)",
+        contact: "0 12px 24px rgba(0, 0, 0, 0.1)",
+        team: "0 12px 32px rgba(0, 0, 0, 0.1)",
       },
       screens: {
         dtxl: { min: "2540px" },
