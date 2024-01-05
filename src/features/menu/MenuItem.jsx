@@ -80,15 +80,23 @@ function MenuItem({ item }) {
 
             {isAvailable && !isInCart && (
               <div>
-                <Button onClick={handlePreorder} type="tertiary">
+                <Button
+                  onClick={handlePreorder}
+                  type="tertiary"
+                  ariaLabel={`Pre-order ${name} for ${price} USD`}
+                >
                   Pre-order
                 </Button>
               </div>
             )}
             {isInCart && (
               <div className="flex items-center justify-between gap-3 tab:gap-8 mob:gap-3">
-                <UpdateItemQuantity id={id} quantity={currentQuantity} />
-                <DeleteItem id={id} />
+                <UpdateItemQuantity
+                  id={id}
+                  quantity={currentQuantity}
+                  name={name}
+                />
+                <DeleteItem id={id} name={name} />
               </div>
             )}
           </div>

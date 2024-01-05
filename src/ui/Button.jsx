@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const rarr = "\u2192";
 
-function Button({ children, to, type, onClick }) {
+function Button({ children, to, type, onClick, ariaLabel }) {
   const classes =
     "rounded-md font-semibold focus:outline-none focus:ring focus:ring-offset-2";
   const styles = {
@@ -24,13 +24,18 @@ function Button({ children, to, type, onClick }) {
 
   if (onClick)
     return (
-      <button type="button" onClick={onClick} className={styles[type]}>
+      <button
+        type="button"
+        onClick={onClick}
+        className={styles[type]}
+        aria-label={ariaLabel}
+      >
         {children}
       </button>
     );
 
   return (
-    <Link to={to} className={styles[type]}>
+    <Link to={to} className={styles[type]} aria-label={ariaLabel}>
       {type === "secondary" ? `${children} ${rarr}` : children}
     </Link>
   );
