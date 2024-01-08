@@ -41,7 +41,7 @@ function MenuItem({ item }) {
 
   return (
     <li className="tab:py-2">
-      <div className="grid grid-cols-[1fr_2fr] gap-8 tablg:gap-2 tab:grid-cols-[auto_1fr] tab:gap-8 mob:gap-2 mobsm:grid-cols-1 mobsm:justify-items-center mobsm:gap-4 mobsm:text-center">
+      <div className="grid grid-cols-[1fr_3fr] gap-8 tablg:grid-cols-[1fr_2fr] tablg:gap-2 tab:grid-cols-[auto_1fr] tab:gap-8 mob:gap-2 mobsm:grid-cols-1 mobsm:justify-items-center mobsm:gap-4 mobsm:text-center">
         <div
           className={`h-36 w-max overflow-hidden rounded-lg tab:h-28 mobsm:justify-self-center ${
             isSeasonal
