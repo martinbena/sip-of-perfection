@@ -11,7 +11,7 @@ function MenuFunctions({ menu }) {
         <Categories />
         <Inputs />
       </div>
-      <div className="mx-auto max-w-screen-xl rounded-lg bg-brandtint p-20 tablg:rounded-none tablg:px-2 tablg:py-8 tab:px-0 mob:py-4">
+      <div className="mx-auto max-w-screen-xl rounded-lg bg-brandtint p-20 shadow-team tablg:rounded-none tablg:px-2 tablg:py-8 tab:px-0 mob:py-4">
         <MenuItems />
         <Pagination />
       </div>
