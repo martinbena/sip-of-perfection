@@ -8,6 +8,7 @@ import { FormProvider } from "../features/reservation/FormContext";
 import SearchReservation from "../features/reservation/SearchReservation";
 import store from "../store";
 import { clearCart } from "../features/cart/cartSlice";
+import Subhero from "../ui/Subhero";
 
 const isValidFullName = (str) =>
   /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
@@ -20,16 +21,22 @@ const isValidEmail = (str) =>
 
 function MakeReservation() {
   return (
-    <section className="overflow-hidden bg-commontext py-40 text-center">
-      <HeadingPrimary>Reservation</HeadingPrimary>
-      <SearchReservation />
-      <Form method="POST">
-        <FormProvider>
-          <DateTimeCheck />
-          <GuestData />
-        </FormProvider>
-      </Form>
-    </section>
+    <>
+      <Subhero
+        background="bg-reservation"
+        title="Reservation"
+        subtitle="Secure your spot or find existing reservations effortlessly."
+      />
+      <section className="overflow-hidden bg-brandshade py-40 text-center">
+        <SearchReservation />
+        <Form method="POST">
+          <FormProvider>
+            <DateTimeCheck />
+            <GuestData />
+          </FormProvider>
+        </Form>
+      </section>
+    </>
   );
 }
 

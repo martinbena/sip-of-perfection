@@ -96,7 +96,7 @@ function DateTimeCheck() {
         value={date}
       />
       <input type="hidden" name="date" value={date} required />
-      <p className="text-white">
+      <p>
         On {formattedDate}, we are open from {formattedOpenHour} to{" "}
         {formattedCloseHour}.
       </p>
@@ -154,13 +154,13 @@ function DateTimeCheck() {
       </select>
       <button
         type="button"
-        className={`text-white ${isChecking ? "cursor-not-allowed" : ""}`}
+        className={`${isChecking ? "cursor-not-allowed" : ""}`}
         onClick={handleCheckAvailability}
         disabled={isChecking}
       >
         {isChecking ? "Checking..." : "Check availability"}
       </button>
-      <p className="text-white">{message}</p>
+      <p>{message}</p>
     </div>
   );
 }
