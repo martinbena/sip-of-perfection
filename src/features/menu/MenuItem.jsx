@@ -90,7 +90,7 @@ function MenuItem({ item }) {
               </div>
             )}
             {isInCart && (
-              <div className="flex items-center justify-between gap-3 tab:gap-8 mob:gap-3">
+              <div className="flex items-center justify-between gap-3 tablg:pr-12 tab:gap-8 tab:pr-0 mob:gap-3">
                 <UpdateItemQuantity
                   id={id}
                   quantity={currentQuantity}
