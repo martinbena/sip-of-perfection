@@ -1,4 +1,3 @@
-import HeadingPrimary from "../ui/HeadingPrimary";
 import { calculateStartEndTime, formatDate } from "../utilities/helpers";
 import { Form, redirect } from "react-router-dom";
 import { makeReservation } from "../services/apiCafe";
