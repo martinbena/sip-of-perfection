@@ -8,6 +8,7 @@ import { MAX_DATE, MIN_DATE } from "../../config/constants";
 import { format, setMinutes } from "date-fns";
 import { checkAvailability } from "../../services/apiCafe";
 import { useFormContext } from "./FormContext";
+import ReservationSelect from "../../ui/ReservationSelect";
 
 function DateTimeCheck() {
   const { ACTIONS, state, dispatch, formattedDate } = useFormContext();
@@ -100,13 +101,12 @@ function DateTimeCheck() {
           On {formattedDate}, we are open from {formattedOpenHour} to{" "}
           {formattedCloseHour}.
         </p>
-        <select
+        <ReservationSelect
           name="time"
-          required
+          value={selectedTime}
           onChange={(e) =>
             dispatch({ type: ACTIONS.SELECT_TIME, payload: e.target.value })
           }
-          value={selectedTime}
         >
           <option value="">- Select time -</option>
           {allReservationTimes.map((time, i) => (
@@ -114,14 +114,13 @@ function DateTimeCheck() {
               {time}
             </option>
           ))}
-        </select>
-        <select
+        </ReservationSelect>
+        <ReservationSelect
           name="numGuests"
+          value={numGuests}
           onChange={(e) =>
             dispatch({ type: ACTIONS.SET_GUESTS, payload: +e.target.value })
           }
-          value={numGuests}
-          required
         >
           <option value="">- Select number of guests -</option>
           <option value="1">1</option>
@@ -133,17 +132,16 @@ function DateTimeCheck() {
           <option value="7">7</option>
           <option value="8">8</option>
           <option value="9">9</option>
-        </select>
-        <select
+        </ReservationSelect>
+        <ReservationSelect
           name="duration"
+          value={duration}
           onChange={(e) =>
             dispatch({
               type: ACTIONS.CHOOSE_DURATION,
               payload: +e.target.value,
             })
           }
-          value={duration}
-          required
         >
           <option value="">- Select duration -</option>
           <option value="1">1 hour</option>
@@ -151,7 +149,7 @@ function DateTimeCheck() {
           <option value="2">2 hours</option>
           <option value="2.5">2.5 hours</option>
           <option value="3">3 hours</option>
-        </select>
+        </ReservationSelect>
         <button
           type="button"
           className={`${isChecking ? "cursor-not-allowed" : ""}`}
