@@ -79,7 +79,7 @@ function DateTimeCheck() {
 
   return (
     <div
-      className={`${
+      className={`grid grid-cols-2 ${
         isAvailable
           ? "invisible h-0 w-0 -translate-x-full"
           : "transition-all duration-500 ease-out"
@@ -94,72 +94,74 @@ function DateTimeCheck() {
         }
         value={date}
       />
-      <input type="hidden" name="date" value={date} required />
-      <p>
-        On {formattedDate}, we are open from {formattedOpenHour} to{" "}
-        {formattedCloseHour}.
-      </p>
-      <select
-        name="time"
-        required
-        onChange={(e) =>
-          dispatch({ type: ACTIONS.SELECT_TIME, payload: e.target.value })
-        }
-        value={selectedTime}
-      >
-        <option value="">- Select time -</option>
-        {allReservationTimes.map((time, i) => (
-          <option key={i} value={time}>
-            {time}
-          </option>
-        ))}
-      </select>
-      <select
-        name="numGuests"
-        onChange={(e) =>
-          dispatch({ type: ACTIONS.SET_GUESTS, payload: +e.target.value })
-        }
-        value={numGuests}
-        required
-      >
-        <option value="">- Select number of guests -</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-      </select>
-      <select
-        name="duration"
-        onChange={(e) =>
-          dispatch({
-            type: ACTIONS.CHOOSE_DURATION,
-            payload: +e.target.value,
-          })
-        }
-        value={duration}
-        required
-      >
-        <option value="">- Select duration -</option>
-        <option value="1">1 hour</option>
-        <option value="1.5">1.5 hours</option>
-        <option value="2">2 hours</option>
-        <option value="2.5">2.5 hours</option>
-        <option value="3">3 hours</option>
-      </select>
-      <button
-        type="button"
-        className={`${isChecking ? "cursor-not-allowed" : ""}`}
-        onClick={handleCheckAvailability}
-        disabled={isChecking}
-      >
-        {isChecking ? "Checking..." : "Check availability"}
-      </button>
-      <p>{message}</p>
+      <div>
+        <input type="hidden" name="date" value={date} required />
+        <p className="font-semibold">
+          On {formattedDate}, we are open from {formattedOpenHour} to{" "}
+          {formattedCloseHour}.
+        </p>
+        <select
+          name="time"
+          required
+          onChange={(e) =>
+            dispatch({ type: ACTIONS.SELECT_TIME, payload: e.target.value })
+          }
+          value={selectedTime}
+        >
+          <option value="">- Select time -</option>
+          {allReservationTimes.map((time, i) => (
+            <option key={i} value={time}>
+              {time}
+            </option>
+          ))}
+        </select>
+        <select
+          name="numGuests"
+          onChange={(e) =>
+            dispatch({ type: ACTIONS.SET_GUESTS, payload: +e.target.value })
+          }
+          value={numGuests}
+          required
+        >
+          <option value="">- Select number of guests -</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+        <select
+          name="duration"
+          onChange={(e) =>
+            dispatch({
+              type: ACTIONS.CHOOSE_DURATION,
+              payload: +e.target.value,
+            })
+          }
+          value={duration}
+          required
+        >
+          <option value="">- Select duration -</option>
+          <option value="1">1 hour</option>
+          <option value="1.5">1.5 hours</option>
+          <option value="2">2 hours</option>
+          <option value="2.5">2.5 hours</option>
+          <option value="3">3 hours</option>
+        </select>
+        <button
+          type="button"
+          className={`${isChecking ? "cursor-not-allowed" : ""}`}
+          onClick={handleCheckAvailability}
+          disabled={isChecking}
+        >
+          {isChecking ? "Checking..." : "Check availability"}
+        </button>
+        <p>{message}</p>
+      </div>
     </div>
   );
 }
