@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Searchbar from "../../ui/Searchbar";
 
 function SearchReservation() {
   const [query, setQuery] = useState("");
@@ -14,8 +15,7 @@ function SearchReservation() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
+      <Searchbar
         placeholder="Search reservation number"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
