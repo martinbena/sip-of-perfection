@@ -14,7 +14,7 @@ function SearchReservation() {
   }
 
   return (
-    <div className="max-w-9xl px-8">
+    <div className="mx-auto max-w-9xl px-8">
       <form className="child:ml-auto" onSubmit={handleSubmit}>
         <Searchbar
           placeholder="Search reservation..."
