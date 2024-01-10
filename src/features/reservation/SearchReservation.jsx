@@ -14,13 +14,15 @@ function SearchReservation() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Searchbar
-        placeholder="Search reservation number"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-    </form>
+    <div className="max-w-9xl px-8">
+      <form className="child:ml-auto" onSubmit={handleSubmit}>
+        <Searchbar
+          placeholder="Search reservation..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </form>
+    </div>
   );
 }
 

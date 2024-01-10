@@ -26,7 +26,7 @@ function MakeReservation() {
         title="Reservation"
         subtitle="Secure your spot or find existing reservations effortlessly."
       />
-      <section className="overflow-hidden bg-brandshade py-40 text-center">
+      <section className="overflow-hidden bg-brandshade py-24 text-center">
         <SearchReservation />
         <Form method="POST">
           <FormProvider>
