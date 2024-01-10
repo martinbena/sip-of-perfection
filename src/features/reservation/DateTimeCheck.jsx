@@ -102,6 +102,7 @@ function DateTimeCheck() {
           {formattedCloseHour}.
         </p>
         <ReservationSelect
+          label="time"
           name="time"
           value={selectedTime}
           onChange={(e) =>
@@ -116,6 +117,7 @@ function DateTimeCheck() {
           ))}
         </ReservationSelect>
         <ReservationSelect
+          label="guests"
           name="numGuests"
           value={numGuests}
           onChange={(e) =>
@@ -134,6 +136,7 @@ function DateTimeCheck() {
           <option value="9">9</option>
         </ReservationSelect>
         <ReservationSelect
+          label="duartion"
           name="duration"
           value={duration}
           onChange={(e) =>
