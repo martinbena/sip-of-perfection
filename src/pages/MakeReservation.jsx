@@ -8,6 +8,7 @@ import SearchReservation from "../features/reservation/SearchReservation";
 import store from "../store";
 import { clearCart } from "../features/cart/cartSlice";
 import Subhero from "../ui/Subhero";
+import ReservationInfo from "../ui/ReservationInfo";
 
 const isValidFullName = (str) =>
   /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
@@ -26,8 +27,9 @@ function MakeReservation() {
         title="Reservation"
         subtitle="Secure your spot or find existing reservations effortlessly."
       />
-      <section className="overflow-hidden bg-brandshade py-24 text-center">
+      <section className="overflow-hidden bg-brandshade py-24">
         <SearchReservation />
+        <ReservationInfo />
         <Form method="POST">
           <FormProvider>
             <DateTimeCheck />

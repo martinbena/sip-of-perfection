@@ -1,6 +1,6 @@
 function HeadingSecondary({ children }) {
   return (
-    <h2 className="tab:text-3xl font-heading text-4xl capitalize">
+    <h2 className="font-heading text-4xl capitalize tab:text-3xl">
       {children}
     </h2>
   );
