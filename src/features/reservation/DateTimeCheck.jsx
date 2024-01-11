@@ -11,6 +11,7 @@ import { useFormContext } from "./FormContext";
 import ReservationSelect from "../../ui/ReservationSelect";
 import Button from "../../ui/Button";
 import { PiWarning } from "react-icons/pi";
+import ReservationStatus from "../../ui/ReservationStatus";
 
 function DateTimeCheck() {
   const { ACTIONS, state, dispatch, formattedDate } = useFormContext();
@@ -165,18 +166,12 @@ function DateTimeCheck() {
           </Button>
         </div>
       </div>
-      <div
-        className={`col-span-2 flex items-center gap-2 font-semibold text-red-700 transition-all duration-500 ease-out ${
-          message
-            ? "opacity-100"
-            : "invisible h-0 w-0 translate-x-full opacity-0"
-        }`}
-      >
-        <span className="child:h-6 child:w-6">
-          <PiWarning />
-        </span>
-        <p>{message}</p>
-      </div>
+      <ReservationStatus
+        status={message}
+        type="danger"
+        icon={<PiWarning />}
+        classes="col-span-2 transition-all duration-500 ease-out"
+      />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { getCart } from "../cart/cartSlice";
 import { PiCheckBold } from "react-icons/pi";
 import Button from "../../ui/Button";
 import ReservationInput from "../../ui/ReservationInput";
+import ReservationStatus from "../../ui/ReservationStatus";
 
 function GuestData() {
   const navigation = useNavigation();
@@ -23,12 +24,12 @@ function GuestData() {
       } `}
     >
       <div className="mb-8">
-        <div className="mx-auto flex max-w-max items-center gap-2 rounded-md bg-green-100 px-4 py-2 font-semibold text-green-700">
-          <span className="child:h-6 child:w-6">
-            <PiCheckBold />{" "}
-          </span>
-          <p>{message}</p>
-        </div>
+        <ReservationStatus
+          status={message}
+          type="success"
+          icon={<PiCheckBold />}
+          classes="mx-auto max-w-max"
+        />
 
         <p className="mx-auto my-4 max-w-max border-b-2 border-commontext pb-1 text-center font-semibold">
           {`You are making a reservation for ${formattedDate} from ${selectedTime} for ${duration} ${
