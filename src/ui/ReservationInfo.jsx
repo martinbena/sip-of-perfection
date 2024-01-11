@@ -1,11 +1,11 @@
-import HeadingTertiary from "./HeadingTertiary";
+import HeadingSecondary from "./HeadingSecondary";
 
 function ReservationInfo() {
   return (
     <article className="my-16 bg-brandtint">
       <div className="mx-auto grid max-w-8xl grid-cols-2 items-center gap-32 p-16">
         <div>
-          <HeadingTertiary>Reserve and update easily</HeadingTertiary>
+          <HeadingSecondary>Reserve and update easily</HeadingSecondary>
           <p className="mb-3 mt-6">
             Welcome to our reservation page! Here, reserving a table is a
             breeze. If you've already filled your pre-order with delightful
