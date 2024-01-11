@@ -165,18 +165,16 @@ function DateTimeCheck() {
           </Button>
         </div>
       </div>
-      {!isAvailable && message && (
-        <div
-          className={`col-span-2 flex items-center gap-2 font-semibold ${
-            isAvailable ? "" : "text-red-700"
-          }`}
-        >
-          <span className="child:h-6 child:w-6">
-            <PiWarning />
-          </span>
-          <p>{message}</p>
-        </div>
-      )}
+      <div
+        className={`col-span-2 flex items-center gap-2 font-semibold text-red-700 transition-all duration-500 ease-out ${
+          message ? "opacity-100" : "translate-x-full opacity-0"
+        }`}
+      >
+        <span className="child:h-6 child:w-6">
+          <PiWarning />
+        </span>
+        <p>{message}</p>
+      </div>
     </div>
   );
 }
