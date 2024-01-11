@@ -2,6 +2,9 @@ import { useActionData, useNavigation } from "react-router-dom";
 import { useFormContext } from "./FormContext";
 import { useSelector } from "react-redux";
 import { getCart } from "../cart/cartSlice";
+import { PiCheckBold } from "react-icons/pi";
+import Button from "../../ui/Button";
+import ReservationInput from "../../ui/ReservationInput";
 
 function GuestData() {
   const navigation = useNavigation();
@@ -13,83 +16,73 @@ function GuestData() {
 
   return (
     <div
-      className={`${
+      className={`mx-auto max-w-7xl rounded-lg bg-brandtint px-16 py-8 shadow-team ${
         !isAvailable
           ? "invisible h-0 w-0 translate-x-full"
           : "transition-all duration-500 ease-out"
       } `}
     >
-      <div>
-        <p className="text-white">{message}</p>
-        <p className="text-white">
-          You are making reservation on {formattedDate} from {selectedTime} for{" "}
-          {duration} hours. The number of guests is {numGuests}
+      <div className="mb-8">
+        <div className="mx-auto flex max-w-max items-center gap-2 rounded-md bg-green-100 px-4 py-2 font-semibold text-green-700">
+          <span className="child:h-6 child:w-6">
+            <PiCheckBold />{" "}
+          </span>
+          <p>{message}</p>
+        </div>
+
+        <p className="mx-auto my-4 max-w-max border-b-2 border-commontext pb-1 text-center font-semibold">
+          {`You are making a reservation for ${formattedDate} from ${selectedTime} for ${duration} ${
+            duration === 1 ? "hour" : "hours"
+          }. The number of guests is ${numGuests}.`}
         </p>
-        <button
-          type="button"
-          className="text-white"
-          onClick={() =>
-            dispatch({ type: ACTIONS.TOGGLE_AVAILABILITY, payload: false })
-          }
-        >
-          Change
-        </button>
+        <div className="text-center">
+          <Button
+            type="secondary"
+            onClick={() =>
+              dispatch({ type: ACTIONS.TOGGLE_AVAILABILITY, payload: false })
+            }
+          >
+            Change
+          </Button>
+        </div>
       </div>
-      <label htmlFor="fullName">Full name:</label>
-      <input
-        type="text"
-        id="fullName"
-        name="fullName"
-        placeholder="John Smith"
-        required
-      />
-      {formErrors?.fullName && (
-        <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
-          {formErrors.fullName}
-        </p>
-      )}
-      <label htmlFor="email">E-mail:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="john.smith@gmail.com"
-        required
-      />
-      {formErrors?.email && (
-        <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
-          {formErrors.email}
-        </p>
-      )}
-      <label htmlFor="phone">Telephone:</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="123-456-7890"
-        required
-      />
-      {formErrors?.phone && (
-        <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
-          {formErrors.phone}
-        </p>
-      )}
-      <label htmlFor="note">Note for us:</label>
-      <textarea
-        name="note"
-        id="note"
-        placeholder="Let us know about your diet, alergies..."
-        cols="30"
-        rows="10"
-      ></textarea>
-      <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-      <button
-        className="text-white"
-        type="submit"
-        disabled={isSubmitting || !isAvailable}
-      >
-        {isSubmitting ? "Making reservation..." : "Reserve"}
-      </button>
+      <div className="mb-8 flex justify-center gap-24">
+        <div className="flex flex-col gap-5">
+          <ReservationInput
+            type="text"
+            label="Full name"
+            name="fullName"
+            placeholder="John Smith"
+            error={formErrors?.fullName}
+          />
+          <ReservationInput
+            type="email"
+            label="E-mail"
+            name="email"
+            placeholder="john.smith@gmail.com"
+            error={formErrors?.email}
+          />
+          <ReservationInput
+            type="tel"
+            label="Telephone"
+            name="phone"
+            placeholder="123-456-7890"
+            error={formErrors?.phone}
+          />
+          <input type="hidden" name="cart" value={JSON.stringify(cart)} />
+        </div>
+        <ReservationInput
+          type="textarea"
+          label="Note for us"
+          name="note"
+          placeholder="Let us know about your diet, alergies..."
+        />
+      </div>
+      <div className="text-center">
+        <Button type="primary" disabled={isSubmitting || !isAvailable}>
+          {isSubmitting ? "Making reservation..." : "Reserve"}
+        </Button>
+      </div>
     </div>
   );
 }

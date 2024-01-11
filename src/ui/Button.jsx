@@ -22,23 +22,23 @@ function Button({ children, to, type, onClick, ariaLabel, disabled }) {
       "rounded-full flex items-center justify-center p-4 h-4 w-4 text-xl bg-accent font-semibold focus:ring-accentshadelight focus:outline-none focus:ring focus:ring-offset-2 mob:p-3.5",
   };
 
-  if (onClick)
+  if (to)
     return (
-      <button
-        type="button"
-        onClick={onClick}
-        className={`${styles[type]} ${disabled ? "cursor-not-allowed" : ""}`}
-        aria-label={ariaLabel}
-        disabled={disabled}
-      >
-        {children}
-      </button>
+      <Link to={to} className={styles[type]} aria-label={ariaLabel}>
+        {type === "secondary" ? `${children} ${rarr}` : children}
+      </Link>
     );
 
   return (
-    <Link to={to} className={styles[type]} aria-label={ariaLabel}>
-      {type === "secondary" ? `${children} ${rarr}` : children}
-    </Link>
+    <button
+      type={onClick ? "button" : "submit"}
+      onClick={onClick}
+      className={`${styles[type]} ${disabled ? "cursor-not-allowed" : ""}`}
+      aria-label={ariaLabel}
+      disabled={disabled}
+    >
+      {children}
+    </button>
   );
 }
 
