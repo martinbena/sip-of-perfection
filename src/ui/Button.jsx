@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const rarr = "\u2192";
 
-function Button({ children, to, type, onClick, ariaLabel }) {
+function Button({ children, to, type, onClick, ariaLabel, disabled }) {
   const classes =
     "rounded-md font-semibold focus:outline-none focus:ring focus:ring-offset-2";
   const styles = {
@@ -27,8 +27,9 @@ function Button({ children, to, type, onClick, ariaLabel }) {
       <button
         type="button"
         onClick={onClick}
-        className={styles[type]}
+        className={`${styles[type]} ${disabled ? "cursor-not-allowed" : ""}`}
         aria-label={ariaLabel}
+        disabled={disabled}
       >
         {children}
       </button>
