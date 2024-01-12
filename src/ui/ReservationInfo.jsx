@@ -6,7 +6,7 @@ function ReservationInfo() {
       <div className="mx-auto grid max-w-8xl grid-cols-2 items-center gap-32 p-16">
         <div>
           <HeadingSecondary>Reserve and update easily</HeadingSecondary>
-          <p className="mb-3 mt-6">
+          <p className="mb-6 mt-12">
             Welcome to our reservation page! Here, reserving a table is a
             breeze. If you've already filled your pre-order with delightful
             items, our system automatically processes it. Upon completion, make
@@ -24,7 +24,7 @@ function ReservationInfo() {
           <img
             src="../src/assets/reserve.jpg"
             alt="Coffee and notebook"
-            className="mx-auto max-w-seventy rounded-lg"
+            className="mx-auto rounded-lg"
           />
         </div>
       </div>

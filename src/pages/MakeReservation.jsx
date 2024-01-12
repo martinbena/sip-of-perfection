@@ -9,6 +9,7 @@ import store from "../store";
 import { clearCart } from "../features/cart/cartSlice";
 import Subhero from "../ui/Subhero";
 import ReservationInfo from "../ui/ReservationInfo";
+import FormContainer from "../ui/FormContainer";
 
 const isValidFullName = (str) =>
   /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
@@ -32,8 +33,9 @@ function MakeReservation() {
         <ReservationInfo />
         <Form method="POST">
           <FormProvider>
-            <DateTimeCheck />
-            <GuestData />
+            {/* <DateTimeCheck />
+            <GuestData /> */}
+            <FormContainer />
           </FormProvider>
         </Form>
       </section>

@@ -1,10 +1,13 @@
 function ReservationInput({ type, label, name, placeholder, error }) {
+  const classes =
+    "text-inherit rounded-sm shadow-menu-inputs focus:outline-none focus:ring-2 focus:ring-commontext focus:ring-offset-4 focus:ring-offset-brandtint";
+
   if (type === "textarea")
     return (
       <div className="flex flex-col gap-5">
         <label htmlFor={name}>{label}:</label>
         <textarea
-          className="p-2 text-inherit"
+          className={`p-2 ${classes}`}
           name={name}
           id={name}
           placeholder={placeholder}
@@ -17,11 +20,11 @@ function ReservationInput({ type, label, name, placeholder, error }) {
   return (
     <div>
       <div className="flex items-center">
-        <label className="w-24" htmlFor={name}>
+        <label className="w-32" htmlFor={name}>
           {label}:
         </label>
         <input
-          className="w-72  px-4 py-2 text-inherit shadow-menu-inputs focus:outline-commontext"
+          className={`w-72 px-4 py-2 ${classes}`}
           type={type}
           id={name}
           name={name}

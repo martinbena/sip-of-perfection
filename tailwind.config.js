@@ -12,6 +12,8 @@ export default {
         accentshadelight: "#49adb4",
         accentshadedark: "#0E737F",
         commontext: "#503000",
+        commontexttintlight: "#834f00",
+        commontexttintdark: "#724400",
         btntext: "#222222",
         brand: "#FFDBA5",
         brandshade: "#FFE9C8",
@@ -67,6 +69,7 @@ export default {
         "menu-inputs": "0 0 6px rgba(0, 0, 0, 0.05)",
         contact: "0 12px 24px rgba(0, 0, 0, 0.1)",
         team: "0 12px 32px rgba(0, 0, 0, 0.1)",
+        reservation: "0 24px 48px rgba(0, 0, 0, 0.22)",
       },
       screens: {
         dtxl: { min: "2540px" },

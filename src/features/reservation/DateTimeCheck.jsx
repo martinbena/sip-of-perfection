@@ -12,6 +12,7 @@ import ReservationSelect from "../../ui/ReservationSelect";
 import Button from "../../ui/Button";
 import { PiWarning } from "react-icons/pi";
 import ReservationStatus from "../../ui/ReservationStatus";
+import FormHeading from "../../ui/FormHeading";
 
 function DateTimeCheck() {
   const { ACTIONS, state, dispatch, formattedDate } = useFormContext();
@@ -83,95 +84,98 @@ function DateTimeCheck() {
 
   return (
     <div
-      className={`mx-auto grid max-w-8xl grid-cols-2 justify-items-center gap-x-6 gap-y-12 px-8 ${
+      className={`${
         isAvailable
           ? "invisible h-0 w-0 -translate-x-full"
-          : "transition-all duration-500 ease-out"
+          : "transition-all duration-700 ease-out"
       }`}
     >
-      <Calendar
-        minDate={MIN_DATE}
-        maxDate={MAX_DATE}
-        view="month"
-        onClickDay={(newDate) =>
-          dispatch({ type: ACTIONS.CHANGE_DATE, payload: newDate })
-        }
-        value={date}
-      />
-      <div className="flex w-full max-w-2xl flex-col gap-9 rounded-lg bg-brandtint p-8 text-center shadow-team">
-        <input type="hidden" name="date" value={date} required />
-        <p className="mx-auto max-w-max border-b-2 border-commontext pb-1 text-center font-semibold">
-          On {formattedDate}, we are open from {formattedOpenHour} to{" "}
-          {formattedCloseHour}.
-        </p>
-        <ReservationSelect
-          label="time"
-          name="time"
-          value={selectedTime}
-          onChange={(e) =>
-            dispatch({ type: ACTIONS.SELECT_TIME, payload: e.target.value })
+      <FormHeading>Savor the Experience: Book Your Table Now!</FormHeading>
+      <div className="grid grid-cols-2 content-center gap-x-8">
+        <Calendar
+          minDate={MIN_DATE}
+          maxDate={MAX_DATE}
+          view="month"
+          onClickDay={(newDate) =>
+            dispatch({ type: ACTIONS.CHANGE_DATE, payload: newDate })
           }
-        >
-          <option value="">- Select time -</option>
-          {allReservationTimes.map((time, i) => (
-            <option key={i} value={time}>
-              {time}
-            </option>
-          ))}
-        </ReservationSelect>
-        <ReservationSelect
-          label="guests"
-          name="numGuests"
-          value={numGuests}
-          onChange={(e) =>
-            dispatch({ type: ACTIONS.SET_GUESTS, payload: +e.target.value })
-          }
-        >
-          <option value="">- Select number of guests -</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </ReservationSelect>
-        <ReservationSelect
-          label="duartion"
-          name="duration"
-          value={duration}
-          onChange={(e) =>
-            dispatch({
-              type: ACTIONS.CHOOSE_DURATION,
-              payload: +e.target.value,
-            })
-          }
-        >
-          <option value="">- Select duration -</option>
-          <option value="1">1 hour</option>
-          <option value="1.5">1.5 hours</option>
-          <option value="2">2 hours</option>
-          <option value="2.5">2.5 hours</option>
-          <option value="3">3 hours</option>
-        </ReservationSelect>
-        <div>
-          <Button
-            type="primary"
-            onClick={handleCheckAvailability}
-            disabled={isChecking}
+          value={date}
+        />
+        <div className="flex w-full max-w-2xl flex-col gap-9 rounded-lg bg-brandtint p-8 text-center">
+          <input type="hidden" name="date" value={date} required />
+          <p className="mx-auto max-w-max border-b-2 border-commontext pb-1 text-center font-semibold">
+            On {formattedDate}, we are open from {formattedOpenHour} to{" "}
+            {formattedCloseHour}.
+          </p>
+          <ReservationSelect
+            label="time"
+            name="time"
+            value={selectedTime}
+            onChange={(e) =>
+              dispatch({ type: ACTIONS.SELECT_TIME, payload: e.target.value })
+            }
           >
-            {isChecking ? "Checking..." : "Check availability"}
-          </Button>
+            <option value="">- Select time -</option>
+            {allReservationTimes.map((time, i) => (
+              <option key={i} value={time}>
+                {time}
+              </option>
+            ))}
+          </ReservationSelect>
+          <ReservationSelect
+            label="guests"
+            name="numGuests"
+            value={numGuests}
+            onChange={(e) =>
+              dispatch({ type: ACTIONS.SET_GUESTS, payload: +e.target.value })
+            }
+          >
+            <option value="">- Select number of guests -</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </ReservationSelect>
+          <ReservationSelect
+            label="duartion"
+            name="duration"
+            value={duration}
+            onChange={(e) =>
+              dispatch({
+                type: ACTIONS.CHOOSE_DURATION,
+                payload: +e.target.value,
+              })
+            }
+          >
+            <option value="">- Select duration -</option>
+            <option value="1">1 hour</option>
+            <option value="1.5">1.5 hours</option>
+            <option value="2">2 hours</option>
+            <option value="2.5">2.5 hours</option>
+            <option value="3">3 hours</option>
+          </ReservationSelect>
+          <div>
+            <Button
+              type="primary"
+              onClick={handleCheckAvailability}
+              disabled={isChecking}
+            >
+              {isChecking ? "Checking..." : "Check availability"}
+            </Button>{" "}
+          </div>
         </div>
+        <ReservationStatus
+          status={message}
+          type="danger"
+          icon={<PiWarning />}
+          classes="col-span-2 transition-all duration-300 ease-out mt-12"
+        />
       </div>
-      <ReservationStatus
-        status={message}
-        type="danger"
-        icon={<PiWarning />}
-        classes="col-span-2 transition-all duration-500 ease-out"
-      />
     </div>
   );
 }

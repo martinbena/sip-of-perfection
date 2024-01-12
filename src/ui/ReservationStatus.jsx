@@ -6,7 +6,9 @@ function ReservationStatus({ type, status, icon, classes }) {
           ? "bg-red-100 text-red-700"
           : "bg-green-100 text-green-700"
       } ${
-        status ? "opacity-100" : "invisible h-0 w-0 translate-x-full opacity-0"
+        status
+          ? "opacity-100"
+          : "invisible mt-0 h-0 w-0 translate-x-full opacity-0"
       }`}
     >
       <span className="child:h-6 child:w-6">{icon}</span>

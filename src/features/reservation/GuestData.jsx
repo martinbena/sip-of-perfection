@@ -6,6 +6,7 @@ import { PiCheckBold } from "react-icons/pi";
 import Button from "../../ui/Button";
 import ReservationInput from "../../ui/ReservationInput";
 import ReservationStatus from "../../ui/ReservationStatus";
+import FormHeading from "../../ui/FormHeading";
 
 function GuestData() {
   const navigation = useNavigation();
@@ -17,13 +18,14 @@ function GuestData() {
 
   return (
     <div
-      className={`mx-auto max-w-7xl rounded-lg bg-brandtint px-16 py-8 shadow-team ${
+      className={`${
         !isAvailable
           ? "invisible h-0 w-0 translate-x-full"
-          : "transition-all duration-500 ease-out"
+          : "transition-all duration-700 ease-out"
       } `}
     >
-      <div className="mb-8">
+      <FormHeading>Congratulations! Your Culinary Journey Awaits</FormHeading>
+      <div className="mb-8 rounded-lg bg-brandtint py-6">
         <ReservationStatus
           status={message}
           type="success"
@@ -47,42 +49,45 @@ function GuestData() {
           </Button>
         </div>
       </div>
-      <div className="mb-8 flex justify-center gap-24">
-        <div className="flex flex-col gap-5">
+      <div className="rounded-lg bg-brandtint py-6">
+        <div className="mb-8 flex justify-center gap-24">
+          <div className="flex flex-col gap-5">
+            <ReservationInput
+              type="text"
+              label="Full name"
+              name="fullName"
+              placeholder="John Smith"
+              error={formErrors?.fullName}
+            />
+            <ReservationInput
+              type="email"
+              label="E-mail"
+              name="email"
+              placeholder="john.smith@gmail.com"
+              error={formErrors?.email}
+            />
+            <ReservationInput
+              type="tel"
+              label="Telephone"
+              name="phone"
+              placeholder="123-456-7890"
+              error={formErrors?.phone}
+            />
+            <input type="hidden" name="cart" value={JSON.stringify(cart)} />
+          </div>
           <ReservationInput
-            type="text"
-            label="Full name"
-            name="fullName"
-            placeholder="John Smith"
-            error={formErrors?.fullName}
+            type="textarea"
+            label="Note for us"
+            name="note"
+            placeholder="Let us know about your diet, alergies..."
           />
-          <ReservationInput
-            type="email"
-            label="E-mail"
-            name="email"
-            placeholder="john.smith@gmail.com"
-            error={formErrors?.email}
-          />
-          <ReservationInput
-            type="tel"
-            label="Telephone"
-            name="phone"
-            placeholder="123-456-7890"
-            error={formErrors?.phone}
-          />
-          <input type="hidden" name="cart" value={JSON.stringify(cart)} />
         </div>
-        <ReservationInput
-          type="textarea"
-          label="Note for us"
-          name="note"
-          placeholder="Let us know about your diet, alergies..."
-        />
-      </div>
-      <div className="text-center">
-        <Button type="primary" disabled={isSubmitting || !isAvailable}>
-          {isSubmitting ? "Making reservation..." : "Reserve"}
-        </Button>
+
+        <div className="text-center">
+          <Button type="primary" disabled={isSubmitting || !isAvailable}>
+            {isSubmitting ? "Making reservation..." : "Reserve"}
+          </Button>
+        </div>
       </div>
     </div>
   );
