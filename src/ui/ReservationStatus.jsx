@@ -7,7 +7,7 @@ function ReservationStatus({ type, status, icon, classes }) {
           : "bg-green-100 text-green-700"
       } ${
         status
-          ? `mx-auto flex items-center gap-2 rounded-md px-4 py-2 font-semibold opacity-100 moblg:items-start mob:flex-col mob:items-center mob:px-2 ${classes}`
+          ? `mx-auto flex items-center gap-2 rounded-md px-4 py-2 font-semibold opacity-100 moblg:items-start moblg:text-sm mob:flex-col mob:items-center mob:px-2 ${classes}`
           : "invisible mt-0 h-0 w-0 translate-x-full opacity-0"
       }`}
     >

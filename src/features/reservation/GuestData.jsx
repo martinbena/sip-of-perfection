@@ -25,7 +25,7 @@ function GuestData() {
       } `}
     >
       <FormHeading>Congratulations! Your Culinary Journey Awaits</FormHeading>
-      <div className="mb-8 rounded-lg bg-brandtint py-6">
+      <div className="mb-8 rounded-lg bg-brandtint px-3 py-6">
         <ReservationStatus
           status={message}
           type="success"
@@ -33,7 +33,7 @@ function GuestData() {
           classes="max-w-max"
         />
 
-        <p className="mx-auto my-4 max-w-max border-b-2 border-commontext pb-1 text-center font-semibold">
+        <p className="mx-auto my-4 max-w-max border-b-2 border-commontext pb-1 text-center font-semibold moblg:text-sm">
           {`You are making a reservation for ${formattedDate} from ${selectedTime} for ${duration} ${
             duration === 1 ? "hour" : "hours"
           }. The number of guests is ${numGuests}.`}
@@ -49,9 +49,9 @@ function GuestData() {
           </Button>
         </div>
       </div>
-      <div className="rounded-lg bg-brandtint py-6">
-        <div className="mb-8 flex justify-center gap-24">
-          <div className="flex flex-col gap-5">
+      <div className="rounded-lg bg-brandtint px-3 py-6">
+        <div className="mb-8 flex justify-center gap-24 tablg:gap-12 tab:flex-col tab:gap-10">
+          <div className="flex flex-col gap-5 tab:mx-auto">
             <ReservationInput
               type="text"
               label="Full name"
