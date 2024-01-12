@@ -33,8 +33,6 @@ function MakeReservation() {
         <ReservationInfo />
         <Form method="POST">
           <FormProvider>
-            {/* <DateTimeCheck />
-            <GuestData /> */}
             <FormContainer />
           </FormProvider>
         </Form>
