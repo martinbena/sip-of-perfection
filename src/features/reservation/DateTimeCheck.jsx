@@ -91,7 +91,7 @@ function DateTimeCheck() {
       }`}
     >
       <FormHeading>Savor the Experience: Book Your Table Now!</FormHeading>
-      <div className="grid grid-cols-2 content-center gap-x-8">
+      <div className="grid grid-cols-2 content-center gap-x-8 tab:grid-cols-1 tab:justify-items-center tab:gap-y-4">
         <Calendar
           minDate={MIN_DATE}
           maxDate={MAX_DATE}
@@ -101,7 +101,7 @@ function DateTimeCheck() {
           }
           value={date}
         />
-        <div className="flex w-full max-w-2xl flex-col gap-9 rounded-lg bg-brandtint p-8 text-center">
+        <div className="flex w-full max-w-2xl flex-col gap-9 rounded-lg bg-brandtint p-8 text-center tablg:p-5">
           <input type="hidden" name="date" value={date} required />
           <p className="mx-auto max-w-max border-b-2 border-commontext pb-1 text-center font-semibold">
             On {formattedDate}, we are open from {formattedOpenHour} to{" "}
@@ -173,7 +173,7 @@ function DateTimeCheck() {
           status={message}
           type="danger"
           icon={<PiWarning />}
-          classes="col-span-2 transition-all duration-300 ease-out mt-12"
+          classes="col-span-2 transition-all duration-300 ease-out mt-12 tab:col-span-1 tab:mt-2"
         />
       </div>
     </div>

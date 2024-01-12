@@ -1,16 +1,6 @@
 import HeadingSecondary from "./HeadingSecondary";
 
-function ReservationInfo() {
-  // screens: {
-  //       dtxl: { min: "2540px" },
-  //       dt: { max: "1540px" },
-  //       dtsm: { max: "1344px" },
-  //       tablg: { max: "1200px" },
-  //       tab: { max: "944px" },
-  //       moblg: { max: "704px" },
-  //       mob: { max: "544px" },
-  //       mobsm: { max: "440px" },
-  //     },
+function ReservationInfo() {  
   return (
     <article className="my-16 bg-brandtint">
       <div className="mx-auto grid max-w-8xl grid-cols-2 items-center gap-32 p-16 dtsm:gap-8 tablg:grid-cols-1 tablg:gap-20 tablg:text-center mob:gap-10 mob:px-4">

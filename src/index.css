@@ -68,13 +68,19 @@
 /* ---------- REACT CALENDAR ---------- */
 
 .react-calendar {
-  max-width: 40.6rem;
+  max-width: 42rem;
+  width: 100%;
   background-color: #fff4e3;
   border-radius: 9px;
-  /* box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
   line-height: 1.25rem;
 }
+
+/* @media screen and (max-width: 34em) {
+  .react-calendar {
+    width: 100%;
+  }
+} */
 
 .react-calendar__navigation {
   display: flex;
@@ -131,6 +137,8 @@
 
 .react-calendar__month-view__days {
   gap: 5px;
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .react-calendar__month-view__days__day--weekend {
@@ -139,7 +147,6 @@
 }
 
 .react-calendar__tile {
-  flex: 0 0 13.5% !important;
   padding: 20px 0;
   background-color: #ffe9c8;
   text-align: center;
@@ -148,6 +155,39 @@
   font-size: 1rem;
   font-weight: 600;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 75em) {
+  .react-calendar__viewContainer {
+    padding: 0 8px;
+  }
+}
+
+@media screen and (max-width: 59em) {
+  .react-calendar__viewContainer {
+    padding: 0 15px 15px 15px;
+  }
+}
+
+@media screen and (max-width: 44em) {
+  .react-calendar__viewContainer {
+    padding: 0 15px 15px 15px;
+  }
+  .react-calendar__tile {
+    padding: 15px 7px;
+  }
+}
+
+@media screen and (max-width: 34em) {  
+  .react-calendar__tile {
+    padding: 10px 5px;
+  }
+}
+
+@media screen and (max-width: 27.5em) {
+  .react-calendar__viewContainer {
+    padding: 0 5px 5px 5px;
+  }
 }
 
 .react-calendar__tile:hover {
