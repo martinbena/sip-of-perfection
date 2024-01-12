@@ -30,7 +30,7 @@ function GuestData() {
           status={message}
           type="success"
           icon={<PiCheckBold />}
-          classes="mx-auto max-w-max"
+          classes="max-w-max"
         />
 
         <p className="mx-auto my-4 max-w-max border-b-2 border-commontext pb-1 text-center font-semibold">
