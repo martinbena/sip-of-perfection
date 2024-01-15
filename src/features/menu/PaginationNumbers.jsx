@@ -48,6 +48,7 @@ function PaginationNumbers() {
                   }`
             }`}
             key={i}
+            type="button"
             onClick={() => handleDispatch(page)}
             disabled={currentPage === i + 1}
             aria-label={`Show page number ${page}`}

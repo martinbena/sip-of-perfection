@@ -41,6 +41,7 @@ function PaginationButton({ direction }) {
           ? "invisible opacity-0"
           : ""
       }`}
+      type="button"
       onClick={handleDispatch}
       disabled={
         (direction === "previous" && currentPage === 1) ||

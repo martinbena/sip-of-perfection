@@ -43,6 +43,7 @@ function UpdateReservation({ reservation, menu }) {
           <MenuFunctions menu={menu.data} />
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <button
+            type="submit"
             disabled={
               JSON.stringify(reservation.preorder) === JSON.stringify(cart) ||
               isSubmitting

@@ -21,10 +21,10 @@ function Reservation() {
   );
 
   return (
-    <section className="overflow-hidden bg-commontext py-40 text-center">
+    <section className="overflow-hidden bg-brandshade py-40 text-center">
       <HeadingPrimary>Your reservation</HeadingPrimary>
       <SearchReservation />
-      <div className="text-white">
+      <div className="">
         <p>Number: {id}</p>
         <p>Date: {date}</p>
         <p>From: {formatTime(from)}</p>
