@@ -20,8 +20,11 @@ function ReservationInput({ type, label, name, placeholder, error }) {
   return (
     <div>
       <div className="flex items-center mob:flex-col mob:gap-2">
-        <label className="w-32 moblg:w-24" htmlFor={name}>
-          {label}:
+        <label
+          className="w-32 after:ml-0.5 after:text-red-500 after:content-['*'] moblg:w-24"
+          htmlFor={name}
+        >
+          {label}
         </label>
         <input
           className={`w-72 px-4 mobsm:w-full py-2${classes}`}
