@@ -5,13 +5,15 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart, loadCart } from "../cart/cartSlice";
 import MenuFunctions from "../menu/MenuFunctions";
+import { getNavHeight } from "../../navigationSlice";
 
-function UpdateReservation({ reservation, menu }) {
+function UpdateReservation({ reservation, menu, forwardedRef }) {
   const fetcher = useFetcher();
   const cart = useSelector(getCart);
   const dispatch = useDispatch();
   const [isHidden, setIsHidden] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navHeight = useSelector(getNavHeight);
 
   useEffect(() => {
     if (!isHidden) dispatch(loadCart(reservation.preorder));
@@ -26,6 +28,17 @@ function UpdateReservation({ reservation, menu }) {
   useEffect(() => {
     setIsHidden(true);
     setIsSubmitting(false);
+
+    if (forwardedRef.current) {
+      const scrollPosition = forwardedRef.current.offsetTop - navHeight - 20;
+      setTimeout(() => {
+        window.scrollTo({
+          top: scrollPosition,
+          left: 0,
+          behavior: "smooth",
+        });
+      }, 0);
+    }
   }, [reservation.preorder]);
 
   return (

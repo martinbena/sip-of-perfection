@@ -9,6 +9,7 @@ import HeadingTertiary from "../../ui/HeadingTertiary";
 function Reservation() {
   const reservation = useLoaderData();
   const { preorder } = reservation;
+  const summaryRef = useRef();
 
   const fetcher = useFetcher();
 
@@ -22,7 +23,11 @@ function Reservation() {
   return (
     <section className="overflow-hidden bg-brandshade py-40">
       <ReservationSummary reservation={reservation} />
-      <PreOrderSummary preorder={preorder} fetcher={fetcher} />
+      <PreOrderSummary
+        preorder={preorder}
+        fetcher={fetcher}
+        forwardedRef={summaryRef}
+      />
       <article className="my-10 bg-brandtint ">
         <div className="mx-auto max-w-4xl py-12">
           <HeadingTertiary>Personalize your culinary journey</HeadingTertiary>
@@ -35,7 +40,11 @@ function Reservation() {
           </p>
         </div>
       </article>
-      <UpdateReservation reservation={reservation} menu={fetcher} />
+      <UpdateReservation
+        reservation={reservation}
+        menu={fetcher}
+        forwardedRef={summaryRef}
+      />
     </section>
   );
 }
