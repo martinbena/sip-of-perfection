@@ -12,6 +12,9 @@ function Button({ children, to, type, onClick, ariaLabel, disabled }) {
     "primary-warn":
       classes +
       " px-10 py-1.5 text-xl hover:bg-red-500 bg-red-400 text-btntext focus:ring-red-500 focus:bg-red-500",
+    "primary-danger":
+      classes +
+      " px-10 py-1.5 text-xl hover:bg-amber-600 bg-amber-500 text-btntext focus:ring-amber-600 focus:bg-amber-600",
     secondary:
       classes +
       " px-10 py-1.5 text-xl hover:bg-accentshadedark focus:text-white focus:bg-accentshadedark focus:ring-accentshadedark text-accentshadedark border-accentshadedark border-2 transition-all duration-300 ease-out hover:text-white",
@@ -36,7 +39,9 @@ function Button({ children, to, type, onClick, ariaLabel, disabled }) {
     <button
       type={onClick ? "button" : "submit"}
       onClick={onClick}
-      className={`${styles[type]} ${disabled ? "cursor-not-allowed" : ""}`}
+      className={`${styles[type]} ${
+        disabled ? "cursor-not-allowed opacity-60 hover:bg-accent" : ""
+      }`}
       aria-label={ariaLabel}
       disabled={disabled}
     >

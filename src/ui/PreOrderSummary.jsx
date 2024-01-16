@@ -1,6 +1,6 @@
 import { formatCurrency } from "../utilities/helpers";
 
-function PreOrderSummary({ preorder, fetcher }) {
+function PreOrderSummary({ preorder, fetcher, ref }) {
   if (preorder.length > 0)
     return (
       <div className="mx-auto max-w-4xl space-y-8">

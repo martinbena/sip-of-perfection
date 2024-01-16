@@ -1,15 +1,14 @@
 import { useFetcher, useLoaderData } from "react-router-dom";
 import { getReservation } from "../../services/apiCafe";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import UpdateReservation from "./UpdateReservation";
 import ReservationSummary from "../../ui/ReservationSummary";
-import { formatCurrency } from "../../utilities/helpers";
 import PreOrderSummary from "../../ui/PreOrderSummary";
 import HeadingTertiary from "../../ui/HeadingTertiary";
 
 function Reservation() {
   const reservation = useLoaderData();
-  const { id, preorder } = reservation;
+  const { preorder } = reservation;
 
   const fetcher = useFetcher();
 
@@ -36,7 +35,6 @@ function Reservation() {
           </p>
         </div>
       </article>
-
       <UpdateReservation reservation={reservation} menu={fetcher} />
     </section>
   );

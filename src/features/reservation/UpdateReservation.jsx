@@ -1,4 +1,4 @@
-import { useFetcher, useNavigation } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
 import Button from "../../ui/Button";
 import { updateReservation } from "../../services/apiCafe";
 import { useEffect, useState } from "react";
@@ -31,27 +31,27 @@ function UpdateReservation({ reservation, menu }) {
   return (
     <fetcher.Form method="PATCH">
       <div className="mx-auto flex max-w-4xl justify-between">
-        <button
-          type="button"
+        <Button
+          type="primary-danger"
           onClick={() => {
             setIsHidden((hidden) => !hidden);
           }}
         >
-          {isHidden ? "Show menu" : "Close menu"}
-        </button>
-        <button
-          type="submit"
+          {isHidden ? "Open menu" : "Close menu"}
+        </Button>
+        <Button
+          type="primary"
           disabled={
+            isHidden ||
             JSON.stringify(reservation.preorder) === JSON.stringify(cart) ||
             isSubmitting
           }
         >
           {isSubmitting ? "Loading..." : "Update pre-order"}
-        </button>
+        </Button>
       </div>
-
       {!isHidden && (
-        <div>
+        <div className="mt-12">
           <MenuFunctions menu={menu.data} />
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
         </div>
