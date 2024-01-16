@@ -9,6 +9,9 @@ function Button({ children, to, type, onClick, ariaLabel, disabled }) {
     primary:
       classes +
       " px-10 py-1.5 text-xl hover:bg-accentshadelight bg-accent text-btntext focus:ring-accentshadelight focus:bg-accentshadelight",
+    "primary-warn":
+      classes +
+      " px-10 py-1.5 text-xl hover:bg-red-500 bg-red-400 text-btntext focus:ring-red-500 focus:bg-red-500",
     secondary:
       classes +
       " px-10 py-1.5 text-xl hover:bg-accentshadedark focus:text-white focus:bg-accentshadedark focus:ring-accentshadedark text-accentshadedark border-accentshadedark border-2 transition-all duration-300 ease-out hover:text-white",

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { cancelReservation } from "../../services/apiCafe";
+import Button from "../../ui/Button";
 
 function CancelReservation({ id }) {
   const navigate = useNavigate();
@@ -12,7 +13,9 @@ function CancelReservation({ id }) {
   }
 
   return (
-    <button onClick={() => handleCancelation(id)}>Cancel reservation</button>
+    <Button type="primary-warn" onClick={() => handleCancelation(id)}>
+      Cancel reservation
+    </Button>
   );
 }
 

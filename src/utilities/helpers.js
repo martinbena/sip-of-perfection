@@ -8,7 +8,6 @@ import {
 
 export function fixedNavigation(entries) {
   const [entry] = entries;
-  // console.log(entry);
 
   if (!entry.isIntersecting) nav.classList.add("sticky");
   else nav.classList.remove("sticky");
@@ -23,6 +22,14 @@ export function formatCurrency(value) {
 
 export function formatDate(dateStr) {
   return new Intl.DateTimeFormat("en-US").format(new Date(dateStr));
+}
+
+export function formatLongDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 export function formatTime(timeStr) {
