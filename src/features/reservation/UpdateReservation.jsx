@@ -30,27 +30,30 @@ function UpdateReservation({ reservation, menu }) {
 
   return (
     <fetcher.Form method="PATCH">
-      <button
-        type="button"
-        onClick={() => {
-          setIsHidden((hidden) => !hidden);
-        }}
-      >
-        {isHidden ? "Show menu" : "Close menu"}
-      </button>
+      <div className="mx-auto flex max-w-4xl justify-between">
+        <button
+          type="button"
+          onClick={() => {
+            setIsHidden((hidden) => !hidden);
+          }}
+        >
+          {isHidden ? "Show menu" : "Close menu"}
+        </button>
+        <button
+          type="submit"
+          disabled={
+            JSON.stringify(reservation.preorder) === JSON.stringify(cart) ||
+            isSubmitting
+          }
+        >
+          {isSubmitting ? "Loading..." : "Update pre-order"}
+        </button>
+      </div>
+
       {!isHidden && (
         <div>
           <MenuFunctions menu={menu.data} />
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button
-            type="submit"
-            disabled={
-              JSON.stringify(reservation.preorder) === JSON.stringify(cart) ||
-              isSubmitting
-            }
-          >
-            {isSubmitting ? "Loading..." : "Update pre-order"}
-          </button>
         </div>
       )}
     </fetcher.Form>
