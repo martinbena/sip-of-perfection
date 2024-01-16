@@ -22,23 +22,24 @@ function UpdateReservation({ reservation, menu, forwardedRef }) {
   }, [isHidden]);
 
   useEffect(() => {
-    fetcher.state === "submitting" && setIsSubmitting(true);
+    if (fetcher.state === "submitting") {
+      setIsSubmitting(true);
+      if (forwardedRef.current) {
+        const scrollPosition = forwardedRef.current.offsetTop - navHeight - 20;
+        setTimeout(() => {
+          window.scrollTo({
+            top: scrollPosition,
+            left: 0,
+            behavior: "smooth",
+          });
+        }, 0);
+      }
+    }
   }, [fetcher.state]);
 
   useEffect(() => {
     setIsHidden(true);
     setIsSubmitting(false);
-
-    if (forwardedRef.current) {
-      const scrollPosition = forwardedRef.current.offsetTop - navHeight - 20;
-      setTimeout(() => {
-        window.scrollTo({
-          top: scrollPosition,
-          left: 0,
-          behavior: "smooth",
-        });
-      }, 0);
-    }
   }, [reservation.preorder]);
 
   return (

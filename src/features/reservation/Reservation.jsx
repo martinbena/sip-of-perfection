@@ -5,6 +5,7 @@ import UpdateReservation from "./UpdateReservation";
 import ReservationSummary from "../../ui/ReservationSummary";
 import PreOrderSummary from "../../ui/PreOrderSummary";
 import HeadingTertiary from "../../ui/HeadingTertiary";
+import HeadingSecondary from "../../ui/HeadingSecondary";
 
 function Reservation() {
   const reservation = useLoaderData();
@@ -21,7 +22,8 @@ function Reservation() {
   );
 
   return (
-    <section className="overflow-hidden bg-brandshade py-40">
+    <section className="overflow-hidden bg-brandshade py-40 [&>*:nth-child(1)]:mb-12 [&>*:nth-child(1)]:text-center ">
+      <HeadingSecondary>Reservation info</HeadingSecondary>
       <ReservationSummary reservation={reservation} />
       <PreOrderSummary
         preorder={preorder}

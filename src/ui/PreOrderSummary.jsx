@@ -36,7 +36,7 @@ function PreOrderSummary({ preorder, fetcher, forwardedRef }) {
         </div>
 
         <div className="flex items-center justify-between bg-commontext px-6 py-3.5 font-semibold text-white">
-          <p className="text-lg">Estimated price:</p>
+          <p className="text-lg">Total value:</p>
           <p>
             {formatCurrency(
               preorder.reduce((sum, item) => sum + item.totalPrice, 0),
