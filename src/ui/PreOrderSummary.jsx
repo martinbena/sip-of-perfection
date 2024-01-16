@@ -5,7 +5,7 @@ function PreOrderSummary({ preorder, fetcher, forwardedRef }) {
     return (
       <div ref={forwardedRef} className="mx-auto max-w-4xl space-y-8">
         <div className="bg-commontext py-3.5 text-center text-white">
-          <h3 className="text-lg font-semibold capitalize">
+          <h3 className="font-heading text-lg font-semibold capitalize">
             Pre-order summary
           </h3>
         </div>
