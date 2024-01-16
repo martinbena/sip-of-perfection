@@ -10,7 +10,7 @@ function ReservationSummary({ reservation }) {
   const { id, date, from, to, guests, note } = reservation;
 
   return (
-    <div className="mx-auto max-w-lg rounded-lg bg-brandtint px-16 py-12 shadow-accordion">
+    <div className="mx-auto mb-16 max-w-lg rounded-lg bg-brandtint px-16 py-12 shadow-accordion">
       <p className="text-lg font-semibold">
         Reservation ID:{" "}
         <span className="border-b-2 border-commontext pb-1">{id}</span>
