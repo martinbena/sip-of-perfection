@@ -100,6 +100,8 @@ function DateTimeCheck() {
             dispatch({ type: ACTIONS.CHANGE_DATE, payload: newDate })
           }
           value={date}
+          prevAriaLabel="Select previous month"
+          nextAriaLabel="Select next month"
         />
         <div className="flex w-full max-w-2xl flex-col gap-9 rounded-lg bg-brandtint p-8 text-center tablg:p-5">
           <input type="hidden" name="date" value={date} required />
@@ -164,6 +166,7 @@ function DateTimeCheck() {
               type="primary"
               onClick={handleCheckAvailability}
               disabled={isChecking}
+              ariaLabel="Check if your reservation is possible"
             >
               {isChecking ? "Checking..." : "Check availability"}
             </Button>{" "}

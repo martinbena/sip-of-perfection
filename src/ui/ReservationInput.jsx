@@ -13,6 +13,7 @@ function ReservationInput({ type, label, name, placeholder, error }) {
           placeholder={placeholder}
           cols="50"
           rows="3"
+          aria-label="Leave a note for us"
         ></textarea>
       </div>
     );
@@ -32,6 +33,7 @@ function ReservationInput({ type, label, name, placeholder, error }) {
           id={name}
           name={name}
           placeholder={placeholder}
+          aria-label={`Enter your ${name}`}
           required
         />
       </div>

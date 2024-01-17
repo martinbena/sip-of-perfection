@@ -52,6 +52,7 @@ function GuestData() {
         <div className="text-center">
           <Button
             type="secondary"
+            ariaLabel="Change the date, time, number of guests or duration"
             onClick={() =>
               dispatch({ type: ACTIONS.TOGGLE_AVAILABILITY, payload: false })
             }
@@ -100,7 +101,11 @@ function GuestData() {
         )}
 
         <div className="text-center">
-          <Button type="primary" disabled={isSubmitting || !isAvailable}>
+          <Button
+            type="primary"
+            disabled={isSubmitting || !isAvailable}
+            ariaLabel="Make a reservation"
+          >
             {isSubmitting ? "Making reservation..." : "Reserve"}
           </Button>
         </div>
