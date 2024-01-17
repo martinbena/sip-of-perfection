@@ -44,25 +44,29 @@ function UpdateReservation({ reservation, menu, forwardedRef }) {
 
   return (
     <fetcher.Form method="PATCH">
-      <div className="mx-auto flex max-w-4xl justify-between">
-        <Button
-          type="primary-danger"
-          onClick={() => {
-            setIsHidden((hidden) => !hidden);
-          }}
-        >
-          {isHidden ? "Open menu" : "Close menu"}
-        </Button>
-        <Button
-          type="primary"
-          disabled={
-            isHidden ||
-            JSON.stringify(reservation.preorder) === JSON.stringify(cart) ||
-            isSubmitting
-          }
-        >
-          {isSubmitting ? "Loading..." : "Update pre-order"}
-        </Button>
+      <div className="mx-auto flex max-w-4xl justify-between tab:gap-12 tab:px-4 mob:flex-col mob:items-center">
+        <div className="mob:order-2">
+          <Button
+            type="primary-danger"
+            onClick={() => {
+              setIsHidden((hidden) => !hidden);
+            }}
+          >
+            {isHidden ? "Open menu" : "Close menu"}
+          </Button>
+        </div>
+        <div className="mob:order-1">
+          <Button
+            type="primary"
+            disabled={
+              isHidden ||
+              JSON.stringify(reservation.preorder) === JSON.stringify(cart) ||
+              isSubmitting
+            }
+          >
+            {isSubmitting ? "Loading..." : "Update pre-order"}
+          </Button>
+        </div>
       </div>
       {!isHidden && (
         <div className="mt-12">
