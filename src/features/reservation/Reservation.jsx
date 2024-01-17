@@ -22,7 +22,7 @@ function Reservation() {
   );
 
   return (
-    <section className="overflow-hidden bg-brandshade px-4 py-40 [&>*:nth-child(1)]:mb-12 [&>*:nth-child(1)]:text-center">
+    <section className="overflow-hidden bg-brandshade py-40 [&>*:nth-child(1)]:mb-12 [&>*:nth-child(1)]:text-center">
       <HeadingSecondary>Reservation info</HeadingSecondary>
       <ReservationSummary reservation={reservation} />
       <PreOrderSummary
