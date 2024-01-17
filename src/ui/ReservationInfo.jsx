@@ -1,6 +1,6 @@
 import HeadingSecondary from "./HeadingSecondary";
 
-function ReservationInfo() {  
+function ReservationInfo() {
   return (
     <article className="my-16 bg-brandtint">
       <div className="mx-auto grid max-w-8xl grid-cols-2 items-center gap-32 p-16 dtsm:gap-8 tablg:grid-cols-1 tablg:gap-20 tablg:text-center mob:gap-10 mob:px-4">
@@ -22,7 +22,7 @@ function ReservationInfo() {
         </div>
         <div>
           <img
-            src="../src/assets/reserve.jpg"
+            src="../src/assets/reserve.webp"
             alt="Coffee and notebook"
             className="mx-auto rounded-lg tablg:w-2/3 moblg:w-full"
           />
