@@ -24,18 +24,23 @@ function UpdateReservation({ reservation, menu, forwardedRef }) {
   useEffect(() => {
     if (fetcher.state === "submitting") {
       setIsSubmitting(true);
-      if (forwardedRef.current) {
-        const scrollPosition = forwardedRef.current.offsetTop - navHeight - 20;
-        setTimeout(() => {
+      const tryScroll = () => {
+        if (forwardedRef.current) {
+          const scrollPosition =
+            forwardedRef.current.offsetTop - navHeight - 20;
           window.scrollTo({
             top: scrollPosition,
             left: 0,
             behavior: "smooth",
           });
-        }, 0);
-      }
+        } else {
+          setTimeout(tryScroll, 100);
+        }
+      };
+
+      tryScroll();
     }
-  }, [fetcher.state]);
+  }, [fetcher.state, forwardedRef.current]);
 
   useEffect(() => {
     setIsHidden(true);

@@ -34,7 +34,7 @@ function Reservation() {
       </div>
 
       <article className="my-10 bg-brandtint tab:px-4">
-        <div className="mx-auto max-w-4xl py-12 mob:text-center">
+        <div className="mx-auto max-w-5xl py-12 mob:text-center">
           <HeadingTertiary>Personalize your culinary journey</HeadingTertiary>
           <p className="mt-6">
             Consider updating your pre-order or creating one if you haven't
