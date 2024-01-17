@@ -23,6 +23,7 @@ function DateTimeCheck() {
     duration,
     isAvailable,
     isChecking,
+    isTouched,
     message,
   } = state;
   const open = getOpeningHour(date);
@@ -39,6 +40,7 @@ function DateTimeCheck() {
   );
 
   async function handleCheckAvailability() {
+    dispatch({ type: ACTIONS.FORM_TOUCHED, payload: true });
     if (!date || !selectedTime || !duration || !numGuests) return;
     dispatch({ type: ACTIONS.TOGGLE_CHECK, payload: true });
 
@@ -113,6 +115,7 @@ function DateTimeCheck() {
             label="time"
             name="time"
             value={selectedTime}
+            formIsTouched={isTouched}
             onChange={(e) =>
               dispatch({ type: ACTIONS.SELECT_TIME, payload: e.target.value })
             }
@@ -128,6 +131,7 @@ function DateTimeCheck() {
             label="guests"
             name="numGuests"
             value={numGuests}
+            formIsTouched={isTouched}
             onChange={(e) =>
               dispatch({ type: ACTIONS.SET_GUESTS, payload: +e.target.value })
             }
@@ -147,6 +151,7 @@ function DateTimeCheck() {
             label="duartion"
             name="duration"
             value={duration}
+            formIsTouched={isTouched}
             onChange={(e) =>
               dispatch({
                 type: ACTIONS.CHOOSE_DURATION,

@@ -12,6 +12,7 @@ function FormProvider({ children }) {
     CHOOSE_DURATION: "choose-duration",
     TOGGLE_AVAILABILITY: "toggle-availability",
     TOGGLE_CHECK: "toggle-check",
+    FORM_TOUCHED: "form-touched",
   };
 
   const initialState = {
@@ -21,6 +22,7 @@ function FormProvider({ children }) {
     duration: "",
     isAvailable: false,
     isChecking: false,
+    isTouched: false,
     message: "",
   };
 
@@ -34,6 +36,8 @@ function FormProvider({ children }) {
         return { ...state, numGuests: action.payload };
       case ACTIONS.CHOOSE_DURATION:
         return { ...state, duration: action.payload };
+      case ACTIONS.FORM_TOUCHED:
+        return { ...state, isTouched: action.payload };
       case ACTIONS.TOGGLE_CHECK:
         return { ...state, isChecking: action.payload };
       case ACTIONS.TOGGLE_AVAILABILITY:
