@@ -3,7 +3,7 @@ import { formatCurrency } from "../utilities/helpers";
 function PreOrderSummary({ preorder, fetcher, forwardedRef }) {
   if (preorder.length > 0)
     return (
-      <div ref={forwardedRef} className="mx-auto max-w-4xl space-y-8">
+      <div ref={forwardedRef} className="mx-auto max-w-5xl space-y-8">
         <div className="bg-commontexttintdark py-3.5 text-center text-white">
           <h3 className="font-heading text-lg font-semibold capitalize">
             Pre-order summary

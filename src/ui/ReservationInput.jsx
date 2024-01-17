@@ -4,7 +4,7 @@ function ReservationInput({ type, label, name, placeholder, error }) {
 
   if (type === "textarea")
     return (
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-1">
         <label htmlFor={name}>{label}:</label>
         <textarea
           className={`p-2 tablg:w-5/6 tab:w-full ${classes}`}
@@ -12,7 +12,7 @@ function ReservationInput({ type, label, name, placeholder, error }) {
           id={name}
           placeholder={placeholder}
           cols="50"
-          rows="4"
+          rows="3"
         ></textarea>
       </div>
     );

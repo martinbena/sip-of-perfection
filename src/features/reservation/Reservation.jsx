@@ -25,11 +25,14 @@ function Reservation() {
     <section className="overflow-hidden bg-brandshade py-40 [&>*:nth-child(1)]:mb-12 [&>*:nth-child(1)]:text-center">
       <HeadingSecondary>Reservation info</HeadingSecondary>
       <ReservationSummary reservation={reservation} />
-      <PreOrderSummary
-        preorder={preorder}
-        fetcher={fetcher}
-        forwardedRef={summaryRef}
-      />
+      <div className="px-4">
+        <PreOrderSummary
+          preorder={preorder}
+          fetcher={fetcher}
+          forwardedRef={summaryRef}
+        />
+      </div>
+
       <article className="my-10 bg-brandtint tab:px-4">
         <div className="mx-auto max-w-4xl py-12 mob:text-center">
           <HeadingTertiary>Personalize your culinary journey</HeadingTertiary>

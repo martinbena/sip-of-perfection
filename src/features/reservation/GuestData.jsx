@@ -61,7 +61,7 @@ function GuestData() {
         </div>
       </div>
       <div className="rounded-lg bg-brandtint px-3 py-6">
-        <div className="mb-8 flex justify-center gap-24 tablg:gap-12 tab:flex-col tab:gap-10">
+        <div className="mb-8 flex items-end justify-center gap-24 tablg:gap-12 tab:flex-col tab:gap-10">
           <div className="flex flex-col gap-5 tab:mx-auto">
             <ReservationInput
               type="text"
