@@ -178,7 +178,7 @@
   }
 }
 
-@media screen and (max-width: 34em) {  
+@media screen and (max-width: 34em) {
   .react-calendar__tile {
     padding: 10px 5px;
   }
@@ -247,3 +247,7 @@
 }
 
 /* RESERVATION INFO */
+
+button:disabled:hover {
+  background-color: #51c0c8;
+}

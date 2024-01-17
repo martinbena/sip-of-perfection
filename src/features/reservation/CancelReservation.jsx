@@ -13,7 +13,7 @@ function CancelReservation({ id }) {
   }
 
   return (
-    <Button type="primary-warn" onClick={() => handleCancelation(id)}>
+    <Button type="primary-danger" onClick={() => handleCancelation(id)}>
       Cancel reservation
     </Button>
   );

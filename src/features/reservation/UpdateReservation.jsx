@@ -47,7 +47,7 @@ function UpdateReservation({ reservation, menu, forwardedRef }) {
       <div className="mx-auto flex max-w-4xl justify-between tab:gap-12 tab:px-4 mob:flex-col mob:items-center">
         <div className="mob:order-2">
           <Button
-            type="primary-danger"
+            type="primary-warn"
             onClick={() => {
               setIsHidden((hidden) => !hidden);
             }}
