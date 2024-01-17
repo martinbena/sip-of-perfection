@@ -15,7 +15,11 @@ function SearchReservation() {
 
   return (
     <div className="mx-auto max-w-8xl px-16 mob:px-2">
-      <form className="child:ml-auto mob:child:mx-auto" onSubmit={handleSubmit}>
+      <form
+        className="child:ml-auto mob:child:mx-auto"
+        aria-label="Search your reservation"
+        onSubmit={handleSubmit}
+      >
         <Searchbar
           placeholder="Search reservation ID..."
           value={query}
