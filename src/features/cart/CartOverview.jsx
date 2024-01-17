@@ -7,13 +7,17 @@ import {
 import { formatCurrency } from "../../utilities/helpers";
 import Button from "../../ui/Button";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function CartOverview() {
   const totalCartQuantity = useSelector(getTotalCartQuantity);
   const totalCartPrice = useSelector(getTotalCartPrice);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const [updated, setUpdated] = useState(false);
+
+  const isReservationPage = location.pathname.startsWith("/reservation");
 
   useEffect(() => {
     setUpdated(true);
@@ -58,13 +62,15 @@ function CartOverview() {
           >
             Clear all
           </Button>
-          <Button
-            type="tertiary"
-            to="/reservation/new"
-            ariaLabel="Proceed to reservation"
-          >
-            Reserve
-          </Button>
+          {!isReservationPage && (
+            <Button
+              type="tertiary"
+              to="/reservation/new"
+              ariaLabel="Proceed to reservation"
+            >
+              Reserve
+            </Button>
+          )}
         </div>
       </div>
     </div>
