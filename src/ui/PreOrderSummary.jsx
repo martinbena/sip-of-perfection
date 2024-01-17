@@ -4,7 +4,7 @@ function PreOrderSummary({ preorder, fetcher, forwardedRef }) {
   if (preorder.length > 0)
     return (
       <div ref={forwardedRef} className="mx-auto max-w-4xl space-y-8">
-        <div className="bg-commontext py-3.5 text-center text-white">
+        <div className="bg-commontexttintdark py-3.5 text-center text-white">
           <h3 className="font-heading text-lg font-semibold capitalize">
             Pre-order summary
           </h3>
@@ -24,18 +24,18 @@ function PreOrderSummary({ preorder, fetcher, forwardedRef }) {
                     {formatCurrency(item.totalPrice)}
                   </p>
                 </div>
-                <p className="text-xs capitalize italic">
+                {/* <p className="text-xs capitalize italic">
                   {!fetcher.state !== "loading" &&
                     fetcher.data
                       ?.find((el) => el.id === item.id)
                       .ingredients.join(", ")}
-                </p>
+                </p> */}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="flex items-center justify-between bg-commontext px-6 py-3.5 font-semibold text-white">
+        <div className="flex items-center justify-between bg-commontexttintdark px-6 py-3.5 font-semibold text-white">
           <p className="text-lg">Total value:</p>
           <p>
             {formatCurrency(

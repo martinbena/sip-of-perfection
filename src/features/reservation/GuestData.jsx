@@ -1,4 +1,4 @@
-import { useActionData, useNavigation } from "react-router-dom";
+import { useActionData, useFetcher, useNavigation } from "react-router-dom";
 import { useFormContext } from "./FormContext";
 import { useSelector } from "react-redux";
 import { getCart } from "../cart/cartSlice";
@@ -7,6 +7,8 @@ import Button from "../../ui/Button";
 import ReservationInput from "../../ui/ReservationInput";
 import ReservationStatus from "../../ui/ReservationStatus";
 import FormHeading from "../../ui/FormHeading";
+import PreOrderSummary from "../../ui/PreOrderSummary";
+import { useEffect } from "react";
 
 function GuestData() {
   const navigation = useNavigation();
@@ -15,6 +17,15 @@ function GuestData() {
   const { selectedTime, numGuests, duration, isAvailable, message } = state;
   const cart = useSelector(getCart);
   const formErrors = useActionData();
+
+  // const fetcher = useFetcher();
+
+  // useEffect(
+  //   function () {
+  //     if (!fetcher.data && fetcher.state === "idle") fetcher.load("/menu");
+  //   },
+  //   [fetcher],
+  // );
 
   return (
     <div
@@ -82,6 +93,11 @@ function GuestData() {
             placeholder="Let us know about your diet, alergies..."
           />
         </div>
+        {cart.length > 0 && (
+          <div className="mb-8">
+            <PreOrderSummary preorder={cart} />
+          </div>
+        )}
 
         <div className="text-center">
           <Button type="primary" disabled={isSubmitting || !isAvailable}>

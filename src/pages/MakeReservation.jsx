@@ -1,8 +1,6 @@
 import { calculateStartEndTime, formatDate } from "../utilities/helpers";
 import { Form, redirect } from "react-router-dom";
 import { makeReservation } from "../services/apiCafe";
-import DateTimeCheck from "../features/reservation/DateTimeCheck";
-import GuestData from "../features/reservation/GuestData";
 import { FormProvider } from "../features/reservation/FormContext";
 import SearchReservation from "../features/reservation/SearchReservation";
 import store from "../store";
