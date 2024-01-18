@@ -1,20 +1,26 @@
+import { Suspense, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
-import Menu, { loader as menuLoader } from "./pages/Menu";
+import { loader as menuLoader } from "./pages/Menu";
 import AppLayout from "./ui/AppLayout";
-import MakeReservation, {
-  action as makeReservationAction,
-} from "./pages/MakeReservation";
-import Reservation, {
-  loader as reservationLoader,
-} from "./features/reservation/Reservation";
-import Contact from "./pages/Contact";
-import Error from "./ui/Error";
+import { action as makeReservationAction } from "./pages/MakeReservation";
+import { loader as reservationLoader } from "./features/reservation/Reservation";
 import { action as updateReservationAction } from "./features/reservation/UpdateReservation";
+import Loader from "./ui/Loader";
+
+const Home = lazy(() => import("./pages/Home"));
+const Menu = lazy(() => import("./pages/Menu"));
+const Contact = lazy(() => import("./pages/Contact"));
+const MakeReservation = lazy(() => import("./pages/MakeReservation"));
+const Reservation = lazy(() => import("./features/reservation/Reservation"));
+const Error = lazy(() => import("./ui/Error"));
 
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: (
+      <Suspense fallback={<Loader />}>
+        <AppLayout />
+      </Suspense>
+    ),
     errorElement: <Error />,
     children: [
       {
