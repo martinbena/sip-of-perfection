@@ -17,6 +17,7 @@ function CartOverview() {
   const location = useLocation();
 
   const [updated, setUpdated] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const isReservationPage = location.pathname.startsWith("/reservation");
 
@@ -31,19 +32,19 @@ function CartOverview() {
   }, [totalCartQuantity]);
 
   function handleClearCart() {
-    setIsModalOpen(true);
-    if (
-      confirm(
-        "Are you sure that you want to delete all items from your pre-order?",
-      )
-    )
-      dispatch(clearCart());
+    dispatch(clearCart());
   }
 
   if (!totalCartQuantity) return null;
 
   return (
     <>
+      <Modal
+        isOpen={isModalOpen}
+        message="Are you sure that you want to delete all items from your pre-order?"
+        onConfirm={handleClearCart}
+        onCancel={() => setIsModalOpen(false)}
+      />
       <div className="fixed bottom-0 left-0 z-30 w-full bg-nav text-white shadow-cart">
         <div className="mx-auto flex max-w-9xl items-center justify-between px-16 py-4 child:space-x-12 tablg:px-8 tab:justify-between tab:child:space-x-6 mob:flex-col mob:gap-2 mob:px-4 mob:child:space-x-3">
           <div className="flex items-center font-semibold">
@@ -60,7 +61,7 @@ function CartOverview() {
           <div>
             <Button
               type="tertiary-warn"
-              onClick={handleClearCart}
+              onClick={() => setIsModalOpen(true)}
               ariaLabel="Remove all items from your pre-order"
             >
               Clear all
