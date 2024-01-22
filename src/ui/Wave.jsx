@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const path1 =
   "M0 169L80 163C160 157 320 145 480 153.7C640 162.3 800 191.7 960 206C1120 220.3 1280 219.7 1360 219.3L1440 219V0H1360C1280 0 1120 0 960 0C800 0 640 0 480 0C320 0 160 0 80 0H0V169Z";
@@ -8,9 +10,16 @@ const path2 =
 
 function Wave() {
   const height = window.innerWidth <= 1344 ? 240 : 160;
+  const [key, setKey] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    setKey((prevKey) => prevKey + 1);
+  }, [location.pathname]);
 
   return (
     <svg
+      key={key}
       viewBox={`0 110 1440 ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
