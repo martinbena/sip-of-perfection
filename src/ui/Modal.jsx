@@ -13,7 +13,7 @@ function Modal({ isOpen, message, onConfirm, onCancel }) {
       onClick={onCancel}
       className="fixed left-0 top-0 z-40 flex h-screen w-full items-center justify-center bg-mobile-nav px-4 backdrop-blur-sm mob:px-2"
     >
-      <div className="relative w-full max-w-3xl rounded-lg bg-brandtint p-12 mob:p-6">
+      <div className="relative w-full max-w-3xl rounded-lg bg-brandtint p-12 text-left mob:p-6">
         <div className="mb-12 space-y-4">
           <div className="flex items-center gap-5">
             <span className="child:h-8 child:w-8">

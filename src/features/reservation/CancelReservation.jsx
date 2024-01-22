@@ -1,21 +1,30 @@
 import { useNavigate } from "react-router-dom";
 import { cancelReservation } from "../../services/apiCafe";
 import Button from "../../ui/Button";
+import Modal from "../../ui/Modal";
+import { useState } from "react";
 
 function CancelReservation({ id }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   function handleCancelation(id) {
-    if (confirm("Do you really want to cancel the reservation?")) {
-      cancelReservation(id);
-      navigate("/reservation/new");
-    }
+    cancelReservation(id);
+    navigate("/reservation/new");
   }
 
   return (
-    <Button type="primary-danger" onClick={() => handleCancelation(id)}>
-      Cancel reservation
-    </Button>
+    <>
+      <Modal
+        isOpen={isModalOpen}
+        message="Are you sure that you want to delete your reservation?"
+        onConfirm={() => handleCancelation(id)}
+        onCancel={() => setIsModalOpen(false)}
+      />
+      <Button type="primary-danger" onClick={() => setIsModalOpen(true)}>
+        Cancel reservation
+      </Button>
+    </>
   );
 }
 

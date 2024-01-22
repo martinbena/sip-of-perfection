@@ -96,8 +96,6 @@ export async function action({ request }) {
   if (Object.keys(errors).length > 0) return errors;
 
   const newReservation = await makeReservation(reservation);
-  console.log(reservation);
-  console.log(newReservation.id);
   store.dispatch(clearCart());
 
   return redirect(`/reservation/${newReservation.id}`);
