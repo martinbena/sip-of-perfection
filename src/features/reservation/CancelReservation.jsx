@@ -1,4 +1,4 @@
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { cancelReservation } from "../../services/apiCafe";
 import Button from "../../ui/Button";
 import Modal from "../../ui/Modal";

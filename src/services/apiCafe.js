@@ -17,7 +17,6 @@ import {
   getClosingHour,
 } from "../utilities/helpers";
 import { CAPACITY } from "../config/constants";
-import toast from "react-hot-toast";
 import { useToast } from "../hooks/useToast";
 
 const menuRef = collection(db, "menu");

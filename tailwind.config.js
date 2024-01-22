@@ -18,9 +18,6 @@ export default {
         brand: "#FFDBA5",
         brandshade: "#FFE9C8",
         brandtint: "#FFF4E3",
-        wavetop: "#F5F8F5",
-        wavemid: "#C2AE91",
-        wavebot: "#886C47",
         linkhover: "#FFC772",
       },
       backgroundImage: {

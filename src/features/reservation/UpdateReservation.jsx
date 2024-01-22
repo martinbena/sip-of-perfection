@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart, loadCart } from "../cart/cartSlice";
 import MenuFunctions from "../menu/MenuFunctions";
 import { getNavHeight } from "../../navigationSlice";
-import toast from "react-hot-toast";
 import { useToast } from "../../hooks/useToast";
 
 function UpdateReservation({ reservation, menu, forwardedRef }) {

@@ -9,9 +9,6 @@ function ContactDetails() {
       />
       <ContactDetail type="phone" value="555-123-4567" />
       <ContactDetail type="email" value="cafe@sop.com" />
-      <ContactDetail>
-        <a href=""></a>
-      </ContactDetail>
     </div>
   );
 }
