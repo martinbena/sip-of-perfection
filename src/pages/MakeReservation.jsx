@@ -8,7 +8,8 @@ import { clearCart } from "../features/cart/cartSlice";
 import Subhero from "../ui/Subhero";
 import ReservationInfo from "../ui/ReservationInfo";
 import FormContainer from "../ui/FormContainer";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import { useToast } from "../hooks/useToast";
 
 // const isValidFullName = (str) =>
 //   /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
@@ -99,10 +100,7 @@ export async function action({ request }) {
 
   const newReservation = await makeReservation(reservation);
   store.dispatch(clearCart());
-  toast.success("Reservation successfully created!", {
-    duration: 4000,
-    position: "bottom-center",
-  });
+  useToast("success", "Reservation successfully created!");
 
   return redirect(`/reservation/${newReservation.id}`);
 }

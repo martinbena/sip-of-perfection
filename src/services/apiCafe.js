@@ -18,6 +18,7 @@ import {
 } from "../utilities/helpers";
 import { CAPACITY } from "../config/constants";
 import toast from "react-hot-toast";
+import { useToast } from "../hooks/useToast";
 
 const menuRef = collection(db, "menu");
 const reservationsRef = collection(db, "reservations");
@@ -121,11 +122,12 @@ export async function getReservation(id) {
 
 export async function cancelReservation(id) {
   const docRef = doc(db, "reservations", id);
-  await deleteDoc(docRef);
-  return toast.success("Reservation successfully cancelled!", {
-    duration: 4000,
-    position: "bottom-center",
-  });
+  try {
+    await deleteDoc(docRef);
+    return useToast("success", "Reservation successfully cancelled!");
+  } catch (err) {
+    return useToast("error", err.message);
+  }
 }
 
 export async function updateReservation(id, reservation) {

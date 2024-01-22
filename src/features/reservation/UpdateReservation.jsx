@@ -7,6 +7,7 @@ import { clearCart, getCart, loadCart } from "../cart/cartSlice";
 import MenuFunctions from "../menu/MenuFunctions";
 import { getNavHeight } from "../../navigationSlice";
 import toast from "react-hot-toast";
+import { useToast } from "../../hooks/useToast";
 
 function UpdateReservation({ reservation, menu, forwardedRef }) {
   const fetcher = useFetcher();
@@ -87,10 +88,11 @@ export async function action({ request, params }) {
   const formData = await request.formData();
   const { cart } = Object.fromEntries(formData);
   const data = { preorder: JSON.parse(cart) };
-  await updateReservation(params.reservationId, data);
-  toast.success("Reservation successfully updated!", {
-    duration: 4000,
-    position: "bottom-center",
-  });
+  try {
+    await updateReservation(params.reservationId, data);
+    useToast("success", "Reservation successfully updated!");
+  } catch (err) {
+    useToast("error", err.message);
+  }
   return null;
 }
