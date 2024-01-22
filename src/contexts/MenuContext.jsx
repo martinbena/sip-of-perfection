@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useRef } from "react";
-import { MENU_ITEMS_PER_PAGE } from "../../config/constants";
+import { MENU_ITEMS_PER_PAGE } from "../config/constants";
 
 const MenuContext = createContext();
 

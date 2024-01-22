@@ -7,7 +7,7 @@ import {
 import { MAX_DATE, MIN_DATE } from "../../config/constants";
 import { format, setMinutes } from "date-fns";
 import { checkAvailability } from "../../services/apiCafe";
-import { useFormContext } from "./FormContext";
+import { useFormContext } from "../../contexts/FormContext";
 import ReservationSelect from "../../ui/ReservationSelect";
 import Button from "../../ui/Button";
 import { PiWarning } from "react-icons/pi";

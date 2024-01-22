@@ -1,4 +1,4 @@
-import { useMenuContext } from "./MenuContext";
+import { useMenuContext } from "../../contexts/MenuContext";
 import PaginationButton from "./PaginationButton";
 import PaginationNumbers from "./PaginationNumbers";
 

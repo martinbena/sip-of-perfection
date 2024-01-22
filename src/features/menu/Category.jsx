@@ -1,4 +1,4 @@
-import { useMenuContext } from "./MenuContext";
+import { useMenuContext } from "../../contexts/MenuContext";
 
 function Category({ category }) {
   const { dispatch, ACTIONS, selectedCategory } = useMenuContext();

@@ -73,10 +73,7 @@ export async function checkAvailability(date, time, duration, numGuests) {
     const close = `${getClosingHour(date)}:00`;
     let status;
 
-    if (endTime > close) {
-      status = "invalid time";
-      return status;
-    }
+    if (endTime > close) return (status = "invalid time");
 
     const req = query(reservationsRef, where("date", "==", reservationDate));
 

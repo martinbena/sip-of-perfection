@@ -1,7 +1,7 @@
 import { calculateStartEndTime, formatDate } from "../utilities/helpers";
 import { Form, redirect } from "react-router-dom";
 import { makeReservation } from "../services/apiCafe";
-import { FormProvider } from "../features/reservation/FormContext";
+import { FormProvider } from "../contexts/FormContext";
 import SearchReservation from "../features/reservation/SearchReservation";
 import store from "../store";
 import { clearCart } from "../features/cart/cartSlice";
@@ -9,8 +9,24 @@ import Subhero from "../ui/Subhero";
 import ReservationInfo from "../ui/ReservationInfo";
 import FormContainer from "../ui/FormContainer";
 
-const isValidFullName = (str) =>
-  /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
+// const isValidFullName = (str) =>
+//   /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
+const isValidFullName = (str) => {
+  const nameParts = str.split(/\s+/);
+
+  if (nameParts.length < 2) {
+    return false;
+  }
+
+  const isValidFirstTwoParts = nameParts
+    .slice(0, 2)
+    .every((part, index) =>
+      index < 2 ? /^[\p{L}'’-]{2,}$/u.test(part) : true,
+    );
+
+  return isValidFirstTwoParts;
+};
+
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
     str,

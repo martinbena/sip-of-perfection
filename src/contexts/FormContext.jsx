@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { createContext, useContext, useReducer } from "react";
-import { MIN_DATE } from "../../config/constants";
+import { MIN_DATE } from "../config/constants";
 
 const FormContext = createContext();
 

@@ -1,7 +1,7 @@
 import Pagination from "./Pagination";
 import MenuItems from "./MenuItems";
 import Categories from "./Categories";
-import { MenuProvider } from "./MenuContext";
+import { MenuProvider } from "../../contexts/MenuContext";
 import Inputs from "./Inputs";
 
 function MenuFunctions({ menu }) {

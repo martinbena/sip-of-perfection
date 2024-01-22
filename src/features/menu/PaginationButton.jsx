@@ -1,5 +1,5 @@
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { useMenuContext } from "./MenuContext";
+import { useMenuContext } from "../../contexts/MenuContext";
 import { getNavHeight } from "../../navigationSlice";
 import { useSelector } from "react-redux";
 

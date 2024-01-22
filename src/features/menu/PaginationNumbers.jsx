@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { getAvailablePages } from "../../utilities/helpers";
-import { useMenuContext } from "./MenuContext";
+import { useMenuContext } from "../../contexts/MenuContext";
 import { getNavHeight } from "../../navigationSlice";
 
 function PaginationNumbers() {

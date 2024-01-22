@@ -1,4 +1,4 @@
-import { useMenuContext } from "./MenuContext";
+import { useMenuContext } from "../../contexts/MenuContext";
 
 function SortMenu() {
   const { sortBy, dispatch, ACTIONS } = useMenuContext();
