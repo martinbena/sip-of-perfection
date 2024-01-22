@@ -4,13 +4,13 @@
 
 ::selection {
   color: #fff;
-  background-color: #503000;
+  background-color: #834f00;
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #503000;
+  scrollbar-color: #834f00 #fff4e3;
 }
 
 /* Chrome, Edge, and Safari */
@@ -35,7 +35,7 @@
 
 .loader {
   width: 50px;
-  --b: 8px; /* the border thickness */
+  --b: 8px;
   aspect-ratio: 1;
   border-radius: 50%;
   padding: 1px;
@@ -51,6 +51,12 @@
       #000 calc(100% - var(--b))
     );
   -webkit-mask-composite: destination-in;
+  mask: repeating-conic-gradient(#0000 0deg, #000 1deg 20deg, #0000 21deg 36deg),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
   mask-composite: intersect;
   animation: loading 1s infinite steps(10);
 }
