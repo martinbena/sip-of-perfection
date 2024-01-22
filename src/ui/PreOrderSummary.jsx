@@ -24,12 +24,12 @@ function PreOrderSummary({ preorder, fetcher, forwardedRef }) {
                     {formatCurrency(item.totalPrice)}
                   </p>
                 </div>
-                {/* <p className="text-xs capitalize italic">
+                <p className="text-xs capitalize italic">
                   {!fetcher.state !== "loading" &&
                     fetcher.data
                       ?.find((el) => el.id === item.id)
                       .ingredients.join(", ")}
-                </p> */}
+                </p>
               </li>
             ))}
           </ul>

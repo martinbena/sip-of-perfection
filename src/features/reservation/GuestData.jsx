@@ -18,14 +18,14 @@ function GuestData() {
   const cart = useSelector(getCart);
   const formErrors = useActionData();
 
-  // const fetcher = useFetcher();
+  const fetcher = useFetcher();
 
-  // useEffect(
-  //   function () {
-  //     if (!fetcher.data && fetcher.state === "idle") fetcher.load("/menu");
-  //   },
-  //   [fetcher],
-  // );
+  useEffect(
+    function () {
+      if (!fetcher.data && fetcher.state === "idle") fetcher.load("/menu");
+    },
+    [fetcher],
+  );
 
   return (
     <div
@@ -96,7 +96,7 @@ function GuestData() {
         </div>
         {cart.length > 0 && (
           <div className="mb-8">
-            <PreOrderSummary preorder={cart} />
+            <PreOrderSummary preorder={cart} fetcher={fetcher} />
           </div>
         )}
 
