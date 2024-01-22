@@ -16,6 +16,17 @@ function UpdateReservation({ reservation, menu, forwardedRef }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navHeight = useSelector(getNavHeight);
 
+  function scrollIntoSummary() {
+    if (forwardedRef.current) {
+      const scrollPosition = forwardedRef.current.offsetTop - navHeight - 20;
+      window.scrollTo({
+        top: scrollPosition,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  }
+
   useEffect(() => {
     if (!isHidden) dispatch(loadCart(reservation.preorder));
 
@@ -25,21 +36,7 @@ function UpdateReservation({ reservation, menu, forwardedRef }) {
   useEffect(() => {
     if (fetcher.state === "submitting") {
       setIsSubmitting(true);
-      const tryScroll = () => {
-        if (forwardedRef.current) {
-          const scrollPosition =
-            forwardedRef.current.offsetTop - navHeight - 20;
-          window.scrollTo({
-            top: scrollPosition,
-            left: 0,
-            behavior: "smooth",
-          });
-        } else {
-          setTimeout(tryScroll, 100);
-        }
-      };
-
-      tryScroll();
+      setTimeout(scrollIntoSummary, 100);
     }
   }, [fetcher.state, forwardedRef.current]);
 
