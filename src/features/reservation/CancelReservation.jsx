@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import { cancelReservation } from "../../services/apiCafe";
 import Button from "../../ui/Button";
 import Modal from "../../ui/Modal";
@@ -17,7 +17,7 @@ function CancelReservation({ id }) {
     <>
       <Modal
         isOpen={isModalOpen}
-        message="Are you sure that you want to delete your reservation?"
+        message="Are you sure that you want to cancel your reservation?"
         onConfirm={() => handleCancelation(id)}
         onCancel={() => setIsModalOpen(false)}
       />

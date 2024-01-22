@@ -265,3 +265,7 @@
 .bg-accent.text-btntext:disabled:hover {
   background-color: #51c0c8;
 }
+
+.toast {
+  top: 220px;
+}

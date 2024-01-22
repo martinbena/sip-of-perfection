@@ -17,6 +17,7 @@ import {
   getClosingHour,
 } from "../utilities/helpers";
 import { CAPACITY } from "../config/constants";
+import toast from "react-hot-toast";
 
 const menuRef = collection(db, "menu");
 const reservationsRef = collection(db, "reservations");
@@ -121,6 +122,10 @@ export async function getReservation(id) {
 export async function cancelReservation(id) {
   const docRef = doc(db, "reservations", id);
   await deleteDoc(docRef);
+  return toast.success("Reservation successfully cancelled!", {
+    duration: 4000,
+    position: "bottom-center",
+  });
 }
 
 export async function updateReservation(id, reservation) {

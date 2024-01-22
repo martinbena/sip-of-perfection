@@ -6,6 +6,7 @@ import ReservationSummary from "../../ui/ReservationSummary";
 import PreOrderSummary from "../../ui/PreOrderSummary";
 import HeadingTertiary from "../../ui/HeadingTertiary";
 import HeadingSecondary from "../../ui/HeadingSecondary";
+import { Toaster } from "react-hot-toast";
 
 function Reservation() {
   const reservation = useLoaderData();
@@ -24,6 +25,7 @@ function Reservation() {
   return (
     <section className="overflow-hidden bg-brandshade py-40 [&>*:nth-child(1)]:mb-12 [&>*:nth-child(1)]:text-center">
       <HeadingSecondary>Reservation info</HeadingSecondary>
+      <Toaster />
       <ReservationSummary reservation={reservation} />
       <div className="px-4">
         <PreOrderSummary

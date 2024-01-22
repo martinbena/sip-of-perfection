@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart, loadCart } from "../cart/cartSlice";
 import MenuFunctions from "../menu/MenuFunctions";
 import { getNavHeight } from "../../navigationSlice";
+import toast from "react-hot-toast";
 
 function UpdateReservation({ reservation, menu, forwardedRef }) {
   const fetcher = useFetcher();
@@ -90,5 +91,9 @@ export async function action({ request, params }) {
   const { cart } = Object.fromEntries(formData);
   const data = { preorder: JSON.parse(cart) };
   await updateReservation(params.reservationId, data);
+  toast.success("Reservation successfully updated!", {
+    duration: 4000,
+    position: "bottom-center",
+  });
   return null;
 }
