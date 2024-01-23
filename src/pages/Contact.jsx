@@ -1,8 +1,10 @@
+import { usePageTitle } from "../hooks/usePageTitle";
 import ContactInfo from "../ui/ContactInfo";
 import Subhero from "../ui/Subhero";
 import Team from "../ui/Team";
 
 function Contact() {
+  usePageTitle("Contact us");
   return (
     <>
       <Subhero

@@ -10,6 +10,7 @@ import ReservationInfo from "../ui/ReservationInfo";
 import FormContainer from "../ui/FormContainer";
 import { Toaster } from "react-hot-toast";
 import { useToast } from "../hooks/useToast";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 // const isValidFullName = (str) =>
 //   /^[\p{L}'’-]{2,}(?:\s[\p{L}'’-]{2,})*$/u.test(str);
@@ -37,6 +38,7 @@ const isValidEmail = (str) =>
   /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(str);
 
 function MakeReservation() {
+  usePageTitle("Reservation");
   return (
     <>
       <Subhero

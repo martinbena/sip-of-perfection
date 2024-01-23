@@ -7,8 +7,10 @@ import PreOrderSummary from "../../ui/PreOrderSummary";
 import HeadingTertiary from "../../ui/HeadingTertiary";
 import HeadingSecondary from "../../ui/HeadingSecondary";
 import { Toaster } from "react-hot-toast";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 function Reservation() {
+  usePageTitle("Your reservation");
   const reservation = useLoaderData();
   const { preorder } = reservation;
   const summaryRef = useRef();

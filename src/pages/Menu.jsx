@@ -3,8 +3,10 @@ import { useLoaderData } from "react-router-dom";
 import MenuFunctions from "../features/menu/MenuFunctions";
 import Subhero from "../ui/Subhero";
 import MenuAccordion from "../ui/MenuAccordion";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Menu() {
+  usePageTitle("Menu");
   const menu = useLoaderData();
 
   return (
