@@ -1,8 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import topLevelAwait from "vite-plugin-top-level-await";
+import dotenv from "dotenv";
 
-// https://vitejs.dev/config/
+dotenv.config();
+
 export default defineConfig({
   plugins: [
     react(),
@@ -25,5 +27,13 @@ export default defineConfig({
         },
       },
     },
+  },
+  define: {
+    SOP_API_KEY: `"${process.env.SOP_API_KEY}"`,
+    SOP_AUTH_DOMAIN: `"${process.env.SOP_AUTH_DOMAIN}"`,
+    SOP_PROJECT_ID: `"${process.env.SOP_PROJECT_ID}"`,
+    SOP_STORAGE_BUCKET: `"${process.env.SOP_STORAGE_BUCKET}"`,
+    SOP_MESSAGING_SENDER_ID: `"${process.env.SOP_MESSAGING_SENDER_ID}"`,
+    SOP_APP_ID: `"${process.env.SOP_APP_ID}"`,
   },
 });
