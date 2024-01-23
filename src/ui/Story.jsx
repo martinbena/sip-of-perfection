@@ -30,10 +30,7 @@ function Story() {
           </Button>
         </article>
         <div className="flex items-center justify-center">
-          <img
-            src="/src/assets/coffee-and-cake.png"
-            alt="Our coffee and cake"
-          />
+          <img src="/assets/coffee-and-cake.png" alt="Our coffee and cake" />
         </div>
       </div>
     </section>

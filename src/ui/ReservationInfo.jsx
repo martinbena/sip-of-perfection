@@ -22,7 +22,7 @@ function ReservationInfo() {
         </div>
         <div>
           <img
-            src="../src/assets/reserve.webp"
+            src="/assets/reserve.webp"
             alt="Coffee and notebook"
             className="mx-auto rounded-lg tablg:w-2/3 moblg:w-full"
           />

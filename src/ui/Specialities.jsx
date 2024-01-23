@@ -11,13 +11,13 @@ const specs = [
     ...coffeeCocktail,
     description:
       "Indulge in our signature Java Bliss Coffee Cocktail, a harmonious blend of premium coffee, a touch of liqueur, and silky cream. This delightful creation is a true testament to the artistry of coffee mixology, delivering a rich and invigorating experience with every sip.",
-    image: "/src/assets/java-coffee-coctail.jpg",
+    image: "/assets/java-coffee-coctail.jpg",
   },
   {
     ...chocolateCake,
     description:
       "Treat yourself to pure indulgence with our Decadent Chocolate Cake. Crafted with the finest cocoa and love, this moist and luscious cake is a chocolate lover's dream come true. Savor the velvety layers and rich flavor that will leave your taste buds craving for more.",
-    image: "/src/assets/chocolate-cake.jpg",
+    image: "/assets/chocolate-cake.jpg",
   },
 ];
 

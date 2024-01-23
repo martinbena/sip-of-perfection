@@ -25,20 +25,20 @@ export default {
         "mobile-nav":
           "linear-gradient(to right, rgba(34, 34, 34 ,0.75), rgba(34, 34, 34 ,0.75))",
         "hero-pattern":
-          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/hero.webp')",
+          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('/assets/hero.webp')",
         "story-pattern":
-          "url('../src/assets/story-bg.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
+          "url('/assets/story-bg.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
         "specs-pattern":
-          "url('../src/assets/specs-bg-left.png'), url('../src/assets/specs-bg-right.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
+          "url('/assets/specs-bg-left.png'), url('/assets/specs-bg-right.png'), linear-gradient(to right, rgba(253, 233, 200), rgba(253, 233, 200))",
         "opening-hours":
-          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/opening-hours.webp')",
+          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('/assets/opening-hours.webp')",
         "contact-us":
-          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/barista.webp')",
+          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('/assets/barista.webp')",
         reservation:
-          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('../src/assets/table.webp')",
-        footer: "url(../src/assets/footer-bg.svg)",
+          "linear-gradient(to right, rgba(34, 34, 34 ,0.55), rgba(34, 34, 34 ,0.55)), url('/assets/table.webp')",
+        footer: "url(/assets/footer-bg.svg)",
         carousel:
-          "url(../src/assets/carousel-bg.png), linear-gradient(to right, rgb(80, 48, 0), rgb(80, 48, 0))",
+          "url(/assets/carousel-bg.png), linear-gradient(to right, rgb(80, 48, 0), rgb(80, 48, 0))",
       },
       backgroundPosition: {
         specs: "left bottom, right top",

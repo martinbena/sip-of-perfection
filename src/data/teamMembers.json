@@ -5,7 +5,7 @@
     "phone": "555-987-6543",
     "email": "jordan@sop.com",
     "description": "The creative force behind Sip of Perfection, devoted to crafting a warm and memorable atmosphere for all.",
-    "image": "/src/assets/jordan-chamberlain.jpg"
+    "image": "/assets/jordan-chamberlain.jpg"
   },
   {
     "fullName": "Sarah Mitchell",
@@ -13,7 +13,7 @@
     "phone": "555-876-5432",
     "email": "sarah@sop.com",
     "description": "Guiding our seamless operations, our dedicated manager upholds the high standards of hospitality at Sip of Perfection.",
-    "image": "/src/assets/sarah-mitchell.webp"
+    "image": "/assets/sarah-mitchell.webp"
   },
   {
     "fullName": "Lorenzo DiMatteo",
@@ -21,6 +21,6 @@
     "phone": "555-765-4321",
     "email": "lorenzo@sop.com",
     "description": "Indulge in culinary excellence, where every dish reflects the chef's commitment to a memorable dining experience at Sip of Perfection.",
-    "image": "/src/assets/lorenzo-dimatteo.webp"
+    "image": "/assets/lorenzo-dimatteo.webp"
   }
 ]
