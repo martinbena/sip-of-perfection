@@ -21,7 +21,7 @@ function SearchReservation() {
     <div className="mx-auto max-w-8xl px-16 mob:px-2">
       <form aria-label="Search your reservation" onSubmit={handleSubmit}>
         <div
-          className={`ml-auto w-96 ${
+          className={`ml-auto w-96 mob:mx-auto mob:max-w-full ${
             isTouched && query !== 20 ? "flex flex-col gap-2" : ""
           }`}
         >

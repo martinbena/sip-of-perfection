@@ -24,7 +24,7 @@ const ContactDetail = ({ type, value }) => {
   }
 
   return (
-    <div className="text-lg child:flex child:w-max child:items-center child:gap-5 mobsm:text-base">
+    <div className="text-lg child:flex child:max-w-max child:items-center child:gap-5 mobsm:text-base">
       {link ? (
         <a href={link} aria-label={ariaLabel} className="hover:text-linkhover">
           <span className="child:h-8 child:w-8">{icon}</span>
