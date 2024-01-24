@@ -6,17 +6,21 @@ import { CiChat1 } from "react-icons/ci";
 import { formatLongDate, formatTime } from "../utilities/helpers";
 import CancelReservation from "../features/reservation/CancelReservation";
 
-function ReservationSummary({ reservation }) {
+function ReservationSummary({ reservation, isObsolete }) {
   const { id, date, from, to, guests, note } = reservation;
 
   return (
     <div className="px-4">
-      <div className="mx-auto mb-16 max-w-lg rounded-lg bg-brandtint px-16 py-12 shadow-accordion mob:p-6">
+      <div
+        className={`mx-auto mb-16 flex max-w-lg flex-col gap-12 rounded-lg px-16 py-12 shadow-accordion mob:p-6 ${
+          isObsolete ? "bg-green-50" : "bg-brandtint"
+        }`}
+      >
         <p className="text-lg font-semibold mobsm:text-base">
           Reservation ID:{" "}
           <span className="border-b-2 border-commontext pb-1">{id}</span>
         </p>
-        <div className="my-12 flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           <ReservationSummaryItem icon={<CiCalendar />}>
             {formatLongDate(date)}
           </ReservationSummaryItem>
@@ -32,9 +36,11 @@ function ReservationSummary({ reservation }) {
             </ReservationSummaryItem>
           )}
         </div>
-        <div className="text-center">
-          <CancelReservation id={id} />
-        </div>
+        {!isObsolete && (
+          <div className="text-center">
+            <CancelReservation id={id} />
+          </div>
+        )}
       </div>
     </div>
   );
