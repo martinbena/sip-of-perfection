@@ -64,7 +64,7 @@ function MenuAccordion() {
           <MenuAccordionListItem icon={<PiCheckBold />}>
             Feel free to modify your order on-site for flexibility
           </MenuAccordionListItem>
-          <MenuAccordionListItem icon={<PiWarning />}>
+          <MenuAccordionListItem icon={<PiWarning />} type="warning">
             While adjustments are welcome upon arrival, please choose wisely
           </MenuAccordionListItem>
           <MenuAccordionListItem icon={<PiSmileyBold />}>
