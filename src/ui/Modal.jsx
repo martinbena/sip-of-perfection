@@ -3,18 +3,31 @@ import HeadingTertiary from "./HeadingTertiary";
 import { PiWarning } from "react-icons/pi";
 import { HiOutlineX } from "react-icons/hi";
 import { createPortal } from "react-dom";
+import { useEffect, useRef } from "react";
 
 function Modal({ isOpen, message, onConfirm, onCancel }) {
+  const modalRef = useRef();
+
+  useEffect(() => {
+    function handleClick(e) {
+      if (modalRef.current && !modalRef.current.contains(e.target)) onCancel();
+    }
+
+    document.addEventListener("click", handleClick, true);
+
+    return () => document.removeEventListener("click", handleClick, true);
+  }, [onCancel]);
+
   if (!isOpen) {
     return null;
   }
 
   return createPortal(
-    <div
-      onClick={onCancel}
-      className="fixed left-0 top-0 z-40 flex h-screen w-full items-center justify-center bg-mobile-nav px-4 backdrop-blur-sm mob:px-2"
-    >
-      <div className="relative w-full max-w-3xl rounded-lg bg-brandtint p-12 text-left mob:p-6">
+    <div className="fixed left-0 top-0 z-40 flex h-screen w-full items-center justify-center bg-mobile-nav px-4 backdrop-blur-sm mob:px-2">
+      <div
+        ref={modalRef}
+        className="relative w-full max-w-3xl rounded-lg bg-brandtint p-12 text-left mob:p-6"
+      >
         <div className="mb-12 space-y-4">
           <div className="flex items-center gap-5">
             <span className="child:h-8 child:w-8">
