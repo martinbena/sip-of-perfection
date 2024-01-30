@@ -2,13 +2,14 @@ import Button from "./Button";
 import HeadingTertiary from "./HeadingTertiary";
 import { PiWarning } from "react-icons/pi";
 import { HiOutlineX } from "react-icons/hi";
+import { createPortal } from "react-dom";
 
 function Modal({ isOpen, message, onConfirm, onCancel }) {
   if (!isOpen) {
     return null;
   }
 
-  return (
+  return createPortal(
     <div
       onClick={onCancel}
       className="fixed left-0 top-0 z-40 flex h-screen w-full items-center justify-center bg-mobile-nav px-4 backdrop-blur-sm mob:px-2"
@@ -43,7 +44,8 @@ function Modal({ isOpen, message, onConfirm, onCancel }) {
           </span>
         </button>
       </div>
-    </div>
+    </div>,
+    document.getElementById("root"),
   );
 }
 
