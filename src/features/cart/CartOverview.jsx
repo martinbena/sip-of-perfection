@@ -33,6 +33,7 @@ function CartOverview() {
 
   function handleClearCart() {
     dispatch(clearCart());
+    setIsModalOpen(false);
   }
 
   if (!totalCartQuantity) return null;
