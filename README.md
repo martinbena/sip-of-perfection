@@ -1,6 +1,6 @@
 # Sip of Perfection
 
-Welcome to **Sip of Perfection**, a fictional cafe website built for showcasing my web development skills. The website is fully responsive and works perfectly across all devices.
+Welcome to **Sip of Perfection**, a fictional cafe website built for showcasing my web development skills. The website is fully responsive and works perfectly across all devices. It is a fast single page application.
 
 ## Online Demo
 
